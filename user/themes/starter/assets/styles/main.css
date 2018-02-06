@@ -3,14 +3,10 @@
 @import "base/_variables";
 @import "base/_mixins";
 @import "base/_global";
+@import "base/_grid";
 @import "modules/_btn";
-@import "modules/_large-hero";
-@import "modules/_wrapper";
-@import "modules/_parallax";
 @import "modules/_content";
 @import "modules/_site-header";
 @import "modules/_primary-nav";
-@import "modules/_lightslider";
-@import "modules/_team-section";
 @import "modules/_footer";
 @import "modules/_modal";

@@ -23,3 +23,15 @@ links:
       - title: Link 3
         url: '#'
         id: 'link-03'
+
+english:
+  links:
+      - title: Link 1
+        url: '#'
+        id: 'link-01'
+      - title: Link 2
+        url: '#'
+        id: 'link-02'
+      - title: Link 3
+        url: '#'
+        id: 'link-03'

@@ -10,7 +10,7 @@ class StickyHeader {
 		this.menuContent = $(".site-header__menu-content");
 		this.headerTriggerElement = $(".large-hero__logo");
 		this.createHeaderWaypoint();
-		this.pageSections = $(".page-section");
+		this.pageSections = $(".content");
 		this.headerLinks = $(".primary-nav a");
 		this.circleButton = $(".btn--circle");
 		this.createPageSectionWaypoint();

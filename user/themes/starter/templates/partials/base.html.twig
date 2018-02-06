@@ -32,17 +32,20 @@
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
 
-    {% block header_navigation %}
-        {% include 'partials/navigation.html.twig' %}
-    {% endblock %}
+    <div class="css-grid-container">
+        {% block header_navigation %}
+            {% include 'partials/navigation.html.twig' %}
+        {% endblock %}
 
-    {% block body %}
-        {% block content %}{% endblock %}
-    {% endblock %}
+        {% block body %}
+            {% block content %}{% endblock %}
+        {% endblock %}
 
-    {% block footer %}
-        {% include 'partials/footer.html.twig' %}
-    {% endblock %}
+        {% block footer %}
+            {% include 'partials/footer.html.twig' %}
+        {% endblock %}
+    </div>
+
 
     {% block stylesheets %}
 

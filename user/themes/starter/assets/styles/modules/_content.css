@@ -1,13 +1,13 @@
 .content {
-	background-color: $mainDarkGrey;
-	padding: 0;
-	z-index: -3;
+	padding: 10px;
 
 	@mixin atMedium {
-		padding: 0 15%;
+		padding: 80px;
 	}
 
-	@mixin atWide {
-		padding: 0 20%;
+	& p {
+		max-width: 60%;
+		margin-left: auto;
+		margin-right: auto;
 	}
 }

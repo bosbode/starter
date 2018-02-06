@@ -5,7 +5,6 @@ class Modal {
 		this.openModalButton = $("#modal-link");
 		this.modal = $(".modal");
 		this.closeModalButton = $(".modal__close");
-		this.resengoBookNow = $("#resengo-booknow");
 		this.events();
 	}
 
@@ -28,20 +27,7 @@ class Modal {
 
 	openModal() {
 		this.modal.addClass("modal--is-visable");
-		this.appendModalScript();
 		return false;
-	}
-
-	appendModalScript() {
-		if(window.location.href.indexOf("/en") > -1) {
-			$.getScript("//www.resengo.com/WID/Widget/Cors", function(){
-				bookNow({companyID: '1457291', target: '#resengo-booknow', language: 'EN'});
-			});
-		} else {
-			$.getScript("//www.resengo.com/WID/Widget/Cors", function(){
-				bookNow({companyID: '1457291', target: '#resengo-booknow', language: 'NL'});
-			});
-		};
 	}
 
 	closeModal() {

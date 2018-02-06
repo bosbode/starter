@@ -1,0 +1,23 @@
+.css-grid-container {
+    height: 100%;
+    display: grid;
+    grid-gap: 0;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 40px auto 40px;
+    grid-template-areas: 
+        "h h h h h h h h h h h h"
+        ". c c c c c c c c c c ."
+        "f f f f f f f f f f f f";
+}
+
+.site-header {
+    grid-area: h;
+}
+
+.content {
+    grid-area: c;
+}
+
+.footer {
+    grid-area: f;
+}

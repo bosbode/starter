@@ -44,7 +44,7 @@
 		top: 0px;
 		right: 8px;
 		font-size: 2rem;
-		color: $mainDarkGrey;
+		color: $color-tertiary;
 		cursor: pointer;
 
 		&:hover {

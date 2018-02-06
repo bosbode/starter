@@ -4,12 +4,13 @@ footer {
     font-weight: 600;
     
     @mixin atMedium {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        right: 0;
+        // position: fixed;
+        // bottom: 0;
+        // left: 0;
+        // right: 0;
         padding: 15px 0;
-        background: $mainDarkGrey;
+        background: $color-primary;
+        color: #fff;
     }
 
     .footer__lang {

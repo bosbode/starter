@@ -1,7 +1,5 @@
 body {
 	font-family: "Tinos", "Times New Roman", Times, Georgia, serif;
-    color: $mainGrey;
-    background-color: $mainDarkGrey;
     text-align: center;
     margin: 0;
 }
@@ -12,6 +10,7 @@ h1 {
 
 h2 {
     font-size: 30px;
+    margin: 0;
 }
 
 h3 {
@@ -45,10 +44,6 @@ h6 {
     color: $color-primary;
 }
 
-h2 {
-    margin: 0;
-}
-
 p {
     font-size: 1.125rem;
     line-height: 1.42857143;
@@ -77,23 +72,5 @@ a {
 
     &:hover {
         color: $color-primary-hover;
-    }
-}
-
-#map {
-    min-width: 100%;
-    background-color: $mainDarkGrey;
-    height: 250px;
-
-    @mixin atSmall {
-        height: 400px;
-    }
-
-    @mixin atMedium {
-        height: calc(100vh - 140px);
-    }
-
-    @mixin atLarge {
-        height: calc(100vh - 350px);
     }
 }

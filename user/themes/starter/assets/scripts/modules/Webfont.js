@@ -7,7 +7,7 @@ function Webfont(){
 		},
 		custom: {
 			families: ['fontawesome'],
-			urls: ['user/themes/starter/assets/font-awesome/css/font-awesome.min.css']
+			urls: ['user/themes/starter/assets/font-awesome/css/fontawesome.min.css']
 		}
   	});
 }

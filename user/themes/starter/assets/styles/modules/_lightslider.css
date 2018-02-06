@@ -1,6 +1,6 @@
 .grav-lightslider {
 
-	background-color: $mainDarkGrey;
+	background-color: $color-tertiary;
 
 	& li img { 
 		object-fit: cover;
