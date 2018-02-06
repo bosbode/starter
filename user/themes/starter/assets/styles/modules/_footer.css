@@ -1,0 +1,54 @@
+footer {
+    font-family: Raleway,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 0.875rem;
+    font-weight: 600;
+    
+    @mixin atMedium {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 15px 0;
+        background: $mainDarkGrey;
+    }
+
+    .footer__lang {
+        display: none;
+        
+        @mixin atMedium {
+            display: flex;
+            flex-direction: row;
+            list-style-type: none;
+            flex-wrap: wrap;
+            margin: 0;
+            padding-left: 0;
+        }
+    }
+
+    .footer__lang-item:first-child {
+        margin-right: 50px;
+        margin-left: auto;
+    }
+    
+    .footer__lang-item:last-child {
+        margin-right: auto;
+    }
+
+    .footer__lang-item {
+        margin-right: 15px;
+
+        @mixin atMedium {
+            margin-right: 20px;
+        }
+    }
+
+    .footer--font p {
+        font-family: Raleway,"Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-size: 0.875rem;
+        font-weight: 600;
+
+        @mixin atMedium {
+            display: none;
+        }
+    }
+}

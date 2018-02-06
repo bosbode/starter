@@ -1,0 +1,46 @@
+<!-- Navigation -->
+<header class="site-header">
+<div class="wrapper wrapper--no-padding-top-bottom">
+  <div class="site-header__logo">
+      <img src="./user/themes/starter/assets/images/fish.svg">
+  </div>
+
+  <div class="site-header__menu-icon">
+    <div class="site-header__menu-icon__middle"></div>
+  </div>
+
+  <div class="site-header__menu-content">
+    <nav class="primary-nav">
+      <ul class="primary-nav__flex-row">
+      {% if base_url == '/en' %}
+        {% for link in site.english.links %}
+            {% if link.url | contains('http') %}
+                {% set domain = '' %}
+            {% elseif link.url | contains('#') %}
+                {% set domain = '' %}
+            {% else %}
+                {% set domain = base_url_absolute %}
+            {% endif %}
+                <li><a id="{{ link.id }}-link" href="{{ domain }}{{ link.url }}" {% if link.url | contains('http') %}target="_blank"{% endif %}>{{ link.title }}</a></li>
+        {% endfor %}
+        {% else %}
+          {% for link in site.links %}
+              {% if link.url | contains('http') %}
+                  {% set domain = '' %}
+              {% elseif link.url | contains('#') %}
+                  {% set domain = '' %}
+              {% else %}
+                  {% set domain = base_url_absolute %}
+              {% endif %}
+                  <li><a id="{{ link.id }}-link" href="{{ domain }}{{ link.url }}" {% if link.url | contains('http') %}target="_blank"{% endif %}>{{ link.title }}</a></li>
+          {% endfor %}
+      {% endif %}
+      </ul>
+      <ul class="site-header__lang">
+        <li><a href="/">Nederlands</a></li>
+        <li><a href="/en">English</a></li>
+      </ul>
+    </nav>
+  </div>
+</div>
+</header>

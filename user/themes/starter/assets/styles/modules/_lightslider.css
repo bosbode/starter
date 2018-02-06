@@ -1,0 +1,13 @@
+.grav-lightslider {
+
+	background-color: $mainDarkGrey;
+
+	& li img { 
+		object-fit: cover;
+		width: 100%;
+
+		@mixin atLarge {
+			height: calc(100vh - 140px);
+		}
+	}
+}

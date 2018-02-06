@@ -1,0 +1,62 @@
+.team-section {
+	display: flex;
+	width: 50%;
+	float: left;
+	position: relative;
+
+	@mixin atMedium {
+		width: 33.33%;
+	}
+
+	&__image {
+		height: 100%;
+		width: 100%;
+		object-fit: cover;
+	}
+
+	&__overlay {
+		background: rgba(0, 0, 0, .5);
+		height: 100%;
+		width: 100%;
+		position: absolute;
+  		top: 0;
+  		left: 0;
+
+  		@mixin atMedium {
+  			opacity: 0;
+  		}
+
+  		& p {
+  			position: absolute;
+		    margin-left: auto;
+		    margin-right: auto;
+		    left: 0;
+		    right: 0;
+		    bottom: 0;
+		    margin: 0;
+		    color: #FFF;
+		    padding: 10px;
+		    line-height: 0.9;
+		    transform: scale(0.8);
+
+		    @mixin atSmall {
+		    	transform: scale(1);
+		    }
+  		}
+
+  		& h4 {
+  			margin: 0;
+  			color: #FFF;
+		    padding: 10px;
+		    transform: scale(0.7);
+
+		    @mixin atSmall {
+		    	transform: scale(1);
+		    }
+  		}
+	}
+
+	&:hover .team-section__overlay {
+		opacity: 1;
+	}
+}

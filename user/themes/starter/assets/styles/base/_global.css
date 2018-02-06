@@ -1,0 +1,99 @@
+body {
+	font-family: "Tinos", "Times New Roman", Times, Georgia, serif;
+    color: $mainGrey;
+    background-color: $mainDarkGrey;
+    text-align: center;
+    margin: 0;
+}
+
+h1 {
+    font-size: 36px;
+}
+
+h2 {
+    font-size: 30px;
+}
+
+h3 {
+    font-size: 24px;
+}
+
+h4 {
+    font-size: 18px;
+}
+
+h5 {
+    font-size: 14px;
+}
+
+h6 {
+    font-size: 12px;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 75px 0 0;
+    text-transform: uppercase;
+    font-family: Raleway,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    color: $color-primary;
+}
+
+h2 {
+    margin: 0;
+}
+
+p {
+    font-size: 1.125rem;
+    line-height: 1.42857143;
+
+    @mixin atSmall{
+        font-size: 1.1875em;
+        line-height: 1.42857143;
+    }
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+    width: auto;
+}
+
+* {
+	box-sizing: border-box;
+    @mixin font-smoothing;
+}
+
+a {
+	color: $color-primary;
+    text-decoration: none;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+
+    &:hover {
+        color: $color-primary-hover;
+    }
+}
+
+#map {
+    min-width: 100%;
+    background-color: $mainDarkGrey;
+    height: 250px;
+
+    @mixin atSmall {
+        height: 400px;
+    }
+
+    @mixin atMedium {
+        height: calc(100vh - 140px);
+    }
+
+    @mixin atLarge {
+        height: calc(100vh - 350px);
+    }
+}

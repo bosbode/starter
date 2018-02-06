@@ -1,0 +1,16 @@
+<!-- {{ page.header.title }} Section -->
+<section id="{{ page.header.section_title }}" class="page-section" data-matching-link="#{{ page.header.section_title }}-link">
+    <div class="content">
+        <div class="wrapper">
+            {{ page.content }}
+            <p><a href="mailto:{{ page.header.contact_email }}">{{ page.header.contact_email }}</a></p>
+            <ul class="btn__list-inline">
+            {% for social in page.header.socials %}
+                <li>
+                    <a href="{{ social.url }}" class="btn btn--social"><i class="fa fa-{{ social.icon }} fa-fw"></i> <span class="network-name">{{ social.name }}</span></a>
+                </li>
+            {% endfor %} 
+            </ul>
+        </div>
+    </div>
+</section>

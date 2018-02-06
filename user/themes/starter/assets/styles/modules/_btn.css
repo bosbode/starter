@@ -1,0 +1,52 @@
+.btn {
+	border: 1px solid $color-primary;
+    color: $color-primary;
+    text-transform: uppercase;
+    padding: 0.625rem 1rem;
+    font-size: 1.125rem;
+    line-height: 1.333333;
+
+    &--social {
+    	display: inline-block;
+	    margin-right: 10px;
+
+	    &:hover {
+	    	color: #000;
+	    	background-color: $color-primary-hover;
+	    }
+    }
+
+    &--circle {
+    	display: block;
+    	margin: 0 auto;
+	   	width: 35px;
+	    height: 35px;
+	    margin-top: 15px;
+	    padding: 3px 5px;
+	    border: 2px solid #fff;
+	    border-radius: 100%;
+	    font-size: 1.3rem;
+	    color: #fff;
+
+	    @mixin atSmall {
+		   	width: 45px;
+		    height: 45px;
+		    padding: 6px 13px;
+		    font-size: 1.5625rem;
+	    }
+
+	    &:hover i{
+	    	transform: scale(1.25);
+	    	color: #FFF;
+	    }
+    }
+
+    &__list-inline {
+    	padding-left: 0;
+    	list-style: none;
+
+    	& li {
+    		display: inline-block;
+    	}
+    }
+}
