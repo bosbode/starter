@@ -8,6 +8,8 @@ content:
         by: default
         dir: asc
         custom:
+            - _modal
+            - _body
 ---
 
 

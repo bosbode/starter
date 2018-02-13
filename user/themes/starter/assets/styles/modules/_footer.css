@@ -4,7 +4,7 @@ footer {
     
     @mixin atMedium {
         padding: 15px 0;
-        background: $color-primary;
+        background: $color-tertiary;
         color: #fff;
     }
 
