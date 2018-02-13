@@ -1,13 +1,11 @@
 .content {
-	padding: 10px;
+	padding: 20px 10px;
 
-	@mixin atMedium {
-		padding: 80px;
+	@mixin atSmall {
+		padding: 20px 20px;
 	}
 
-	& p {
-		max-width: 60%;
-		margin-left: auto;
-		margin-right: auto;
+	@mixin atMedium {
+		padding: 50px 0;
 	}
 }

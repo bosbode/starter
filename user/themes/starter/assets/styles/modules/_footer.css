@@ -1,13 +1,8 @@
 footer {
-    font-family: Raleway,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 0.875rem;
     font-weight: 600;
     
     @mixin atMedium {
-        // position: fixed;
-        // bottom: 0;
-        // left: 0;
-        // right: 0;
         padding: 15px 0;
         background: $color-primary;
         color: #fff;
@@ -40,16 +35,6 @@ footer {
 
         @mixin atMedium {
             margin-right: 20px;
-        }
-    }
-
-    .footer--font p {
-        font-family: Raleway,"Helvetica Neue",Helvetica,Arial,sans-serif;
-        font-size: 0.875rem;
-        font-weight: 600;
-
-        @mixin atMedium {
-            display: none;
         }
     }
 }

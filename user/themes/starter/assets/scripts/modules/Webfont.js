@@ -3,7 +3,7 @@ import webfont from "webfontloader";
 function Webfont(){
 	webfont.load({
     	google: {
-      		families: ['Tinos:400,400i,700,700i', 'Raleway:400,700,600']
+      		families: ['Quicksand:400,400i,700,700i', 'Josefin+Slab:700']
 		},
 		custom: {
 			families: ['fontawesome'],

@@ -1,22 +1,16 @@
 .site-header {
-	// width: 100%;
 	z-index: 100;
-	// position: fixed;
-	// height: 40px;
-	transition: height 0.2s, background-color 0.7s, border-bottom 0.7s;
-	background-color: #88d8b0; 
-
-	@mixin atLarge {
-		// padding: 25px 0;
-		// height: 47px;
-		transition: padding 0.3s;
-	}
+	width: 100%;
+	position: fixed;
+	height: 40px;
+	transition: height 0.3s, background-color 0.7s, border-bottom 0.7s;
+	background-color: #88d8b0;
 
 	&--is-expanded {
-		background-color: $color-tertiary;
+		background-color: #88d8b0;
 		border-bottom: 1px solid #FFF;
 		padding: 0;
-		height: 330px;
+		height: 100vh;
 	}
 
 		&--dark {
@@ -121,7 +115,7 @@
 		opacity: 0;
 		top: -600px;
 		transform: scale(1.2);
-		transition: opacity 1s, transform .2s, top .2s ease-out;
+		transition: opacity 1s, transform .2s, top .5s ease-out;
 		position: relative;
 		z-index: -10;
 		padding: 30px 0;

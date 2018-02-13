@@ -6,8 +6,12 @@
 	}
 
 	&__flex-row {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		height: calc(100vh - 40px);
+
 		@mixin atLarge {
-			display: flex;
 			flex-direction: row;
 			justify-content: flex-end;
 		}
@@ -19,7 +23,8 @@
 	}
 	
 	li:first-child {
-		margin-top: 7px;
+		margin-top: 0;
+		padding-top: 0;
 
 		@mixin atLarge {
 			margin-top: 0;
@@ -28,10 +33,12 @@
 
 	li {
 		list-style: none;
+		padding: 30px 0;
 
 		@mixin atLarge {
-			padding-right: 10px;
 			display: block;
+			padding: 0;
+			height: 40px;
 		}
 	}
 
@@ -40,19 +47,18 @@
 	}
 
 	a {
-		color: #000;
+		color: rgb(255, 255, 255);
 		text-decoration: none;
 		font-weight: 600;
 		display: block;
-		padding: 8px 0;
-		font-size: .875rem;
+		font-size: 5rem;
 		letter-spacing: 1px;
-		text-transform: uppercase;
-	    font-family: Raleway,"Helvetica Neue",Helvetica,Arial,sans-serif;
+		// text-transform: uppercase;
+	    font-family: "Josefin Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
 
 		@mixin atLarge {
 			font-size: .875rem;
-			padding: 15px 10px;
+			padding: 12px 20px;
 			background-color: transparent;
 		}
 
