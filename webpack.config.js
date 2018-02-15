@@ -3,7 +3,7 @@ config = require("./gulp/config.json");
 
 module.exports = {
 	entry: {
-		App: "./user/themes/" + config.theme + "/assets/scripts/app.js",
+		App: "./user/themes/" + config.theme + "/assets/scripts/App.js",
 		Vendor: "./user/themes/" + config.theme + "/assets/scripts/Vendor.js"
 	},
 	output: {
