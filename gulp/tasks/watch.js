@@ -20,7 +20,6 @@ gulp.task('watch', ['clearCompiled', 'php', 'clearCache', 'scripts', 'styles'], 
 
 	watch('./user/themes/' + config.theme + '/assets/styles/**/*.scss', function(){
 		gulp.start('cssInject');
-		gulp.start('critical');
 	});
 
 	watch('./user/themes/' + config.theme + '/assets/scripts/**/*.js', function(){

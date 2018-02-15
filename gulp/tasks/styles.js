@@ -1,13 +1,8 @@
 var gulp = require("gulp"),
 postcss = require("gulp-postcss"),
-cssImport = require("postcss-import"),
-cssvars = require("postcss-simple-vars"),
-nested = require("postcss-nested"),
 autoprefixer = require("autoprefixer"),
-mixins = require("postcss-mixins"),
 hexrgba = require("postcss-hexrgba"),
 cssnano = require("cssnano"),
-functions = require("postcss-define-function"),
 config = require("../config.json"),
 sass = require('gulp-sass');
 

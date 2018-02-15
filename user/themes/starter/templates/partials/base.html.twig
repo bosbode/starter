@@ -61,9 +61,10 @@
       <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDv1l7qVWIUaKC3SbdQSoBgxVwy52Edu9U"></script>
 
       <!-- Custom Theme JavaScript -->
-      {% do assets.addJs('theme://assets/compiled/scripts/App.js', {'loading':'async'}) %}
-
       {% do assets.addJs('theme://assets/compiled/scripts/Vendor.js', {'loading':'async'}) %}
+      {% do assets.addJs('theme://assets/compiled/scripts/modernizr.js', {'loading':'async'}) %}
+
+      {% do assets.addJs('theme://assets/compiled/scripts/App.js', {'loading':'async'}) %}
 
     {% endblock %}
   {{ assets.js() }}

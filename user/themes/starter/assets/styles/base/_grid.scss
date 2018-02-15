@@ -5,22 +5,16 @@
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: repeat(auto);
     grid-template-areas: 
-        "h h h h h h h h h h h h"
         "c c c c c c c c c c c c"
         "ca ca ca ca ca ca ca ca ca ca ca ca"
         "f f f f f f f f f f f f";
 
         @include breakpoint(atMedium) {
         grid-template-areas: 
-        "h h h h h h h h h h h h"
+        "ca ca ca ca ca ca ca ca ca ca ca ca"
         ". . c c c c c c c c . ."
-        ". ca ca ca ca ca ca ca ca ca ca ."
         "f f f f f f f f f f f f";
     }
-}
-
-.site-header {
-    grid-area: h;
 }
 
 .content {

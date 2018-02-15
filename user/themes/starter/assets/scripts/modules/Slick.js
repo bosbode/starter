@@ -10,8 +10,6 @@ class MobileMenu {
 	initalise() {
 		
 		this.carousel.slick({
-			// nextArrow: '<i class="fas fa-camera-retro"></i>',
-			// prevArrow: '<i class="fas fa-camera-retro"></i>',
 			lazyLoad: 'ondemand',
 			infinite: true,
 			dots: true,
@@ -19,7 +17,6 @@ class MobileMenu {
 			arrows: false,
 			speed: 500,
 			cssEase: 'linear',
-			adaptiveHeight: true,
 
 			responsive: [{
 
