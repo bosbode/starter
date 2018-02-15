@@ -7,12 +7,26 @@ autoprefixer = require("autoprefixer"),
 mixins = require("postcss-mixins"),
 hexrgba = require("postcss-hexrgba"),
 cssnano = require("cssnano"),
-config = require("../config.json");
+functions = require("postcss-define-function"),
+config = require("../config.json"),
+sass = require('gulp-sass');
 
 
-gulp.task("styles", function(){
-	return gulp.src("./user/themes/" + config.theme + "/assets/styles/main.css")
-		.pipe(postcss([cssImport, mixins, cssvars, nested, hexrgba, autoprefixer, cssnano]))
+gulp.task("styles", ["sass"], function(){
+	return gulp.src("./user/themes/" + config.theme + "/assets/compiled/styles/main.css")
+		.pipe(postcss([hexrgba, autoprefixer, cssnano]))
+		.on("error", function(errorInfo){
+			console.log(errorInfo.toString());
+			this.emit("end");
+		})
+		.pipe(gulp.dest("./user/themes/" + config.theme + "/assets/compiled/styles"));
+});
+
+gulp.task("sass", function(){
+	return gulp.src("./user/themes/" + config.theme + "/assets/styles/main.scss")
+		.pipe(sass({
+			includePaths: ['node_modules/slick-carousel/slick/', 'node_modules/normalize.css/']
+		}))
 		.on("error", function(errorInfo){
 			console.log(errorInfo.toString());
 			this.emit("end");

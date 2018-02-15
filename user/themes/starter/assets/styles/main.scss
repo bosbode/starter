@@ -1,12 +1,18 @@
-@import "normalize.css";
+@import "normalize";
 
 @import "base/_variables";
+
+@import "slick.scss";
+@import "slick-theme.scss";
+
 @import "base/_mixins";
 @import "base/_global";
 @import "base/_grid";
+
 @import "modules/_btn";
 @import "modules/_content";
 @import "modules/_site-header";
 @import "modules/_primary-nav";
 @import "modules/_footer";
 @import "modules/_modal";
+@import "modules/_slick-slider";

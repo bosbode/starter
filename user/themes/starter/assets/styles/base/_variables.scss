@@ -1,0 +1,15 @@
+$color-primary: rgb(64,182,225);
+$color-primary-hover: rgb(0,180,180);
+$color-secondary: rgb(173,173,173);
+$color-tertiary: rgb(28,28,28);
+
+$slick-font-path: "../../../../../../node_modules/slick-carousel/slick/fonts/";
+$slick-font-family: "Font Awesome 5 Pro";
+$slick-loader-path: "../../../../../../node_modules/slick-carousel/slick/";
+$slick-arrow-color: $color-primary;
+$slick-dot-color: black;
+$slick-dot-color-active: $slick-dot-color;
+$slick-prev-character: '\f053';
+$slick-next-character: '\f054';
+$slick-dot-character: '\2022';
+$slick-dot-size: 20px;

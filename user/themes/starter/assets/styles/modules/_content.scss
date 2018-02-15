@@ -1,11 +1,11 @@
 .content {
 	padding: 0 10px 50px;
 
-	@mixin atSmall {
+	@include breakpoint(atSmall) {
 		padding: 0 20px 50px;
 	}
 
-	@mixin atMedium {
+	@include breakpoint(atMedium) {
 		padding: 0 0 50px;
 	}
 }

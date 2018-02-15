@@ -12,11 +12,11 @@
 	&__logo {
 		width: 80%;
 
-		@mixin atLarge {
+		@include breakpoint(atLarge) {
 			width: 60%;
 		}
 
-		@mixin atWide {
+		@include breakpoint(atWide) {
 			width: 50%;
 		}
 	}

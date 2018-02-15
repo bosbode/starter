@@ -18,15 +18,16 @@ gulp.task('watch', ['clearCompiled', 'php', 'clearCache', 'scripts', 'styles'], 
 		browserSync.reload();
 	});
 
-	watch('./user/themes/' + config.theme + '/assets/styles/**/*.css', function(){
+	watch('./user/themes/' + config.theme + '/assets/styles/**/*.scss', function(){
 		gulp.start('cssInject');
+		gulp.start('critical');
 	});
 
 	watch('./user/themes/' + config.theme + '/assets/scripts/**/*.js', function(){
 		gulp.start('scriptsRefresh');
 	});
 	
-	watch('./user/themes/' + config.theme + '/templates/**/*.twig', function(){
+	watch(['./user/themes/' + config.theme + '/templates/**/*.twig', './user/pages/**/*'], function(){
 		gulp.start('cacheRefresh');
 	});
 

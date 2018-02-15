@@ -48,7 +48,7 @@ p {
     font-size: 1.125rem;
     line-height: 1.42857143;
 
-    @mixin atSmall{
+    @include breakpoint(atSmall) {
         font-size: 1.1875em;
         line-height: 1.42857143;
     }
@@ -62,7 +62,10 @@ img {
 
 * {
 	box-sizing: border-box;
-    @mixin font-smoothing;
+    // -webkit-font-smoothing: antialiased;
+	// -moz-osx-font-smoothing: grayscale;
+	// -o-font-smoothing: antialiased;
+	// text-shadow: 0 0 0;
 }
 
 a {
@@ -73,4 +76,8 @@ a {
     &:hover {
         color: $color-primary-hover;
     }
+}
+
+ol > li, ul > li {
+    padding-right: 30px;
 }

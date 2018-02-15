@@ -28,7 +28,7 @@
 	    font-size: 1.3rem;
 	    color: #fff;
 
-	    @mixin atSmall {
+	    @include breakpoint(atSmall) {
 		   	width: 45px;
 		    height: 45px;
 		    padding: 6px 13px;

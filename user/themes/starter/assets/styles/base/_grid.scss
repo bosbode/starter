@@ -1,18 +1,20 @@
 .css-grid-container {
     display: grid;
     overflow: hidden;
-    grid-gap: 0;
+    grid-gap: 10px;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: 40px auto 40px;
+    grid-template-rows: repeat(auto);
     grid-template-areas: 
         "h h h h h h h h h h h h"
         "c c c c c c c c c c c c"
+        "ca ca ca ca ca ca ca ca ca ca ca ca"
         "f f f f f f f f f f f f";
 
-    @mixin atMedium {
+        @include breakpoint(atMedium) {
         grid-template-areas: 
         "h h h h h h h h h h h h"
         ". . c c c c c c c c . ."
+        ". ca ca ca ca ca ca ca ca ca ca ."
         "f f f f f f f f f f f f";
     }
 }
@@ -23,6 +25,10 @@
 
 .content {
     grid-area: c;
+}
+
+.carousel {
+    grid-area: ca;
 }
 
 .footer {
