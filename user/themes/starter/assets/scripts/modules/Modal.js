@@ -32,7 +32,6 @@ class Modal {
 
 	closeModal() {
 		this.modal.removeClass("modal--is-visable");
-		this.resengoBookNow.empty();
 	}
 
 }
