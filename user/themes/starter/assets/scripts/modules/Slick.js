@@ -1,7 +1,7 @@
 import $ from "jquery";
 import slick from "slick-carousel/slick/slick.min.js";
 
-class MobileMenu {
+class Slick {
 	constructor(){
 		this.carousel = $(".carousel");
 		this.initalise();
@@ -30,4 +30,4 @@ class MobileMenu {
 	}
 }
 
-export default MobileMenu;
+export default Slick;
