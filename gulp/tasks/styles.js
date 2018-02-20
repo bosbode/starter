@@ -8,8 +8,13 @@ sass = require('gulp-sass');
 
 
 gulp.task("styles", ["sass"], function(){
+	var plugins = [
+		hexrgba(),
+        autoprefixer({grid: true}),
+		cssnano()
+    ];
 	return gulp.src("./user/themes/" + config.theme + "/assets/compiled/styles/main.css")
-		.pipe(postcss([hexrgba, autoprefixer, cssnano]))
+		.pipe(postcss(plugins))
 		.on("error", function(errorInfo){
 			console.log(errorInfo.toString());
 			this.emit("end");
