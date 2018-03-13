@@ -25,7 +25,7 @@ gulp.task("styles", ["sass"], function(){
 gulp.task("sass", function(){
 	return gulp.src("./user/themes/" + config.theme + "/assets/styles/main.scss")
 		.pipe(sass({
-			includePaths: ['node_modules/slick-carousel/slick/', 'node_modules/normalize.css/']
+			includePaths: ['node_modules/slick-carousel/slick/', 'node_modules/fullpage.js/dist/', 'node_modules/normalize.css/']
 		}))
 		.on("error", function(errorInfo){
 			console.log(errorInfo.toString());

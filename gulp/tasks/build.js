@@ -1,5 +1,4 @@
 var gulp = require("gulp"),
-bump = require('gulp-bump'),
 imagemin = require("gulp-imagemin"),
 del = require("del"),
 usemin = require("gulp-usemin"),

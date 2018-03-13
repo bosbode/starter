@@ -1,0 +1,29 @@
+.landing {
+    
+    &__logo {
+        height: 70%;
+        position: absolute;
+        top: 80px;
+        margin: 0 auto;
+        left: 0;
+        right: 0;
+    }
+
+    &__scroll-text {
+        display: block;
+        position: absolute;
+        bottom: 70px;
+        margin: 0 auto;
+        left: 0;
+        right: 0;
+        font-size: 1.5rem;
+
+        &:after {
+            content: "\f0dd";
+            font-family: 'Font Awesome 5 Pro';
+            font-weight: 200;
+            display: block;
+            line-height: 0.5;
+        }
+    }
+}

@@ -1,7 +1,9 @@
 body {
-	font-family: "Quicksand", "Times New Roman", Times, Georgia, serif;
+    font-family: "Quicksand","Helvetica Neue",Helvetica,Arial,sans-serif;
     text-align: center;
     margin: 0;
+    background-color: $color-background;
+    color: $color-body-text;
 }
 
 h1 {
@@ -38,7 +40,7 @@ h5,
 h6 {
     margin: 75px 0 0;
     text-transform: uppercase;
-    font-family: "Dekko","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "Dekko", "Times New Roman", Times, Georgia, serif;
     font-weight: 400;
     letter-spacing: 1.2px;
     color: $color-primary;
