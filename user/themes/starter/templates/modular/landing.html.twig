@@ -1,5 +1,5 @@
 <!-- {{ page.header.title }} Section -->
 <section id="{{ page.header.section_title }}" class="landing content section">
-    {{ page.media.files['logo.svg'].html('Happy Kemper', 'Happy Kemper logo', 'landing__logo') }}
+    {{ getfilecontents(page.media.files['logo.svg'].filepath) }}
     <span class="landing__scroll-text">{{ page.header.text }}</span>
 </section>
