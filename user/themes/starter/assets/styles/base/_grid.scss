@@ -1,7 +1,8 @@
-.css-grid-container {
+.grid-container {
     display: grid;
     overflow: hidden;
     grid-gap: 10px;
+    height: 100vh;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: repeat(auto);
     grid-template-areas: 
@@ -11,20 +12,8 @@
 
         @include breakpoint(atMedium) {
         grid-template-areas: 
-        "ca ca ca ca ca ca ca ca ca ca ca ca"
-        ". . c c c c c c c c . ."
-        "f f f f f f f f f f f f";
+        ". c c c . . . . . . . ."
+        ". c c c . . . . . . . ."
+        ". c c c . . . . . . . .";
     }
-}
-
-.content {
-    grid-area: c;
-}
-
-.carousel {
-    grid-area: ca;
-}
-
-.footer {
-    grid-area: f;
 }
