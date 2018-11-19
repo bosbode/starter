@@ -32,18 +32,19 @@
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
 
-    <div class="css-grid-container" id="fullpage">
-        {# {% block header_navigation %}
-            {% include 'partials/navigation.html.twig' %}
-        {% endblock %} #}
+    {% block header_navigation %}
+        {% include 'partials/navigation.html.twig' %}
+    {% endblock %}
+
+    <div id="fullpage">
 
         {% block body %}
             {% block content %}{% endblock %}
         {% endblock %}
 
-        {% block footer %}
+        {# {% block footer %}
             {% include 'partials/footer.html.twig' %}
-        {% endblock %}
+        {% endblock %} #}
     </div>
 
 

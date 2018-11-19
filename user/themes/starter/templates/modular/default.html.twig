@@ -1,4 +1,8 @@
 <!-- {{ page.header.title }} Section -->
-<section id="{{ page.header.section_title }}" class="content section" data-matching-link="#{{ page.header.section_title }}-link">
-    {{ page.content }}
+<section id="{{ page.header.section_title }}" class="section content content__bgcolor--{{ page.header.bgcolor }}" data-matching-link="#{{ page.header.section_title }}-link">
+    <div class="grid-container">
+        <div class="content__bodytext">
+            {{ page.content }}
+        </div>
+    </div>
 </section>
