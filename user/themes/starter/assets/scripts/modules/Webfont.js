@@ -8,7 +8,7 @@ function Webfont(){
 
 	webfont.load({
     	google: {
-      		families: ['Quicksand:400,400i,700,700i', 'Dekko:400']
+      		families: ['Quicksand:400,400i,500,500i', 'Dekko:400']
 		},
 		custom: {
 			families: ['Font Awesome 5 Solid', 'Font Awesome 5 Regular', 'Font Awesome 5 Brands', 'Font Awesome 5 Light'],
