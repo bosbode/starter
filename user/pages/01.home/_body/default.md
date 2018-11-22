@@ -1,6 +1,7 @@
 ---
 title: Home
 bgcolor: pink
+image: about-01.svg
 ---
 
 # WELKOM
