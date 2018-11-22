@@ -1,12 +1,9 @@
 <!-- Navigation -->
 <header class="site-header">
-    <div class="site-header__logo">
-        <img src="">
-    </div>
 
-    <div class="site-header__menu-icon">
+    {# <div class="site-header__menu-icon">
     <div class="site-header__menu-icon__middle"></div>
-    </div>
+    </div> #}
 
     <div class="site-header__menu-content">
     <nav class="primary-nav">
@@ -35,5 +32,11 @@
             {% endfor %}
         {% endif %}
     </nav>
+    </div>
+    <div class="site-header__logo">
+        {{ getfilecontents('./user/themes/starter/assets/images/logo.svg') }}
+    </div>
+    <div class="site-header__icon">
+        {{ getfilecontents('./user/themes/starter/assets/images/icon.svg') }} 
     </div>
 </header>
