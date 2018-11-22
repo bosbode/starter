@@ -14,13 +14,13 @@ description: "Place discription here"
 # For external links add external: true
 
 links:
-      - title: Link 1
+      - title: About
         url: '#'
         id: 'link-01'
-      - title: Link 2
+      - title: Work
         url: '#'
         id: 'link-02'
-      - title: Link 3
+      - title: Contact
         url: '#'
         id: 'link-03'
 
