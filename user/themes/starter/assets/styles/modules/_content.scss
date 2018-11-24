@@ -3,14 +3,13 @@
 	&__grid-container {
 		display: grid;
 		overflow: hidden;
-		// align-items: center;
 		grid-gap: 0;
 		height: 100vh;
 		width: 100vw;
-		grid-template-columns: repeat(1, 1fr);
-		grid-template-rows: repeat(auto);
+		grid-template-columns: repeat(12, 1fr);
+		grid-template-rows: repeat(21, 1fr);
 
-		@include breakpoint(atSmall) {
+		@include breakpoint(atMedium) {
 			grid-template-columns: repeat(24, 1fr);
 			grid-template-rows: repeat(14, 1fr);
 		}
@@ -24,8 +23,20 @@
 
 	&__bodytext {
 		margin: 0 0;
+		grid-column-start: 2;
+		grid-column-end: 12;
+		grid-row-start: 14;
+		grid-row-end: 21;
+		overflow: hidden;
 
 		@include breakpoint(atSmall) {
+			grid-column-start: 2;
+			grid-column-end: 9;
+			grid-row-start: 14;
+			grid-row-end: 21;
+		}
+
+		@include breakpoint(atMedium) {
 			grid-column-start: 3;
 			grid-column-end: 9;
 			grid-row-start: 4;
@@ -33,7 +44,6 @@
 		}
 		
 		h1 {
-			padding-bottom: 20px;
 
 			@include breakpoint(atMedium) {
 				padding-bottom: 100px;
@@ -43,8 +53,19 @@
 
 	&__img-container {
 		position: relative;
+		grid-column-start: 1;
+		grid-column-end: 13;
+		grid-row-start: 3;
+		grid-row-end: 13;
 
 		@include breakpoint(atSmall) {
+			grid-column-start: 2;
+			grid-column-end: 12;
+			grid-row-start: 2;
+			grid-row-end: 14;
+		}
+
+		@include breakpoint(atMedium) {
 			grid-column-start: 11;
 			grid-column-end: 25;
 			grid-row-start: 1;
@@ -118,12 +139,33 @@
 	}
 
 	&__animation-container--fire {
-		bottom: 15%;
+		bottom: 20%;
 		left: 50%;
-		transform:translateX(-50%);
+		transform: translateX(-50%) scale(0.4);
 		max-width: 68px;
 		width: 68px;
 		overflow: hidden;
+
+		@include breakpoint(atSmall) {
+			transform: translateX(-50%) scale(0.6);
+		}
+
+		@include breakpoint(atMedium) {
+			bottom: 15%;
+		}
+
+		@include breakpoint(atLarge) {
+			transform: translateX(-50%) scale(0.75);
+			bottom: 15%;
+		}
+
+		@include breakpoint(atWide) {
+			transform: translateX(-50%) scale(1);
+		}
+
+		& #fire-group {
+			animation: fire 0.9s steps(3) infinite;
+		}
 
 		& > svg {
 
@@ -132,17 +174,13 @@
 			}
 	
 			.cls-2 {
-			fill: #ffb976;
+				fill: #ffb976;
 			}
 	
 			.cls-3 {
-			fill: #312c22;
+				fill: #312c22;
 			}
 			
-		}
-		
-		& #fire-group {
-			animation: fire 0.9s steps(3) infinite;
 		}
 	}
 }
