@@ -7,15 +7,16 @@ body {
 }
 
 h1 {
-    font-size: 32px;
+    @include responsive-font-size(3.75rem);
+    // font-size: 32px;
 
-    @include breakpoint(atSmall) {
-        font-size: 44px;
-    }
+    // @include breakpoint(atSmall) {
+    //     font-size: 44px;
+    // }
 
-    @include breakpoint(atMedium) {
-        font-size: 60px;
-    }
+    // @include breakpoint(atMedium) {
+    //     font-size: 60px;
+    // }
 }
 
 h2 {
@@ -52,17 +53,18 @@ h6 {
     color: $color-primary;
 }
 
-p {
-    font-size: 0.9rem;
+p { 
+    @include responsive-font-size(1.5rem);
+    // font-size: 0.9rem;
     line-height: 1.42857143;
 
-    @include breakpoint(atSmall) {
-        font-size: 1.1rem;
-    }
+    // @include breakpoint(atSmall) {
+    //     font-size: 1.1rem;
+    // }
 
-    @include breakpoint(atMedium) {
-        font-size: 1.5rem;
-    }
+    // @include breakpoint(atMedium) {
+    //     font-size: 1.5rem;
+    // }
 }
 
 img {
