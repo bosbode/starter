@@ -10,6 +10,7 @@
     "lottie-web": "^5.2.1",
     "normalize.css": "^8.0.0",
     "picturefill": "^3.0.2",
+    "rfs": "^7.1.8",
     "slick-carousel": "^1.8.1",
     "waypoints": "^4.0.1",
     "webfontloader": "^1.6.28"
