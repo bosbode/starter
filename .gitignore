@@ -3,6 +3,7 @@
 /node_modules
 /assets
 /images
+/npm-debug.log
 /logs
 /user/accounts
 /user/themes/starter/assets/compiled
