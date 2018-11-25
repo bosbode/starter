@@ -8,15 +8,6 @@ body {
 
 h1 {
     @include responsive-font-size(3.75rem);
-    // font-size: 32px;
-
-    // @include breakpoint(atSmall) {
-    //     font-size: 44px;
-    // }
-
-    // @include breakpoint(atMedium) {
-    //     font-size: 60px;
-    // }
 }
 
 h2 {
@@ -55,16 +46,7 @@ h6 {
 
 p { 
     @include responsive-font-size(1.5rem);
-    // font-size: 0.9rem;
-    line-height: 1.42857143;
-
-    // @include breakpoint(atSmall) {
-    //     font-size: 1.1rem;
-    // }
-
-    // @include breakpoint(atMedium) {
-    //     font-size: 1.5rem;
-    // }
+    line-height: 1.2;
 }
 
 img {
