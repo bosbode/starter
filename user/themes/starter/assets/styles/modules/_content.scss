@@ -25,9 +25,11 @@
 		margin: 0 0;
 		grid-column-start: 2;
 		grid-column-end: 12;
-		grid-row-start: 14;
+		grid-row-start: 13;
 		grid-row-end: 21;
 		overflow: hidden;
+		z-index: 2;
+		padding-top: 20px;
 
 		@include breakpoint(atSmall) {
 			grid-column-start: 2;
@@ -53,6 +55,8 @@
 
 	&__img-container {
 		position: relative;
+		align-self: center;
+
 		grid-column-start: 1;
 		grid-column-end: 13;
 		grid-row-start: 3;
@@ -70,6 +74,7 @@
 			grid-column-end: 25;
 			grid-row-start: 1;
 			grid-row-end: 15;
+			max-width: 1120px;
 		}
 	}
 
@@ -139,7 +144,7 @@
 	}
 
 	&__animation-container--fire {
-		bottom: 20%;
+		bottom: 25%;
 		left: 50%;
 		transform: translateX(-50%) scale(0.4);
 		max-width: 68px;
