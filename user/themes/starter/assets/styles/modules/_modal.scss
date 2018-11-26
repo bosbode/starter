@@ -1,0 +1,54 @@
+.modal {
+	position: fixed;
+	z-index: 101;
+	background-color: rgba(255, 255, 255, .94);
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	opacity: 0;
+	visibility: hidden;
+	transform: scale(1.2);
+	transition: all .3s ease-out;
+
+	&--is-visable {
+		opacity: 1;
+		visibility: visible;
+		transform: scale(1);
+	}
+
+	&__inner {
+		position: relative;
+		width: 100%;
+		height: 100%;
+	    overflow-y: auto;
+
+		@include breakpoint(atSmall) {
+			width: 550px;
+			margin: auto;
+		}
+
+		&__text {
+			margin-top: 8vh;
+		    text-transform: uppercase;
+		    font-family: "Dekko","Helvetica Neue",Helvetica,Arial,sans-serif;
+		    font-weight: 400;
+		    letter-spacing: 1.2px;
+		    color: $color-primary;
+			font-size: 1rem;
+		}
+	}
+
+		&__close {
+		position: absolute;
+		top: 0px;
+		right: 8px;
+		font-size: 2rem;
+		color: $color-tertiary;
+		cursor: pointer;
+
+		&:hover {
+			color: $color-primary;
+		}
+	}
+}

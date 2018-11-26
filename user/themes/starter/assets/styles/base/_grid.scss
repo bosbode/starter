@@ -1,0 +1,30 @@
+.css-grid-container {
+    display: grid;
+    overflow: hidden;
+    grid-gap: 10px;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(auto);
+    grid-template-areas: 
+        "c c c c c c c c c c c c"
+        "ca ca ca ca ca ca ca ca ca ca ca ca"
+        "f f f f f f f f f f f f";
+
+        @include breakpoint(atMedium) {
+        grid-template-areas: 
+        "ca ca ca ca ca ca ca ca ca ca ca ca"
+        ". . c c c c c c c c . ."
+        "f f f f f f f f f f f f";
+    }
+}
+
+.content {
+    grid-area: c;
+}
+
+.carousel {
+    grid-area: ca;
+}
+
+.footer {
+    grid-area: f;
+}

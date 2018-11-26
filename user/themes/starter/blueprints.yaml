@@ -1,0 +1,34 @@
+name: Starter
+version: 0.0.1
+description: "Basic setup to start developing"
+icon: group
+author:
+  name: Bosse Kemper
+  email: bosse@happykemper.com
+  url: http://happykemper.com
+homepage: https://github.com/bosbode/starter
+keywords: 
+bugs: 
+license: MIT
+
+form:
+  validation: loose
+  fields:
+    dropdown.enabled:
+        type: toggle
+        label: Dropdown in navbar
+        highlight: 1
+        default: 0
+        options:
+          1: Enabled
+          0: Disabled
+        validate:
+          type: bool
+
+    color:
+        type: text
+        size: medium
+        label: Color
+        default: 'blue'
+        validate:
+          type: text

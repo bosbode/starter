@@ -1,0 +1,37 @@
+title: Starter
+author:
+  name: Bosse Kemper
+  email: 'bossekemper@gmail.com'
+metadata:
+    description: 'Place discription here'
+
+# Site settings
+title: Starter
+email: bossekemper@gmail.com
+description: "Place discription here"
+
+# Links to include in navigation
+# For external links add external: true
+
+links:
+      - title: Link 1
+        url: '#'
+        id: 'link-01'
+      - title: Link 2
+        url: '#'
+        id: 'link-02'
+      - title: Link 3
+        url: '#'
+        id: 'link-03'
+
+english:
+  links:
+      - title: Link 1
+        url: '#'
+        id: 'link-01'
+      - title: Link 2
+        url: '#'
+        id: 'link-02'
+      - title: Link 3
+        url: '#'
+        id: 'link-03'

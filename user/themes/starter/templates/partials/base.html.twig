@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {% block head %}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% include 'partials/metadata.html.twig' %}
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#006464">
+    <meta name="theme-color" content="#006464">
+    <title>{{ site.title }}</title>
+
+    {% block criticalCSS %}
+
+    <!-- Critical CSS -->
+    {% do assets.addCss('theme://assets/compiled/styles/main.critical.css', {'group':'criticalCSS', 'loading': 'inline'}) %}
+
+    {% endblock %}
+    {{ assets.css('criticalCSS') }}
+
+    
+    
+  {% endblock head%}
+
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+    <div class="css-grid-container">
+        {% block header_navigation %}
+            {% include 'partials/navigation.html.twig' %}
+        {% endblock %}
+
+        {% block body %}
+            {% block content %}{% endblock %}
+        {% endblock %}
+
+        {% block footer %}
+            {% include 'partials/footer.html.twig' %}
+        {% endblock %}
+    </div>
+
+
+    {% block stylesheets %}
+
+    <!-- Custom CSS -->
+    {% do assets.addCss('theme://assets/compiled/styles/main.css',100) %}
+    
+    {% endblock %}
+    {{ assets.css() }}
+
+    {% block scripts %}
+
+      <!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
+      <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDv1l7qVWIUaKC3SbdQSoBgxVwy52Edu9U"></script>
+
+      <!-- Custom Theme JavaScript -->
+      {% do assets.addJs('theme://assets/compiled/scripts/Vendor.js', {'loading':'async'}) %}
+      {% do assets.addJs('theme://assets/compiled/scripts/modernizr.js', {'loading':'async'}) %}
+
+      {% do assets.addJs('theme://assets/compiled/scripts/App.js', {'loading':'async'}) %}
+
+    {% endblock %}
+  {{ assets.js() }}
+
+</body>
+
+</html>
