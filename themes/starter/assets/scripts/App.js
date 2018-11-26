@@ -1,5 +1,5 @@
 import $ from "jquery";
-import FullPage from "./modules/FullPage";
+// import FullPage from "./modules/FullPage";
 import MobileMenu from "./modules/MobileMenu";
 // import StickyHeader from "./modules/StickyHeader";
 import Modal from "./modules/Modal";
