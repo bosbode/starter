@@ -7,5 +7,6 @@ Disallow: /logs/
 Disallow: /system/
 Disallow: /vendor/
 Disallow: /user/
-Allow: /user/pages/
-Allow: /user/themes/
+Disallow: /user/pages/
+Disallow: /user/themes/
+Disallow:/
