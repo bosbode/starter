@@ -1,0 +1,23 @@
+$color-primary: rgb(190,162,175);
+$color-primary-hover: rgba(190,162,175,.8);
+$color-secondary: rgb(173,173,173);
+$color-tertiary: rgb(28,28,28);
+$color-background: rgb(255,255,255);
+$color-background-pink: rgb(255,217,187);
+$color-body-text: rgb(49,44,33);
+
+$slick-font-path: "../../../../../../node_modules/slick-carousel/slick/fonts/";
+$slick-font-family: "Font Awesome 5 Pro";
+$slick-loader-path: "../../../../../../node_modules/slick-carousel/slick/";
+$slick-arrow-color: $color-primary;
+$slick-dot-color: black;
+$slick-dot-color-active: $slick-dot-color;
+$slick-prev-character: '\f053';
+$slick-next-character: '\f054';
+$slick-dot-character: '\2022';
+$slick-dot-size: 20px;
+
+// RFS options
+
+$rfs-minimum-font-size: 0.45rem !default;
+$rfs-factor: 5 !default;

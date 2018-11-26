@@ -1,0 +1,23 @@
+.animation {
+	position: relative;
+
+	#animation__logo {
+
+		svg {
+			width: 30% !important;
+		}
+	}
+
+	& > svg {
+		width: 30% !important;
+		opacity: 0;
+		position: absolute;
+		top: 0;
+		left: 50%;
+		transform: translate(-50%, 0);
+	}
+
+	& > svg:hover {
+		opacity: 1;
+	}
+}

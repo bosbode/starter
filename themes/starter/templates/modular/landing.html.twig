@@ -1,0 +1,9 @@
+<!-- {{ page.header.title }} Section -->
+<section id="{{ page.header.section_title }}" class="landing content section">
+    <div class="animation">
+        <div id="animation__logo">
+            {{ getfilecontents(page.media.files['logo2.svg'].filepath) }}
+        </div>
+    </div>
+    <span class="landing__scroll-text">{{ page.header.text }}</span>
+</section>

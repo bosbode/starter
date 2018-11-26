@@ -1,0 +1,104 @@
+.site-header {
+	display: grid;
+	z-index: 100;
+	position: fixed;
+	background-color: transparent;
+	grid-template-columns: repeat(12, 1fr);
+	grid-template-rows: repeat(auto);
+	align-items: center;
+	padding: 20px 0;
+
+	@include breakpoint(atSmall) {
+		display: grid;
+		height: 160px;
+		width: 100vw;
+		text-align: left;
+		align-items: center;
+		grid-template-columns: repeat(24, 1fr);
+		grid-template-rows: repeat(auto);
+		padding: 0;
+	}
+
+	&__logo {
+		display: none;
+		z-index: 2;
+		cursor: pointer;
+		margin-top: 20px;
+
+		@include breakpoint(atSmall) {
+			grid-column-start: 16;
+			grid-column-end: 20;
+			margin-top: 0;
+			display: inline;
+		}
+
+		@include breakpoint(atMedium) {
+			grid-column-start: 12;
+			grid-column-end: 14;
+			margin-top: 0;
+		}
+
+		svg {
+
+			.cls-1 {
+				fill: #312c22;
+			}
+		
+			.cls-2 {
+				fill: #bda7b4;
+			}
+		
+			.cls-3 {
+				fill: #fdd6b4;
+			}
+		}
+	  
+	}
+
+	&__icon {
+		z-index: 2;
+		cursor: pointer;
+		width: 43px;
+		margin-right: 20px;
+		grid-column-start: 2;
+		grid-column-end: 4;
+		grid-row-start: 1;
+		grid-row-end: 2;
+
+		@include breakpoint(atSmall) {
+			display: none;
+		}
+
+		svg {
+
+			.cls-1 {
+				fill: #bda7b4;
+			}
+		
+			.cls-2 {
+				fill: #312c22;
+			}
+		
+			.cls-3 {
+				fill: #fdd6b4;
+			}
+		}
+	}
+
+	&__menu-content {
+		grid-column-start: 4;
+		grid-column-end: 12;
+
+		@include breakpoint(atSmall) {
+			grid-column-start: 3;
+			grid-column-end: 12;
+			margin-top: 0;
+		}
+
+		@include breakpoint(atMedium) {
+			grid-column-start: 3;
+			grid-column-end: 7;
+			margin-top: 0;
+		}
+	}
+}
