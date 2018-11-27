@@ -22,7 +22,7 @@ gulp.task('styles', ['sass'], function(){
 		.pipe(gulp.dest('./user/themes/' + config.theme + '/assets/compiled/styles'));
 });
 
-gulp.task('sass', ['clearCompiled'], function(){
+gulp.task('sass', function(){
 	return gulp.src('./user/themes/' + config.theme + '/assets/styles/main.scss')
 		.pipe(sass({
 			includePaths: ['node_modules/rfs/scss/', 'node_modules/slick-carousel/slick/', 'node_modules/fullpage.js/dist/', 'node_modules/normalize.css/']
