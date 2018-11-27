@@ -10,7 +10,7 @@ import ObjectFit from "./modules/ObjectFit";
 
 var mobileMenu = new MobileMenu;
 var slick = new Slick;
-var fullpage = new FullPage;
+// var fullpage = new FullPage;
 var objectfit = new ObjectFit;
 // var stickyHeader = new StickyHeader;
 var modal = new Modal;
