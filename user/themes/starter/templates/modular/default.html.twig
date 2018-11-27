@@ -8,7 +8,8 @@
             {% for svg in page.media.files %}
                 {% if page.header.image == svg.filename %}
                     <div class="content__img">
-                        {{ getfilecontents(svg.filepath) }}
+                        <img srcset="{{ svg.url }}" />
+                        {# {{ getfilecontents(svg.filepath) }} #}
                     </div>
                 {% else %}
                     {% set file = svg.filename|slice(0, (svg.filename|length - 4)) %}
