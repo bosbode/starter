@@ -5,7 +5,6 @@
 	background-color: transparent;
 	grid-template-columns: repeat(12, 1fr);
 	grid-template-rows: repeat(auto);
-	align-items: center;
 	padding: 20px 0;
 
 	@include breakpoint(atSmall) {
@@ -13,7 +12,6 @@
 		height: 160px;
 		width: 100vw;
 		text-align: left;
-		align-items: center;
 		grid-template-columns: repeat(24, 1fr);
 		grid-template-rows: repeat(auto);
 		padding: 0;
@@ -24,6 +22,7 @@
 		z-index: 2;
 		cursor: pointer;
 		margin-top: 20px;
+		align-self: center;
 
 		@include breakpoint(atSmall) {
 			grid-column-start: 16;
@@ -40,15 +39,15 @@
 
 		svg {
 
-			.cls-1 {
+			.a {
 				fill: #312c22;
 			}
 		
-			.cls-2 {
+			.b {
 				fill: #bda7b4;
 			}
 		
-			.cls-3 {
+			.c {
 				fill: #fdd6b4;
 			}
 		}
@@ -64,6 +63,7 @@
 		grid-column-end: 4;
 		grid-row-start: 1;
 		grid-row-end: 2;
+		align-self: center;
 
 		@include breakpoint(atSmall) {
 			display: none;
@@ -71,15 +71,15 @@
 
 		svg {
 
-			.cls-1 {
+			.a {
 				fill: #bda7b4;
 			}
 		
-			.cls-2 {
+			.b {
 				fill: #312c22;
 			}
 		
-			.cls-3 {
+			.c {
 				fill: #fdd6b4;
 			}
 		}
@@ -88,6 +88,7 @@
 	&__menu-content {
 		grid-column-start: 4;
 		grid-column-end: 12;
+		align-self: center;
 
 		@include breakpoint(atSmall) {
 			grid-column-start: 3;
