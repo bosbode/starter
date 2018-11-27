@@ -147,7 +147,7 @@
 	&__animation-container--fire {
 		bottom: 10%;
 		left: 50%;
-		transform: translateX(-50%) scale(0.4);
+		transform: translateX(-50%) scale(0.35);
 		max-width: 68px;
 		width: 68px;
 		overflow: hidden;
@@ -195,24 +195,21 @@
 	}
 
 	&__animation-container--bubbles {
-		bottom: 33%;
+		bottom: 30%;
 		left: 45%;
-		transform: translateX(-50%) scale(0.4);
+		transform: translateX(-50%) scale(0.6);
 		max-width: 9px;
 		width: 9px;
 		overflow: hidden;
 
 		@include breakpoint(atSmall) {
-			transform: translateX(-50%) scale(0.6);
-		}
-
-		@include breakpoint(atMedium) {
-			bottom: 50%;
+			transform: translateX(-50%) scale(1);
+			bottom: 33%;
 		}
 
 		@include breakpoint(atLarge) {
 			transform: translateX(-50%) scale(1.5);
-			bottom: 35%;
+			bottom: 33%;
 		}
 
 		& #bubbles-group {
@@ -228,22 +225,19 @@
 	&__animation-container--fish {
 		bottom: 32%;
 		left: 47%;
-		transform: translateX(-50%) scale(0.4);
+		transform: translateX(-50%) scale(0.6);
 		max-width: 48px;
 		width: 48px;
 		overflow: hidden;
 
 		@include breakpoint(atSmall) {
-			transform: translateX(-50%) scale(0.6);
-		}
-
-		@include breakpoint(atMedium) {
-			bottom: 50%;
+			transform: translateX(-50%) scale(0.8);
+			bottom: 35%;
 		}
 
 		@include breakpoint(atLarge) {
 			transform: translateX(-50%) scale(1.5);
-			bottom: 33%;
+			bottom: 35%;
 		}
 
 		& .fish-group--play-animation {
