@@ -145,7 +145,7 @@
 	}
 
 	&__animation-container--fire {
-		bottom: 25%;
+		bottom: 10%;
 		left: 50%;
 		transform: translateX(-50%) scale(0.4);
 		max-width: 68px;
@@ -154,6 +154,7 @@
 
 		@include breakpoint(atSmall) {
 			transform: translateX(-50%) scale(0.6);
+			bottom: 12%;
 		}
 
 		@include breakpoint(atMedium) {
@@ -194,7 +195,7 @@
 	}
 
 	&__animation-container--bubbles {
-		bottom: 75%;
+		bottom: 33%;
 		left: 45%;
 		transform: translateX(-50%) scale(0.4);
 		max-width: 9px;
@@ -225,8 +226,8 @@
 	}
 
 	&__animation-container--fish {
-		bottom: 75%;
-		left: 48%;
+		bottom: 32%;
+		left: 47%;
 		transform: translateX(-50%) scale(0.4);
 		max-width: 48px;
 		width: 48px;
