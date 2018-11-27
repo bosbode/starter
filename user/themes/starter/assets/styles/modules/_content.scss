@@ -36,6 +36,7 @@
 			grid-column-end: 9;
 			grid-row-start: 14;
 			grid-row-end: 21;
+			padding-top: 0;
 		}
 
 		@include breakpoint(atMedium) {
@@ -140,7 +141,7 @@
 	}
 
 	&__animation-container {
-		position: relative;
+		position: absolute;
 	}
 
 	&__animation-container--fire {
@@ -169,10 +170,13 @@
 		}
 
 		& #fire-group {
-			animation: fire 0.9s steps(3) infinite;
+			animation: fire 0.8s steps(3) infinite;
 		}
 
 		& > svg {
+
+			width: 199px; 
+			height: 48.82px;
 
 			.cls-1 {
 				fill: #fb4842;
@@ -188,10 +192,84 @@
 			
 		}
 	}
+
+	&__animation-container--bubbles {
+		bottom: 75%;
+		left: 45%;
+		transform: translateX(-50%) scale(0.4);
+		max-width: 9px;
+		width: 9px;
+		overflow: hidden;
+
+		@include breakpoint(atSmall) {
+			transform: translateX(-50%) scale(0.6);
+		}
+
+		@include breakpoint(atMedium) {
+			bottom: 50%;
+		}
+
+		@include breakpoint(atLarge) {
+			transform: translateX(-50%) scale(1.5);
+			bottom: 35%;
+		}
+
+		& #bubbles-group {
+			animation: bubbles 1.2s steps(6) infinite;
+		}
+
+		& > svg {
+			width: 54px; 
+			height: 25px;
+		}
+	}
+
+	&__animation-container--fish {
+		bottom: 75%;
+		left: 48%;
+		transform: translateX(-50%) scale(0.4);
+		max-width: 48px;
+		width: 48px;
+		overflow: hidden;
+
+		@include breakpoint(atSmall) {
+			transform: translateX(-50%) scale(0.6);
+		}
+
+		@include breakpoint(atMedium) {
+			bottom: 50%;
+		}
+
+		@include breakpoint(atLarge) {
+			transform: translateX(-50%) scale(1.5);
+			bottom: 33%;
+		}
+
+		& .fish-group--play-animation {
+			animation: fish 1.2s steps(10) 1;
+		}
+
+		& > svg {
+			width: 480px; 
+			height: 21px;
+		}
+	}
 }
 
 @keyframes fire {
 	100% {
 		transform: translateX(-198px);
+  	}
+}
+
+@keyframes bubbles {
+	100% {
+		transform: translateX(-54px);
+  	}
+}
+
+@keyframes fish {
+	100% {
+		transform: translateX(-480px);
   	}
 }
