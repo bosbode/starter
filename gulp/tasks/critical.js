@@ -3,7 +3,7 @@ critical = require('critical'),
 config = require("../config.json");
 
 
-gulp.task('critical', function () {
+gulp.task('critical', ['build'], function () {
     return critical.generate({
         src: config.criticalCSS,
         width: 1920,
