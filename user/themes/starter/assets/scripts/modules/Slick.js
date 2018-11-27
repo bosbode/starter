@@ -3,7 +3,7 @@ import slick from "slick-carousel/slick/slick.min.js";
 
 class Slick {
 	constructor(){
-		this.carousel = $(".carousel");
+		this.carousel = $(".slick-carousel");
 		this.initalise();
 	}
 
