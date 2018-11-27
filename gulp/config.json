@@ -1,4 +1,4 @@
 {
     "theme": "starter",
-    "criticalCSS": "http://localhost:8080/"
+    "criticalCSS": "https://stage.happykemper.com"
 }
