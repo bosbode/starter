@@ -36,16 +36,13 @@
         {% include 'partials/navigation.html.twig' %}
     {% endblock %}
 
-    <div id="fullpage">
+    {% block body %}
+        {% block content %}{% endblock %}
+    {% endblock %}
 
-        {% block body %}
-            {% block content %}{% endblock %}
-        {% endblock %}
-
-        {# {% block footer %}
-            {% include 'partials/footer.html.twig' %}
-        {% endblock %} #}
-    </div>
+    {# {% block footer %}
+        {% include 'partials/footer.html.twig' %}
+    {% endblock %} #}
 
 
     {% block stylesheets %}
