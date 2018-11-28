@@ -1,4 +1,8 @@
 {
     "theme": "starter",
-    "criticalCSS": "https://stage.happykemper.com"
+    "criticalCSSPath": {
+        "home": "https://stage.happykemper.com",
+        "work": "https://stage.happykemper.com/work", 
+        "contact": "https://stage.happykemper.com/contact"
+    }
 }

@@ -1,5 +1,3 @@
-var gulp = require('gulp'),
-del = require('del'),
-config = require('../config.json');
+var gulp = require('gulp');
 
-gulp.task('build', ['clearCompiled', 'clearCache', 'scripts', 'styles']);
+gulp.task('build', ['clearCompiled', 'clearCache', 'scripts', 'concatCritical']);
