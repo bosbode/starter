@@ -6,6 +6,7 @@
 	grid-template-columns: repeat(12, 1fr);
 	grid-template-rows: repeat(auto);
 	padding: 20px 0;
+	width: 100vw;
 
 	@include breakpoint(atSmall) {
 		display: grid;
