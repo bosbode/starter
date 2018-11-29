@@ -3,12 +3,20 @@ import $ from 'jquery';
 class Animations {
 	constructor(){
 		this.bubbles = $('.content__animation-container--bubbles');
+		this.fire = $('.content__animation-container--fire');
+		this.icon = $('.site-header__icon');
+		this.treeShade = $('.tree-shade');
+		this.tree = $('.tree');
 		this.fish = $('#fish-group');
+		this.sun = $('#sun');
+		this.night = $('#night');
+		this.$body = $('body');
 		this.events();
 	}
 
 	events() {
 		this.bubbles.on('click', this.animateFish.bind(this));
+		this.sun.on('click', this.invertColor.bind(this));
 	}
 
 	animateFish() {
@@ -25,6 +33,28 @@ class Animations {
 		setTimeout(function() {
 			that.fish.removeClass('fish-group--play-animation');
 		}, 1200);
+	}
+
+	invertColor() {
+		var that = this;
+
+		this.sun.css('display', 'none');
+		this.night.css('display', 'block');
+		this.$body.css('filter', 'invert(100%)');
+		this.fire.css('filter', 'invert(100%)');
+		this.icon.css('filter', 'invert(100%)');
+		this.treeShade.css('fill', '#fff');
+		this.tree.css('fill', '#dde2ff');
+
+		setTimeout(function() {
+			that.treeShade.css('fill', '#dde2ff');
+			that.tree.css('fill', '#fff');
+			that.$body.css('filter', 'invert(0)');
+			that.fire.css('filter', 'invert(0)');
+			that.icon.css('filter', 'invert(0)');
+			that.sun.css('display', 'block');
+			that.night.css('display', 'none');
+		}, 5000);
 	}
 }
 

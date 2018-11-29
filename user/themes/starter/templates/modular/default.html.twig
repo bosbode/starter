@@ -1,5 +1,5 @@
 <!-- {{ page.header.title }} Section -->
-<section id="{{ page.header.section_title }}" class="content content__bgcolor--{{ page.header.bgcolor }}" data-matching-link="#{{ page.header.section_title }}-link">
+<section id="{{ page.header.section_title }}" class="content content__bgcolor content__bgcolor--{{ page.header.bgcolor }}" data-matching-link="#{{ page.header.section_title }}-link">
     <div class="content__grid-container">
         <div class="content__bodytext">
             {{ page.content }}
@@ -8,8 +8,7 @@
             {% for svg in page.media.files %}
                 {% if page.header.image == svg.filename %}
                     <div class="content__img">
-                        <img srcset="{{ svg.url }}" />
-                        {# {{ getfilecontents(svg.filepath) }} #}
+                        {{ getfilecontents(svg.filepath) }}
                     </div>
                 {% else %}
                     {% set file = svg.filename|slice(0, (svg.filename|length - 4)) %}

@@ -56,6 +56,7 @@
 	&__img-container {
 		position: relative;
 		align-self: center;
+		z-index: 2;
 
 		grid-column-start: 1;
 		grid-column-end: 13;
@@ -85,57 +86,10 @@
 			width: 100%;
 			height: 100%;
 
-			.cls-1, .cls-5 {
-				fill: #ffd9bb;
-			  }
-		
-			  .cls-2 {
-				opacity: 0.05;
-			  }
-		
-			  .cls-10, .cls-11, .cls-12, .cls-3, .cls-8 {
-				fill: #fff;
-			  }
-		
-			  .cls-4, .cls-7 {
-				fill: #c7ceff;
-			  }
-		
-			  .cls-4 {
-				opacity: 0.35;
-			  }
-		
-			  .cls-5 {
-				opacity: 0.5;
-			  }
-		
-			  .cls-6 {
-				fill: #312c22;
-			  }
-		
-			  .cls-7 {
-				opacity: 0.35;
-			  }
-		
-			  .cls-10, .cls-11, .cls-12, .cls-7, .cls-8 {
-				isolation: isolate;
-			  }
-		
-			  .cls-8 {
-				opacity: 0.4;
-			  }
-		
-			  .cls-9 {
-				fill: url(#radial-gradient);
-			  }
-		
-			  .cls-10 {
-				opacity: 0.6;
-			  }
-		
-			  .cls-11 {
-				opacity: 0.8;
-			  }
+		}
+
+		& #night {
+			display: none;
 		}
 	}
 
