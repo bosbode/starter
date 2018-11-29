@@ -57,9 +57,13 @@
         </nav>
     </div>
     <div class="site-header__logo">
-        {{ getfilecontents('./user/themes/starter/assets/images/logo.svg') }}
-    </div>
-    <div class="site-header__icon">
-        {{ getfilecontents('./user/themes/starter/assets/images/icon.svg') }} 
+        <div class="site-header__logo-flex-container">
+            <div class="site-header__icon">
+                {{ getfilecontents('./user/themes/starter/assets/images/icon.svg') }} 
+            </div>
+            <div class="site-header__logo-text">
+                {{ getfilecontents('./user/themes/starter/assets/images/logo-text.svg') }} 
+            </div>
+        </div>
     </div>
 </header>

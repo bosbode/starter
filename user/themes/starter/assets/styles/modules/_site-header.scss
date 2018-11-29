@@ -19,17 +19,17 @@
 	}
 
 	&__logo {
-		display: none;
+		grid-column-start: 2;
+		grid-column-end: 3;
+		grid-row-start: 1;
+		grid-row-end: 2;
 		z-index: 2;
-		cursor: pointer;
-		margin-top: 20px;
 		align-self: center;
 
 		@include breakpoint(atSmall) {
 			grid-column-start: 16;
 			grid-column-end: 20;
 			margin-top: 0;
-			display: inline;
 		}
 
 		@include breakpoint(atMedium) {
@@ -37,52 +37,36 @@
 			grid-column-end: 14;
 			margin-top: 0;
 		}
+	}
 
-		svg {
-
-			.a {
-				fill: #312c22;
-			}
-		
-			.b {
-				fill: #bda7b4;
-			}
-		
-			.c {
-				fill: #fdd6b4;
-			}
-		}
-	  
+	&__logo-flex-container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
 	}
 
 	&__icon {
-		z-index: 2;
-		cursor: pointer;
-		width: 43px;
-		margin-right: 20px;
-		grid-column-start: 2;
-		grid-column-end: 4;
-		grid-row-start: 1;
-		grid-row-end: 2;
-		align-self: center;
-
+		
 		@include breakpoint(atSmall) {
-			display: none;
+			margin-right: 10px;
 		}
 
-		svg {
+		& svg {
+			width: 100%;
+			height: auto;
+		}
+	}
 
-			.a {
-				fill: #bda7b4;
-			}
-		
-			.b {
-				fill: #312c22;
-			}
-		
-			.c {
-				fill: #fdd6b4;
-			}
+	&__logo-text {
+		display: none;
+
+		@include breakpoint(atSmall) {
+			display: block;
+		}
+
+		& svg {
+			width: 100%;
+			height: auto;
 		}
 	}
 
