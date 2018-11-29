@@ -3,7 +3,7 @@ critical = require('critical'),
 concat = require('gulp-concat'),
 config = require("../config.json");
 
-gulp.task('concatCritical', ['critical'], function(){
+gulp.task('concatCritical', function(){
 	return gulp.src('./user/themes/' + config.theme + '/assets/compiled/styles/critical/*.css')
 		.pipe(concat('./user/themes/' + config.theme + '/assets/compiled/styles/main.critical.css'))
 		.pipe(gulp.dest('.'));
