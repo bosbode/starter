@@ -4,6 +4,8 @@ class Animations {
 	constructor(){
 		this.bubbles = $('.content__animation-container--bubbles');
 		this.fire = $('.content__animation-container--fire');
+		this.tentaclesContainer = $('.content__animation-container--tentacles');
+		this.tentacles = $('#tentacle-group');
 		this.icon = $('.site-header__icon');
 		this.treeShade = $('.tree-shade');
 		this.tree = $('.tree');
@@ -16,7 +18,7 @@ class Animations {
 
 	events() {
 		this.bubbles.on('click', this.animateFish.bind(this));
-		this.sun.on('click', this.invertColor.bind(this));
+		this.sun.on('click', this.nightMode.bind(this));
 	}
 
 	animateFish() {
@@ -35,8 +37,13 @@ class Animations {
 		}, 1200);
 	}
 
-	invertColor() {
+	nightMode() {
 		var that = this;
+
+		this.tentaclesContainer.css('display', 'block');
+		this.tentacles.addClass('tentacles-group--play-animation');
+
+		this.bubbles.css('display', 'none');
 
 		this.sun.css('display', 'none');
 		this.night.css('display', 'block');
@@ -47,6 +54,11 @@ class Animations {
 		this.tree.css('fill', '#dde2ff');
 
 		setTimeout(function() {
+			that.tentaclesContainer.css('display', 'none');
+			that.tentacles.removeClass('tentacles-group--play-animation');
+
+			that.bubbles.css('display', 'block');
+
 			that.treeShade.css('fill', '#dde2ff');
 			that.tree.css('fill', '#fff');
 			that.$body.css('filter', 'invert(0)');
@@ -54,7 +66,7 @@ class Animations {
 			that.icon.css('filter', 'invert(0)');
 			that.sun.css('display', 'block');
 			that.night.css('display', 'none');
-		}, 5000);
+		}, 2500);
 	}
 }
 

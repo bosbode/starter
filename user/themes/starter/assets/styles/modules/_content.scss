@@ -95,6 +95,7 @@
 
 	&__animation-container {
 		position: absolute;
+		overflow: hidden;
 	}
 
 	&__animation-container--fire {
@@ -103,7 +104,6 @@
 		transform: translateX(-50%) scale(0.35);
 		max-width: 68px;
 		width: 68px;
-		overflow: hidden;
 
 		@include breakpoint(atSmall) {
 			transform: translateX(-50%) scale(0.6);
@@ -131,18 +131,6 @@
 
 			width: 199px; 
 			height: 48.82px;
-
-			.cls-1 {
-				fill: #fb4842;
-			}
-	
-			.cls-2 {
-				fill: #ffb976;
-			}
-	
-			.cls-3 {
-				fill: #312c22;
-			}
 			
 		}
 	}
@@ -153,7 +141,7 @@
 		transform: translateX(-50%) scale(0.6);
 		max-width: 9px;
 		width: 9px;
-		overflow: hidden;
+		z-index: 1;
 
 		@include breakpoint(atSmall) {
 			transform: translateX(-50%) scale(1);
@@ -202,6 +190,35 @@
 			height: 21px;
 		}
 	}
+
+	&__animation-container--tentacles {
+		bottom: 32%;
+		left: 50%;
+		transform: translateX(-50%) scale(0.6);
+		max-width: 250px;
+		width: 250px;
+		display: none;
+		filter: invert(100%);
+
+		@include breakpoint(atSmall) {
+			transform: translateX(-50%) scale(0.8);
+			bottom: 35%;
+		}
+
+		@include breakpoint(atLarge) {
+			transform: translateX(-50%) scale(1.1);
+			bottom: 35%;
+		}
+
+		& .tentacles-group--play-animation {
+			animation: tentacle 2.5s steps(16) infinite;
+		}
+
+		& > svg {
+			width: 4000px; 
+			height: 250px;
+		}
+	}
 }
 
 @keyframes fire {
@@ -219,5 +236,11 @@
 @keyframes fish {
 	100% {
 		transform: translateX(-480px);
+  	}
+}
+
+@keyframes tentacle {
+	100% {
+		transform: translateX(-4000px);
   	}
 }
