@@ -2,7 +2,7 @@ footer {
     font-size: 0.875rem;
     font-weight: 600;
     
-    @include breakpoint(atMedium) {
+    @include breakpoint(tabletLandscape) {
         padding: 15px 0;
         background: $color-tertiary;
         color: #fff;
@@ -11,7 +11,7 @@ footer {
     .footer__lang {
         display: none;
         
-        @include breakpoint(atMedium) {
+        @include breakpoint(tabletLandscape) {
             display: flex;
             flex-direction: row;
             list-style-type: none;
@@ -33,7 +33,7 @@ footer {
     .footer__lang-item {
         margin-right: 15px;
 
-        @include breakpoint(atMedium) {
+        @include breakpoint(tabletLandscape) {
             margin-right: 20px;
         }
     }

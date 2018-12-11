@@ -9,7 +9,23 @@
 		grid-template-columns: repeat(12, 1fr);
 		grid-template-rows: repeat(21, 1fr);
 
-		@include breakpoint(atMedium) {
+		@include breakpoint(tabletPortrait) {
+			@media (orientation: landscape) {
+				height: 100%;
+				width: 100%;
+				
+			}
+		}
+
+		@include breakpoint(desktop) {
+			@media (orientation: landscape) {
+				height: 100vh;
+				width: 100vw;
+				
+			}
+		}
+
+		@include breakpoint(desktop) {
 			grid-template-columns: repeat(24, 1fr);
 			grid-template-rows: repeat(14, 1fr);
 		}
@@ -30,7 +46,7 @@
 		z-index: 2;
 		padding-top: 20px;
 
-		@include breakpoint(atSmall) {
+		@include breakpoint(tabletPortrait) {
 			grid-column-start: 2;
 			grid-column-end: 9;
 			grid-row-start: 14;
@@ -38,7 +54,7 @@
 			padding-top: 0;
 		}
 
-		@include breakpoint(atMedium) {
+		@include breakpoint(desktop) {
 			grid-column-start: 3;
 			grid-column-end: 9;
 			grid-row-start: 4;
@@ -47,7 +63,7 @@
 		
 		h1 {
 
-			@include breakpoint(atMedium) {
+			@include breakpoint(desktop) {
 				padding-bottom: 100px;
 			}
 		}
@@ -63,14 +79,14 @@
 		grid-row-start: 3;
 		grid-row-end: 13;
 
-		@include breakpoint(atSmall) {
+		@include breakpoint(tabletPortrait) {
 			grid-column-start: 2;
 			grid-column-end: 12;
 			grid-row-start: 2;
 			grid-row-end: 14;
 		}
 
-		@include breakpoint(atMedium) {
+		@include breakpoint(desktop) {
 			grid-column-start: 11;
 			grid-column-end: 25;
 			grid-row-start: 1;
@@ -105,16 +121,16 @@
 		max-width: 68px;
 		width: 68px;
 
-		@include breakpoint(atSmall) {
+		@include breakpoint(tabletPortrait) {
 			transform: translateX(-50%) scale(0.6);
 			bottom: 12%;
 		}
 
-		@include breakpoint(atMedium) {
+		@include breakpoint(desktop) {
 			bottom: 15%;
 		}
 
-		@include breakpoint(atLarge) {
+		@include breakpoint(desktop) {
 			transform: translateX(-50%) scale(0.75);
 			bottom: 15%;
 		}
@@ -143,12 +159,12 @@
 		width: 9px;
 		z-index: 1;
 
-		@include breakpoint(atSmall) {
+		@include breakpoint(tabletPortrait) {
 			transform: translateX(-50%) scale(1);
 			bottom: 33%;
 		}
 
-		@include breakpoint(atLarge) {
+		@include breakpoint(desktop) {
 			transform: translateX(-50%) scale(1.2);
 			bottom: 33%;
 		}
@@ -171,12 +187,12 @@
 		width: 48px;
 		overflow: hidden;
 
-		@include breakpoint(atSmall) {
+		@include breakpoint(tabletPortrait) {
 			transform: translateX(-50%) scale(0.8);
 			bottom: 35%;
 		}
 
-		@include breakpoint(atLarge) {
+		@include breakpoint(desktop) {
 			transform: translateX(-50%) scale(1.3);
 			bottom: 35%;
 		}
@@ -192,20 +208,20 @@
 	}
 
 	&__animation-container--tentacles {
-		bottom: 32%;
+		bottom: 15%;
 		left: 50%;
-		transform: translateX(-50%) scale(0.6);
+		transform: translateX(-50%) scale(0.45);
 		max-width: 250px;
 		width: 250px;
 		display: none;
 		filter: invert(100%);
 
-		@include breakpoint(atSmall) {
-			transform: translateX(-50%) scale(0.8);
-			bottom: 35%;
+		@include breakpoint(tabletPortrait) {
+			transform: translateX(-50%) scale(0.7);
+			bottom: 27%;
 		}
 
-		@include breakpoint(atLarge) {
+		@include breakpoint(desktop) {
 			transform: translateX(-50%) scale(1.1);
 			bottom: 35%;
 		}

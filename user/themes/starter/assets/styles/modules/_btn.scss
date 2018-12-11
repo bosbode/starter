@@ -28,7 +28,7 @@
 	    font-size: 1.3rem;
 	    color: #fff;
 
-	    @include breakpoint(atSmall) {
+	    @include breakpoint(tabletPortrait) {
 		   	width: 45px;
 		    height: 45px;
 		    padding: 6px 13px;

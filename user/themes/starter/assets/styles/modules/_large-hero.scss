@@ -12,11 +12,11 @@
 	&__logo {
 		width: 80%;
 
-		@include breakpoint(atLarge) {
+		@include breakpoint(desktop) {
 			width: 60%;
 		}
 
-		@include breakpoint(atWide) {
+		@include breakpoint(desktopWide) {
 			width: 50%;
 		}
 	}
