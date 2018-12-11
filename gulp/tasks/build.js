@@ -1,3 +1,3 @@
 var gulp = require('gulp');
 
-gulp.task('build', ['clearCache', 'scripts', 'critical']);
+gulp.task('build', ['clearCompiled', 'clearCache', 'scripts', 'critical']);
