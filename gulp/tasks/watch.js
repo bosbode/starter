@@ -1,63 +1,59 @@
 var gulp = require('gulp'),
-php = require('gulp-connect-php'),
-watch = require('gulp-watch'),
+phpConnect = require('gulp-connect-php'),
 del = require('del'),
 browserSync = require('browser-sync').create(),
-config = require('../config.json');
+config = require('../config.json'),
+styles = require('./styles'),
+scripts = require('./scripts');
 
-gulp.task('watch', ['clearCompiled', 'php', 'clearCache', 'scripts', 'styles'], function(){
+function watch (){
 
 	browserSync.init({
         proxy: '127.0.0.1:8010',
         port: 8080,
         open: true,
         notify: false
-    });
-
-	watch('./user/pages/**/**/*.md', function(){
-		browserSync.reload();
-	});
-
-	watch('./user/themes/' + config.theme + '/assets/styles/**/*.scss', function(){
-		gulp.start('cssInject');
-	});
-
-	watch('./user/themes/' + config.theme + '/assets/scripts/**/*.js', function(){
-		gulp.start('scriptsRefresh');
 	});
 	
-	watch(['./user/themes/' + config.theme + '/templates/**/*.twig', './user/pages/**/*'], function(){
-		gulp.start('cacheRefresh');
+	phpConnect.server({ 
+		base: '.', 
+		router: './system/router.php', 
+		port: 8010, 
+		keepalive: true
 	});
 
-});
+	gulp.watch('./user/pages/**/**/*.md', gulp.series('browserRefresh'));
 
-gulp.task('cssInject', ['styles'], function(){
+	gulp.watch('./user/themes/' + config.theme + '/assets/styles/**/*.scss', gulp.series(styles.sass, styles.styles, cssInject));
+    
+    gulp.watch('./user/themes/' + config.theme + '/assets/scripts/**/*.js', gulp.series(scripts.scripts, browserRefresh));
+   
+    gulp.watch('./user/themes/' + config.theme + '/templates/**/*.twig', gulp.series(clearCache, browserRefresh));
+    
+    gulp.watch('./user/pages/**/*', gulp.series(clearCache, browserRefresh));
+	
+};
+
+function cssInject (){
 	return gulp.src('./user/themes/' + config.theme + '/assets/compiled/styles/main.css')
 		.pipe(browserSync.stream());
-});
+};
 
-gulp.task('scriptsRefresh', ['scripts'], function(){
+function browserRefresh(cb){
 	browserSync.reload();
-});
+	cb();
+};
 
-gulp.task('php', function() {
-    php.server({ base: '.', router: './system/router.php', port: 8010, keepalive: true});
-});
+function clearCache (){
+	return del(['./cache/*', './assets/*', './images/*']);
+};
 
-gulp.task('clearCache', function(){
-	return del(['./cache/']);
-});
-
-gulp.task('clearCompiled', function(){
+function clearCompiled (){
 	return del(['./user/themes/' + config.theme + '/assets/compiled']);
-});
+};
 
-gulp.task('cacheRefresh', ['clearCache'], function(){
-	browserSync.reload();
-});
-
-gulp.task('default', function () {
-	gulp.start('watch');
-});
-
+gulp.task('cssInject', cssInject);
+gulp.task('clearCache', clearCache);
+gulp.task('clearCompiled', clearCompiled);
+gulp.task('browserRefresh', browserRefresh);
+gulp.task('watch', watch);
