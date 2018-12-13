@@ -1,7 +1,9 @@
-require("./gulp/tasks/styles");
-require("./gulp/tasks/critical");
-require("./gulp/tasks/watch");
-require("./gulp/tasks/sprites");
-require("./gulp/tasks/scripts");
-require("./gulp/tasks/modernizr");
-require("./gulp/tasks/build");
+let gulp = require('gulp'), 
+HubRegistry = require('gulp-hub');
+
+let hub = new HubRegistry(['gulp/tasks/*.js']);
+
+gulp.registry(hub);
+
+gulp.task('build', gulp.series(gulp.parallel('clearCompiled', 'clearCache', 'modernizr', 'sass'), gulp.parallel('scripts', 'styles'), 'criticalCss'));
+gulp.task('default', gulp.series(gulp.parallel('clearCompiled', 'clearCache', 'modernizr', 'sass'), gulp.parallel('scripts', 'styles'), 'watch'));
