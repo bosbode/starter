@@ -5,13 +5,11 @@
 	background-color: transparent;
 	grid-template-columns: repeat(12, 1fr);
 	grid-template-rows: repeat(auto);
-	padding: 20px 0;
+	padding: 20px 0 0;
 	width: 100vw;
 
 	@include breakpoint(tabletPortrait) {
-		display: grid;
 		padding: 55px 0 0;
-		text-align: left;
 		grid-template-columns: repeat(24, 1fr);
 		grid-template-rows: repeat(auto);
 	}
@@ -36,11 +34,12 @@
 			margin-top: 0;
 		}
 	}
-
-	&__logo-flex-container {
+	
+	&__logo {
 		display: flex;
 		align-items: center;
 		font-size: 0;
+		max-height: 45px;
 	}
 
 	&__icon {
