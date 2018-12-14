@@ -115,24 +115,21 @@
 	}
 
 	&__animation-container--fire {
-		bottom: 10%;
+		bottom: 0%;
 		left: 50%;
 		transform: translateX(-50%) scale(0.35);
-		max-width: 68px;
-		width: 68px;
+		max-width: 87px;
+		width: 87px;
+		z-index: 1;
 
 		@include breakpoint(tabletPortrait) {
 			transform: translateX(-50%) scale(0.6);
-			bottom: 12%;
-		}
-
-		@include breakpoint(desktop) {
-			bottom: 15%;
+			bottom: 8%;
 		}
 
 		@include breakpoint(desktop) {
 			transform: translateX(-50%) scale(0.75);
-			bottom: 15%;
+			bottom: 12%;
 		}
 
 		@include breakpoint(atWide) {
@@ -143,10 +140,19 @@
 			animation: fire 0.8s steps(3) infinite;
 		}
 
+		& .fire-group--hidden {
+			opacity: 0;
+		}
+
+		& .smoke-group--play-animation {
+			opacity: 1;
+			animation: smoke 1.4s steps(10) 1;
+		}
+
 		& > svg {
 
-			width: 199px; 
-			height: 48.82px;
+			width: 870px; 
+			height: 168px;
 			
 		}
 	}
@@ -239,7 +245,7 @@
 
 @keyframes fire {
 	100% {
-		transform: translateX(-198px);
+		transform: translateX(-261px);
   	}
 }
 
@@ -258,5 +264,11 @@
 @keyframes tentacle {
 	100% {
 		transform: translateX(-4000px);
+  	}
+}
+
+@keyframes smoke {
+	100% {
+		transform: translateX(-870px);
   	}
 }

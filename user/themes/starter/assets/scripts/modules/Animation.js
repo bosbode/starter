@@ -3,9 +3,12 @@ import $ from 'jquery';
 class Animations {
 	constructor(){
 		this.bubbles = $('.content__animation-container--bubbles');
-		this.fire = $('.content__animation-container--fire');
+		this.fireContainer = $('.content__animation-container--fire');
 		this.tentaclesContainer = $('.content__animation-container--tentacles');
+		this.smokeContainer = $('.content__animation-container--smoke');
 		this.tentacles = $('#tentacle-group');
+		this.fire = $('#fire-group');
+		this.smoke = $('#smoke-group');
 		this.icon = $('.site-header__icon');
 		this.treeShade = $('.tree-shade');
 		this.tree = $('.tree');
@@ -19,6 +22,7 @@ class Animations {
 	events() {
 		this.bubbles.on('click', this.animateFish.bind(this));
 		this.sun.on('click', this.nightMode.bind(this));
+		this.fire.on('click', this.animateSmoke.bind(this));
 	}
 
 	animateFish() {
@@ -37,6 +41,17 @@ class Animations {
 		}, 1200);
 	}
 
+	animateSmoke() {
+
+		if(!this.fire.hasClass('fire-group--hidden')){
+			this.fire.addClass('fire-group--hidden');
+			this.smoke.addClass('smoke-group--play-animation');
+		} else {
+			this.fire.removeClass('fire-group--hidden');
+			this.smoke.removeClass('smoke-group--play-animation');
+		}
+	}
+
 	nightMode() {
 		var that = this;
 
@@ -48,7 +63,7 @@ class Animations {
 		this.sun.css('display', 'none');
 		this.night.css('display', 'block');
 		this.$body.css('filter', 'invert(100%)');
-		this.fire.css('filter', 'invert(100%)');
+		this.fireContainer.css('filter', 'invert(100%)');
 		this.icon.css('filter', 'invert(100%)');
 		this.treeShade.css('fill', '#fff');
 		this.tree.css('fill', '#dde2ff');
@@ -62,7 +77,7 @@ class Animations {
 			that.treeShade.css('fill', '#dde2ff');
 			that.tree.css('fill', '#fff');
 			that.$body.css('filter', 'invert(0)');
-			that.fire.css('filter', 'invert(0)');
+			that.fireContainer.css('filter', 'invert(0)');
 			that.icon.css('filter', 'invert(0)');
 			that.sun.css('display', 'block');
 			that.night.css('display', 'none');
