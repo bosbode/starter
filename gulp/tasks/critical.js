@@ -21,7 +21,7 @@ function criticalCss (cb) {
     })
 };
 
-gulp.task('criticalLocal', function () {
+gulp.task('criticalCssLocal', function () {
     return critical.generate({
         src: 'http://localhost:8080/',
         width: 1920,
