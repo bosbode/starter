@@ -10,12 +10,10 @@
 
 	@include breakpoint(tabletPortrait) {
 		display: grid;
-		height: 160px;
-		width: 100vw;
+		padding: 55px 0 0;
 		text-align: left;
 		grid-template-columns: repeat(24, 1fr);
 		grid-template-rows: repeat(auto);
-		padding: 0;
 	}
 
 	&__logo {
