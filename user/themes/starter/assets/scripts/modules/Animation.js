@@ -22,7 +22,7 @@ class Animations {
 	events() {
 		this.bubbles.on('click', this.animateFish.bind(this));
 		this.sun.on('click', this.nightMode.bind(this));
-		this.fire.on('click', this.animateSmoke.bind(this));
+		this.fireContainer.on('click', this.animateSmoke.bind(this));
 	}
 
 	animateFish() {
