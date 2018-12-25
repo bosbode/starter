@@ -1,5 +1,17 @@
 .content {
 
+	&--hide {
+		opacity: 0 !important;
+	}
+
+	&--show {
+		opacity: 1 !important;
+	}
+
+	&--invert {
+		filter: invert(100%);
+	}
+
 	&__grid-container {
 		display: grid;
 		overflow: hidden;
@@ -18,16 +30,18 @@
 		}
 
 		@include breakpoint(desktop) {
+			grid-template-columns: repeat(24, 1fr);
+			grid-template-rows: repeat(14, 1fr);
+
 			@media (orientation: landscape) {
 				height: 100vh;
 				width: 100vw;
 				
+				@media (max-height: 1080px) { 
+					height: 100%;
+					width: 100%; 
+				}
 			}
-		}
-
-		@include breakpoint(desktop) {
-			grid-template-columns: repeat(24, 1fr);
-			grid-template-rows: repeat(14, 1fr);
 		}
 	}
 
@@ -105,7 +119,7 @@
 		}
 
 		& #night {
-			display: none;
+			opacity: 0;
 		}
 	}
 
@@ -219,7 +233,8 @@
 		transform: translateX(-50%) scale(0.45);
 		max-width: 250px;
 		width: 250px;
-		display: none;
+		opacity: 0;
+		overflow: hidden;
 		filter: invert(100%);
 
 		@include breakpoint(tabletPortrait) {
@@ -228,7 +243,7 @@
 		}
 
 		@include breakpoint(desktop) {
-			transform: translateX(-50%) scale(1.1);
+			transform: translateX(-50%) scale(1);
 			bottom: 35%;
 		}
 

@@ -15,7 +15,8 @@ class Animations {
 		this.fish = $('#fish-group');
 		this.sun = $('#sun');
 		this.night = $('#night');
-		this.$body = $('body');
+		this.$content = $('.content');
+		this.siteHeader = $('.site-header');
 		this.events();
 	}
 
@@ -55,32 +56,38 @@ class Animations {
 	nightMode() {
 		var that = this;
 
-		this.tentaclesContainer.css('display', 'block');
+		this.tentaclesContainer.addClass('content--show');
 		this.tentacles.addClass('tentacles-group--play-animation');
 
-		this.bubbles.css('display', 'none');
+		this.bubbles.addClass('content--hide');
 
-		this.sun.css('display', 'none');
-		this.night.css('display', 'block');
-		this.$body.css('filter', 'invert(100%)');
-		this.fireContainer.css('filter', 'invert(100%)');
-		this.icon.css('filter', 'invert(100%)');
+		this.sun.addClass('content--hide');
+		this.night.addClass('content--show');
+		
 		this.treeShade.css('fill', '#fff');
 		this.tree.css('fill', '#dde2ff');
 
+		this.$content.addClass('content--invert');
+		this.siteHeader.addClass('content--invert');
+		this.fireContainer.addClass('content--invert');
+		this.icon.addClass('content--invert');
+
 		setTimeout(function() {
-			that.tentaclesContainer.css('display', 'none');
+			that.tentaclesContainer.removeClass('content--show');
 			that.tentacles.removeClass('tentacles-group--play-animation');
 
-			that.bubbles.css('display', 'block');
+			that.bubbles.removeClass('content--hide');
+
+			that.sun.removeClass('content--hide');
+			that.night.removeClass('content--show');
 
 			that.treeShade.css('fill', '#dde2ff');
 			that.tree.css('fill', '#fff');
-			that.$body.css('filter', 'invert(0)');
-			that.fireContainer.css('filter', 'invert(0)');
-			that.icon.css('filter', 'invert(0)');
-			that.sun.css('display', 'block');
-			that.night.css('display', 'none');
+
+			that.$content.removeClass('content--invert');
+			that.siteHeader.removeClass('content--invert');
+			that.fireContainer.removeClass('content--invert');
+			that.icon.removeClass('content--invert');
 		}, 2500);
 	}
 }
