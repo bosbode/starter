@@ -12,8 +12,8 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/manifest.json">
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#006464">
-    <meta name="theme-color" content="#006464">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#FFD9BB">
+    <meta name="theme-color" content="#FFD9BB">
     <title>{{ site.title }}</title>
 
     {% block criticalCSS %}
@@ -23,8 +23,6 @@
 
     {% endblock %}
     {{ assets.css('criticalCSS') }}
-
-    
     
   {% endblock head%}
 
@@ -40,10 +38,9 @@
         {% block content %}{% endblock %}
     {% endblock %}
 
-    {# {% block footer %}
+    {% block footer %}
         {% include 'partials/footer.html.twig' %}
-    {% endblock %} #}
-
+    {% endblock %}
 
     {% block stylesheets %}
 
@@ -54,9 +51,6 @@
     {{ assets.css() }}
 
     {% block scripts %}
-
-      <!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
-      <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDv1l7qVWIUaKC3SbdQSoBgxVwy52Edu9U"></script>
 
       <!-- Custom Theme JavaScript -->
       {% do assets.addJs('theme://assets/compiled/scripts/Vendor.js', {'loading':'async'}) %}
