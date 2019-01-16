@@ -123,6 +123,14 @@
 			display: none;
 		}
 
+		& .tree-shade--white {
+			fill: #fff;
+		}
+
+		& .tree--blue {
+			fill: #dde2ff;
+		}
+
 	}
 
 	&__animation-container {

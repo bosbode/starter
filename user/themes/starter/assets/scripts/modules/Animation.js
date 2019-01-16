@@ -37,10 +37,10 @@ class Animations {
 	animateFish() {
 		const that = this;
 
-		this.bubbles.css('opacity', 0);
+		this.bubbles.addClass('content--hide');
 
 		setTimeout(function() {
-			that.bubbles.css('opacity', 1);
+			that.bubbles.removeClass('content--hide');
 		}, 2400);
 
 		this.fish.addClass('fish-group--play-animation');
@@ -87,8 +87,8 @@ class Animations {
 		this.sun.addClass('content--hide');
 		this.night.addClass('content--show');
 		
-		this.treeShade.css('fill', '#fff');
-		this.tree.css('fill', '#dde2ff');
+		this.treeShade.addClass('tree-shade--white');
+		this.tree.addClass('tree--blue');
 
 		this.$content.addClass('content--invert');
 		this.contentTitle.addClass('content--invert');
@@ -105,8 +105,8 @@ class Animations {
 			that.sun.removeClass('content--hide');
 			that.night.removeClass('content--show');
 
-			that.treeShade.css('fill', '#dde2ff');
-			that.tree.css('fill', '#fff');
+			that.treeShade.removeClass('tree-shade--white');
+			that.tree.removeClass('tree--blue');
 
 			that.$content.removeClass('content--invert');
 			that.contentTitle.removeClass('content--invert');
