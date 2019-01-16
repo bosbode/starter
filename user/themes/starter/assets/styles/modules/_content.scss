@@ -1,11 +1,12 @@
 .content {
+	width: 100vw;
 
 	&--hide {
-		opacity: 0 !important;
+		display: none !important;
 	}
 
 	&--show {
-		opacity: 1 !important;
+		display: block !important;
 	}
 
 	&--invert {
@@ -37,7 +38,7 @@
 				height: 100vh;
 				width: 100vw;
 				
-				@media (max-height: 1080px) { 
+				@media (max-height: 1079px) { 
 					height: 100%;
 					width: 100%; 
 				}
@@ -119,8 +120,9 @@
 		}
 
 		& #night {
-			opacity: 0;
+			display: none;
 		}
+
 	}
 
 	&__animation-container {
@@ -137,7 +139,7 @@
 		z-index: 1;
 
 		@include breakpoint(tabletPortrait) {
-			transform: translateX(-50%) scale(0.6);
+			transform: translateX(-50%) scale(0.55);
 			bottom: 8%;
 		}
 
@@ -181,11 +183,11 @@
 
 		@include breakpoint(tabletPortrait) {
 			transform: translateX(-50%) scale(1);
-			bottom: 33%;
+			bottom: 31%;
 		}
 
 		@include breakpoint(desktop) {
-			transform: translateX(-50%) scale(1.2);
+			transform: translateX(-50%) scale(1.6);
 			bottom: 33%;
 		}
 
@@ -208,8 +210,8 @@
 		overflow: hidden;
 
 		@include breakpoint(tabletPortrait) {
-			transform: translateX(-50%) scale(0.8);
-			bottom: 35%;
+			transform: translateX(-50%) scale(1);
+			bottom: 33%;
 		}
 
 		@include breakpoint(desktop) {
@@ -233,7 +235,7 @@
 		transform: translateX(-50%) scale(0.45);
 		max-width: 250px;
 		width: 250px;
-		opacity: 0;
+		display: none;
 		overflow: hidden;
 		filter: invert(100%);
 
@@ -256,34 +258,115 @@
 			height: 250px;
 		}
 	}
+
+	&__animation-bird-tree {
+		animation: tree 2s infinite;
+	}
+
+	& #tree-needles {
+		display: none;
+	}
+
+	&__animation-container--bird {
+		bottom: 20%;
+		left: 30%;
+		transform: translateX(-50%) scale(0.4) rotate(-15deg);
+		max-width: 50px;
+		width: 50px;
+		overflow: hidden;
+		display: none;
+
+		@include breakpoint(tabletPortrait) {
+			transform: translateX(-50%) scale(0.6) rotate(-15deg);
+			bottom: 25%;
+		}
+
+		@include breakpoint(desktop) {
+			transform: translateX(-50%) scale(1) rotate(-15deg);
+			bottom: 25%;
+		}
+
+		& #bird-group {
+			animation: flyBird 0.3s steps(2) infinite;
+		}
+
+		& > svg {
+			width: 100px; 
+			height: 56px;
+		}
+	}
+
+	&__animation-container--bird-animate {
+		animation: moveBird 2.2s cubic-bezier(0.47, 0, 0.745, 0.715) 1;
+	}
 }
 
 @keyframes fire {
-	100% {
+	to {
 		transform: translateX(-261px);
-  	}
+	}
 }
 
 @keyframes bubbles {
-	100% {
+	to {
 		transform: translateX(-54px);
-  	}
+	}
 }
 
 @keyframes fish {
-	100% {
+	to {
 		transform: translateX(-480px);
-  	}
+	}
 }
 
 @keyframes tentacle {
-	100% {
+	to {
 		transform: translateX(-4000px);
-  	}
+	}
 }
 
 @keyframes smoke {
-	100% {
+	to {
 		transform: translateX(-870px);
-  	}
+	}
+}
+
+@keyframes flyBird {
+	to {
+		transform: translateX(-100px);
+	}
+}
+
+@keyframes moveBird {
+	to {
+		left: 110%;
+		bottom: 80%;
+	}
+}
+
+@keyframes tree{
+	0% {
+		transform: translateX(0);
+	}
+	39% {
+		transform: translateX(0);
+	}
+	40% {
+		transform: translateX(-2px);
+	}
+	50% {
+		transform: translateX(2px);
+	}
+	55% {
+		transform: translateX(-2px);
+	}
+	60% {
+		transform: translateX(2px);
+	}
+	61% {
+		transform: translateX(0);
+	}
+	100% {
+		transform: translateX(0);
+	}
 }
