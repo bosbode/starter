@@ -12,25 +12,66 @@
 		grid-template-columns: repeat(24, 1fr);
 		grid-template-rows: repeat(auto);
     }
+
+    & p {
+        font-size: 1rem;
+        margin: 0;
+    }
     
     &__address--email {
-        grid-column-start: 3;
-		grid-column-end: 7;
-		grid-row-start: 1;
-		grid-row-end: 2;
+        grid-column-start: 2;
+		grid-column-end: 11;
 		z-index: 2;
-		align-self: center;
+        align-self: center;
+        
+        @include breakpoint(tabletPortrait) {
+			grid-column-start: 3;
+			grid-column-end: 12;
+		}
+
+		@include breakpoint(desktop) {
+			grid-column-start: 3;
+			grid-column-end: 7;
+		}
     }
 
     &__address--number {
-		grid-column-start: 7;
+		grid-column-start: 2;
 		grid-column-end: 11;
-        align-self: center;
+        align-self: top;
+
+        @include breakpoint(tabletPortrait) {
+			grid-column-start: 3;
+            grid-column-end: 24;
+		}
+
+		@include breakpoint(desktop) {
+			grid-column-start: 7;
+            grid-column-end: 12;
+            align-self: center;
+        }
+        
+        & p {
+            margin-top: 5px;
+        }
     }
     
     &__copyright {
-		grid-column-start: 12;
-		grid-column-end: 23;
-        align-self: center;
+		grid-column-start: 2;
+		grid-column-end: 11;
+        align-self: top;
+        margin-top: 20px;
+
+        @include breakpoint(tabletPortrait) {
+			grid-column-start: 3;
+            grid-column-end: 11;
+		}
+
+		@include breakpoint(desktop) {
+			grid-column-start: 12;
+            grid-column-end: 23;
+            align-self: center;
+            margin-top: 0;
+		}
     }
 }
