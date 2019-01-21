@@ -1,22 +1,50 @@
-<!-- {{ page.header.title }} Section -->
 <section id="{{ page.header.section_title }}" class="content content__bgcolor content__bgcolor--{{ page.header.bgcolor }}" data-matching-link="#{{ page.header.section_title }}-link">
     <div class="content__grid-container">
-        <div class="content__bodytext">
+        <div class={% if page.header.switchPosition %}"content__bodytext content__bodytext--switch-position" {% else %}"content__bodytext" {% endif %}>
             {{ page.content }}
+            {% if page.header.github and page.header.site %}
+                <div class="content__link-icons">
+                    <a href="{{ page.header.site }}" target="_blank">
+                        <i class="far fa-browser"></i>
+                    </a>
+                    <a href="{{ page.header.github }}" target="_blank">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+            {% endif %}
         </div>
-        <div class="content__img-container">
-            {% for svg in page.media.files %}
-                {% if page.header.image == svg.filename %}
-                    <div class="content__img">
-                        {{ getfilecontents(svg.filepath) }}
-                    </div>
-                {% else %}
-                    {% set file = svg.filename|slice(0, (svg.filename|length - 4)) %}
-                    <div class="content__animation-container content__animation-container--{{ file }}">
-                        {{ getfilecontents(svg.filepath) }}
-                    </div>
-                {% endif %}
-            {% endfor %}
-        </div>
+        {% set extention = page.header.image|split('.')|last %}
+        {% if extention == 'svg' %}
+            <div class={% if page.header.switchPosition %}"content__svg-container content__svg-container--switch-position" {% else %}"content__svg-container" {% endif %}>
+                {% for svg in page.media.files %}
+                    {% if page.header.image == svg.filename %}
+                        <div class="content__svg">
+                            {{ getfilecontents(svg.filepath) }}
+                        </div>
+                    {% else %}
+                        {% set file = svg.filename|slice(0, (svg.filename|length - 4)) %}
+                        <div class="content__animation-container content__animation-container--{{ file }}">
+                            {{ getfilecontents(svg.filepath) }}
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        {% elseif extention == 'jpg' %}
+            <div class={% if page.header.switchPosition %}"content__img-container content__img-container--switch-position" {% else %}"content__img-container" {% endif %}>
+                {% for img in page.media.images %}
+                    {% if page.header.site %}
+                        <a href="{{ page.header.site }}" target="_blank">
+                            <img srcset="{{ img.url }}" />
+                        </a>
+                    {% else %}
+                        <img srcset="{{ img.url }}" />
+                    {% endif %}
+                {% endfor %}
+            </div>
+        {% else %}
+            <div class="content__img-container">
+                <p>Set image name in page header</p>
+            </div>
+        {% endif %}
     </div>
 </section>
