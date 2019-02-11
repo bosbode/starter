@@ -21,8 +21,6 @@ class Animations {
 		this.$content = $('.content');
 		this.siteHeader = $('.site-header');
 
-		this.clickCount = 0;
-
 		this.events();
 	}
 
@@ -63,17 +61,13 @@ class Animations {
 	flyBird() {
 		const that = this;
 
-		if(this.clickCount === 0) {
-			this.birdContainer.addClass('content__animation-container--bird-animate');
-			this.birdContainer.addClass('content--show');
-			this.birdTree.removeClass('content__animation-bird-tree');
-			
-			this.clickCount++;
+		this.birdContainer.addClass('content__animation-container--bird-animate');
+		this.birdContainer.addClass('content--show');
+		this.birdTree.removeClass('content__animation-bird-tree');
 
-			setTimeout(function() {
-				that.birdContainer.removeClass('content--show');
-			}, 2200);
-		}
+		setTimeout(function() {
+			that.birdContainer.removeClass('content--show');
+		}, 2200);
 	}
 
 	nightMode() {
