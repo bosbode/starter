@@ -92,7 +92,11 @@
 	}
 
 	&__link-icons {
-		@include responsive-font-size(1.5rem);
+		font-size: 1.5rem;
+		
+		&>a:first-child {
+			margin-right: 10px;
+		}
 	}
 
 	&__svg-container {
@@ -132,16 +136,17 @@
 		position: relative;
 		align-self: center;
 		z-index: 2;
+		overflow: hidden;
 
-		grid-column-start: 1;
-		grid-column-end: 13;
-		grid-row-start: 3;
+		grid-column-start: 2;
+		grid-column-end: 12;
+		grid-row-start: 4;
 		grid-row-end: 13;
 
 		@include breakpoint(tabletPortrait) {
 			grid-column-start: 2;
 			grid-column-end: 12;
-			grid-row-start: 2;
+			grid-row-start: 3;
 			grid-row-end: 14;
 		}
 
