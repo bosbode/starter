@@ -1,6 +1,6 @@
 <section id="{{ page.header.section_title }}" class="content content__bgcolor content__bgcolor--{{ page.header.bgcolor }}" data-matching-link="#{{ page.header.section_title }}-link">
     <div class="content__grid-container">
-        <div class={% if page.header.switchPosition %}"content__bodytext content__bodytext--switch-position" {% else %}"content__bodytext" {% endif %}>
+        <div class={% if page.header.switchPosition %}"content__bodytext content__bodytext--switch-position"{% else %}"content__bodytext"{% endif %}>
             {{ page.content }}
             {% if page.header.github and page.header.site %}
                 <div class="content__link-icons">
@@ -30,7 +30,7 @@
                 {% endfor %}
             </div>
         {% elseif extention == 'jpg' %}
-            <div class={% if page.header.switchPosition %}"content__img-container content__img-container--switch-position" {% else %}"content__img-container" {% endif %}>
+            <div class={% if page.header.switchPosition %}"content__img-container content__img-container--switch-position"{% else %}"content__img-container"{% endif %}>
                 {% for img in page.media.images %}
                     {% if page.header.site %}
                         <a href="{{ page.header.site }}" target="_blank">
@@ -42,7 +42,7 @@
                 {% endfor %}
             </div>
         {% else %}
-            <div class="content__img-container">
+            <div class={% if page.header.switchPosition %}"content__img-container content__img-container--switch-position"{% else %}"content__img-container"{% endif %}>
                 <p>Set image name in page header</p>
             </div>
         {% endif %}
