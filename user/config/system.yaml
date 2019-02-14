@@ -6,9 +6,7 @@ force_ssl: false
 username_regex: '^[a-z0-9_-]{3,16}$'
 pwd_regex: '(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}'
 languages:
-  supported:
-    - nl
-    - en
+  supported: [nl, en]
   include_default_lang: false
   translations: true
   translations_fallback: true
@@ -38,7 +36,7 @@ pages:
     page: true
     twig: true
   markdown:
-    extra: false
+    extra: true
     auto_line_breaks: false
     auto_url_links: false
     escape_markup: false
@@ -113,7 +111,7 @@ debugger:
     close_connection: true
   twig: true
 images:
-  default_image_quality: 85
+  default_image_quality: 80
   cache_all: false
   cache_perms: '0755'
   debug: false
