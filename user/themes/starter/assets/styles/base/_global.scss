@@ -1,5 +1,5 @@
 body {
-    font-family: "Quicksand","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "Quicksand Regular", "Trebuchet MS", sans-serif;
     text-align: left;
     margin: 0;
     background-color: $color-background;
@@ -38,9 +38,9 @@ h3,
 h4,
 h5,
 h6 {
-    text-transform: uppercase;
-    font-family: "Quicksand","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "Quicksand Medium", "Trebuchet MS", sans-serif;
     font-weight: 500;
+    text-transform: uppercase;
     letter-spacing: 1.2px;
     color: $color-primary;
 }
@@ -64,7 +64,9 @@ img {
 	// text-shadow: 0 0 0;
 }
 
-a {
+a { 
+    font-family: "Quicksand Medium", "Trebuchet MS", sans-serif;
+    font-weight: 500;
 	color: $color-primary;
     text-decoration: none;
     -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
