@@ -5,8 +5,8 @@
     font-display: swap;
     src: local('Quicksand Regular'),
          local('Quicksand-Regular'),
-         url('/user/themes/assets/fonts/quicksand/quicksand-v8-latin-regular.woff2') format('woff2'), 
-         url('/user/themes/assets/fonts/quicksand/quicksand-v8-latin-regular.woff') format('woff');
+         url('/user/themes/starter/assets/fonts/quicksand/quicksand-v8-latin-regular.woff2') format('woff2'), 
+         url('/user/themes/starter/assets/fonts/quicksand/quicksand-v8-latin-regular.woff') format('woff');
 }
 
 @font-face {
@@ -16,6 +16,6 @@
     font-display: swap;
     src: local('Quicksand Medium'),
         local('Quicksand-Medium'),
-        url('/user/themes/assets/fonts/quicksand/quicksand-v8-latin-500.woff2') format('woff2'), 
-        url('/user/themes/assets/fonts/quicksand/quicksand-v8-latin-500.woff') format('woff');
+        url('/user/themes/starter/assets/fonts/quicksand/quicksand-v8-latin-500.woff2') format('woff2'), 
+        url('/user/themes/starter/assets/fonts/quicksand/quicksand-v8-latin-500.woff') format('woff');
 }
