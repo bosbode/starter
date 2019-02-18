@@ -139,8 +139,8 @@
 
 		grid-column-start: 2;
 		grid-column-end: 12;
-		grid-row-start: 4;
-		grid-row-end: 13;
+		grid-row-start: 5;
+		grid-row-end: 12;
 
 		@include breakpoint(tabletPortrait) {
 			grid-column-start: 2;
