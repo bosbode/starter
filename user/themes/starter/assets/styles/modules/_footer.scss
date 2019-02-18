@@ -7,6 +7,7 @@
     width: 100vw;
     overflow: hidden;
     padding: 20px 0;
+    transform: translateY(-5px);
     
     @include breakpoint(tabletPortrait) {
 		grid-template-columns: repeat(24, 1fr);
