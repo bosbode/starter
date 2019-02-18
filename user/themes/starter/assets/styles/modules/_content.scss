@@ -16,8 +16,9 @@
 	&__grid-container {
 		display: grid;
 		overflow: hidden;
+		border-bottom: 5px dotted $color-background;
 		grid-gap: 0;
-		height: 100vh;
+		height: 100%;
 		width: 100vw;
 		grid-template-columns: repeat(12, 1fr);
 		grid-template-rows: repeat(21, 1fr);
@@ -37,12 +38,16 @@
 			@media (orientation: landscape) {
 				height: 100vh;
 				width: 100vw;
-				
-				@media (max-height: 1079px) { 
-					height: 100%;
-					width: 100%; 
-				}
 			}
+
+			@media (max-height: 1079px) { 
+				height: 100%;
+				width: 100%; 
+			}
+		}
+
+		&--top {
+			height: 100vh;
 		}
 	}
 
@@ -76,7 +81,7 @@
 			grid-row-end: 13;
 		}
 		
-		h1 {
+		& > h1 {
 
 			@include breakpoint(desktop) {
 				padding-bottom: 100px;
@@ -91,8 +96,88 @@
 		}
 	}
 
+	&__bodytext--1 {
+		grid-column-start: 2;
+		grid-column-end: 12;
+		grid-row-start: 2;
+		grid-row-end: 8;
+		padding-top: 0;
+
+		@include breakpoint(tabletPortrait) {
+			grid-column-start: 2;
+			grid-column-end: 9;
+			grid-row-start: 2;
+			grid-row-end: 8;
+		}
+
+		@include breakpoint(desktop) {
+			grid-column-start: 3;
+			grid-column-end: 9;
+			grid-row-start: 4;
+			grid-row-end: 13;
+		}
+
+		& > p > img {
+			height: 100px;
+		}
+	}
+	
+	&__bodytext--2 {
+		grid-column-start: 2;
+		grid-column-end: 12;
+		grid-row-start: 9;
+		grid-row-end: 16;
+		padding-top: 0;
+
+		@include breakpoint(tabletPortrait) {
+			grid-column-start: 2;
+			grid-column-end: 9;
+			grid-row-start: 9;
+			grid-row-end: 16;
+		}
+
+		@include breakpoint(desktop) {
+			grid-column-start: 10;
+			grid-column-end: 16;
+			grid-row-start: 4;
+			grid-row-end: 13;
+			padding-top: 210px;
+		}
+
+		& > p > img {
+			height: 100px;
+		}
+	}
+
+	&__bodytext--3 {
+		grid-column-start: 2;
+		grid-column-end: 12;
+		grid-row-start: 16;
+		grid-row-end: 23;
+		padding-top: 0;
+
+		@include breakpoint(tabletPortrait) {
+			grid-column-start: 2;
+			grid-column-end: 9;
+			grid-row-start: 16;
+			grid-row-end: 23;
+		}
+
+		@include breakpoint(desktop) {
+			grid-column-start: 17;
+			grid-column-end: 23;
+			grid-row-start: 4;
+			grid-row-end: 13;
+			padding-top: 210px;
+		}
+
+		& > p > img {
+			height: 100px;
+		}
+	}
+
 	&__link-icons {
-		font-size: 1.5rem;
+		font-size: 1.3rem;
 		
 		&>a:first-child {
 			margin-right: 10px;
