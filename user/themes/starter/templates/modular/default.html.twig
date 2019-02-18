@@ -34,10 +34,10 @@
                 {% for img in page.media.images %}
                     {% if page.header.site %}
                         <a href="{{ page.header.site }}" target="_blank">
-                            <img srcset="{{ img.url }}" />
+                            <img class={% if page.header.imgPosition %}"content__img content__img--{{ page.header.imgPosition }}"{% else %}"content__img"{% endif %} srcset="{{ img.url }}" />
                         </a>
                     {% else %}
-                        <img srcset="{{ img.url }}" />
+                        <img class={% if page.header.imgPosition %}"content__img content__img--{{ page.header.imgPosition }}"{% else %}"content__img"{% endif %} srcset="{{ img.url }}" />
                     {% endif %}
                 {% endfor %}
             </div>
