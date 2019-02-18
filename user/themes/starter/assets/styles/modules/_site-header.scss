@@ -23,8 +23,8 @@
 		align-self: center;
 
 		@include breakpoint(tabletPortrait) {
-			grid-column-start: 16;
-			grid-column-end: 20;
+			grid-column-start: 15;
+			grid-column-end: 19;
 			margin-top: 0;
 		}
 
@@ -76,7 +76,7 @@
 
 		@include breakpoint(tabletPortrait) {
 			grid-column-start: 3;
-			grid-column-end: 12;
+			grid-column-end: 13;
 			margin-top: 0;
 		}
 
