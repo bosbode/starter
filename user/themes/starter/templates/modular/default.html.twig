@@ -1,5 +1,5 @@
-<section id="{{ page.header.section_title }}" class="content content__bgcolor content__bgcolor--{{ page.header.bgcolor }}" data-matching-link="#{{ page.header.section_title }}-link">
-    <div class="content__grid-container">
+<section class="content content__bgcolor content__bgcolor--{{ page.header.bgcolor }}" data-matching-link="#{{ page.header.section_title }}-link">
+    <div class={% if page.header.top %}"content__grid-container content__grid-container--top"{% else %}"content__grid-container"{% endif %}>
         <div class={% if page.header.switchPosition %}"content__bodytext content__bodytext--switch-position"{% else %}"content__bodytext"{% endif %}>
             {{ page.content }}
             {% if page.header.github and page.header.site %}
