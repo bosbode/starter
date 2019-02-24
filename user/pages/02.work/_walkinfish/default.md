@@ -7,7 +7,7 @@ site: https://thewalkinfish.com
 github: https://github.com/bosbode/walkin-fish
 imgPosition: center
 switchPosition: false
-top: true
+fullHeight: true
 ---
 
 # THE WALK’IN FISH

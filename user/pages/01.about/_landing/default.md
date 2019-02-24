@@ -3,7 +3,7 @@ title: Home
 bgcolor: pink
 image: about-01.svg
 switchPosition: false
-top: true
+fullHeight: true
 ---
 
 # WELKOM
