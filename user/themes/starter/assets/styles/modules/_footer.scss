@@ -48,7 +48,7 @@
 
 		@include breakpoint(desktop) {
 			grid-column-start: 7;
-            grid-column-end: 12;
+            grid-column-end: 10;
             align-self: center;
         }
         
@@ -69,8 +69,8 @@
 		}
 
 		@include breakpoint(desktop) {
-			grid-column-start: 12;
-            grid-column-end: 23;
+			grid-column-start: 10;
+            grid-column-end: 21;
             align-self: center;
             margin-top: 0;
 		}
