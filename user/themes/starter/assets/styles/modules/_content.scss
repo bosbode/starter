@@ -23,31 +23,34 @@
 		grid-template-columns: repeat(12, 1fr);
 		grid-template-rows: repeat(21, 1fr);
 
-		@include breakpoint(tabletPortrait) {
-			@media (orientation: landscape) {
-				height: 100%;
-				width: 100%;
-				
-			}
-		}
-
 		@include breakpoint(desktop) {
 			grid-template-columns: repeat(24, 1fr);
 			grid-template-rows: repeat(14, 1fr);
-
-			@media (orientation: landscape) {
-				height: 100vh;
-				width: 100vw;
-			}
-
-			@media (max-height: 1079px) { 
-				height: 100%;
-				width: 100%; 
-			}
 		}
 
 		&--top {
 			height: 100vh;
+
+			@include breakpoint(tabletPortrait) {
+				@media (orientation: landscape) {
+					height: 100%;
+					width: 100%;
+					
+				}
+			}
+
+			@include breakpoint(desktop) {
+	
+				@media (orientation: landscape) {
+					height: 100vh;
+					width: 100vw;
+				}
+	
+				@media (max-height: 1079px) { 
+					height: 100%;
+					width: 100%; 
+				}
+			}
 		}
 	}
 
@@ -88,6 +91,11 @@
 			}
 		}
 
+		& > p > img {
+			height: 160px;
+			margin: 30px 0;
+		}
+
 		&--switch-position {
 			@include breakpoint(desktop) {
 				grid-column-start: 17;
@@ -116,10 +124,6 @@
 			grid-row-start: 4;
 			grid-row-end: 13;
 		}
-
-		& > p > img {
-			height: 100px;
-		}
 	}
 	
 	&__bodytext--2 {
@@ -143,10 +147,6 @@
 			grid-row-end: 13;
 			padding-top: 210px;
 		}
-
-		& > p > img {
-			height: 100px;
-		}
 	}
 
 	&__bodytext--3 {
@@ -169,10 +169,6 @@
 			grid-row-start: 4;
 			grid-row-end: 13;
 			padding-top: 210px;
-		}
-
-		& > p > img {
-			height: 100px;
 		}
 	}
 
