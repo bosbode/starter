@@ -1,4 +1,4 @@
-## Makkelijk te gebruiken
+## Laagdrempelig in gebruik voor iedereen
 
 ![Alt text][image-02]
 
