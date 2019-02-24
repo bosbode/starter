@@ -2,8 +2,8 @@
 
 @import "vendor";
 
-@import "base/_mixins";
-@import "base/fonts";
+@import "base/_breakpoints";
+@import "base/_fonts";
 @import "base/_global";
 
 @import "modules/_animation";
