@@ -1,23 +1,23 @@
 class Animations {
 	constructor(){
-		this.contentTitle = document.querySelector('.content__bodytext > h1');
+		this.contentTitle = document.querySelectorAll('.content__bodytext > h1');
 		this.bubbles = document.querySelector('.content__animation-container--bubbles');
 		this.fireContainer = document.querySelector('.content__animation-container--fire');
-		this.tentaclesContainer = document.querySelector('.content__animation-container--tentacles');
-		this.smokeContainer = document.querySelector('.content__animation-container--smoke');
-		this.birdContainer = document.querySelector('.content__animation-container--bird');
+		this.tentaclesContainer = document.querySelectorAll('.content__animation-container--tentacles');
+		this.smokeContainer = document.querySelectorAll('.content__animation-container--smoke');
+		this.birdContainer = document.querySelectorAll('.content__animation-container--bird');
 		this.tentacles = document.querySelector('#tentacle-group');
 		this.fire = document.querySelector('#fire-group');
 		this.smoke = document.querySelector('#smoke-group');
 		this.birdTree = document.querySelector('#tree-top');
-		this.icon = document.querySelector('.site-header__icon');
-		this.treeShade = document.querySelector('.tree-shade');
-		this.tree = document.querySelector('.tree');
+		this.icon = document.querySelectorAll('.site-header__icon');
+		this.treeShade = document.querySelectorAll('.tree-shade');
+		this.tree = document.querySelectorAll('.tree');
 		this.fish = document.querySelector('#fish-group');
 		this.sun = document.querySelector('#sun');
 		this.night = document.querySelector('#night');
-		this.contentClass = document.querySelector('.content');
-		this.siteHeader = document.querySelector('.site-header');
+		this.contentClass = document.querySelectorAll('.content');
+		this.siteHeader = document.querySelectorAll('.site-header');
 
 		this.clicked = false;
 		
@@ -29,26 +29,26 @@ class Animations {
 		this.sun.addEventListener('click', this.nightMode.bind(this));
 		this.fireContainer.addEventListener('click', this.animateSmoke.bind(this));
 		this.birdTree.addEventListener('click', this.flyBird.bind(this));
-		this.birdTree.classList.add('content__animation-bird-tree');
+		this.addOrRemoveClass(this.birdTree, 'content__animation-bird-tree', 'add');
 	}
 
 	animateFish() {
 		const that = this;
 
 		// Hide bubbles
-		this.bubbles.classList.add('content--hide');
+		this.addOrRemoveClass(this.bubbles, 'content--hide', 'add');
 
 		// Undo hide bubbles after 2400 milliseconds
 		setTimeout(function() {
-			that.bubbles.classList.remove('content--hide');
+			that.addOrRemoveClass(that.bubbles, 'content--hide', 'remove');
 		}, 1400);
 
 		// Play fish animation
-		this.fish.classList.add('fish-group--play-animation');
+		this.addOrRemoveClass(this.fish, 'fish-group--play-animation', 'add');
 		
 		// Remove fish animation so it can play again
 		setTimeout(function() {
-			that.fish.classList.remove('fish-group--play-animation');
+			that.addOrRemoveClass(that.fish, 'fish-group--play-animation', 'remove');
 		}, 1200);
 	}
 
@@ -56,11 +56,11 @@ class Animations {
 		// If fire is visable, hide fire and show smoke
 		// Else show fire and stop smoke animation
 		if(!this.fire.classList.contains('fire-group--hidden')){
-			this.fire.classList.add('fire-group--hidden');
-			this.smoke.classList.add('smoke-group--play-animation');
+			this.addOrRemoveClass(this.fire, 'fire-group--hidden', 'add');
+			this.addOrRemoveClass(this.smoke, 'smoke-group--play-animation', 'add');
 		} else {
-			this.fire.classList.remove('fire-group--hidden');
-			this.smoke.classList.remove('smoke-group--play-animation');
+			this.addOrRemoveClass(this.fire, 'fire-group--hidden', 'remove');
+			this.addOrRemoveClass(this.smoke, 'smoke-group--play-animation', 'remove');
 		}
 	}
 	
@@ -69,16 +69,16 @@ class Animations {
 
 		if (!this.clicked) {
 			// Show bird container and append animation, remove tree shake animation
-			this.birdContainer.classList.add('content--show');
-			this.birdContainer.classList.add('content__animation-container--bird-animate');
-			this.birdTree.classList.remove('content__animation-bird-tree');
+			this.addOrRemoveClass(this.birdContainer, 'content--show', 'add');
+			this.addOrRemoveClass(this.birdContainer, 'content__animation-container--bird-animate', 'add');
+			this.addOrRemoveClass(this.birdTree, 'content__animation-bird-tree', 'remove');
 	
 			// Hide bird container after 2200 milliseconds
 			setTimeout(function() {
-				that.birdContainer.classList.remove('content--show');
+				that.addOrRemoveClass(that.birdContainer, 'content--show', 'remove');
 			}, 2200);
 
-			that.clicked = true;
+			this.clicked = true;
 		}
 	}
 
@@ -86,46 +86,84 @@ class Animations {
 		const that = this;
 
 		// Shows and appends tentacle animation
-		this.tentaclesContainer.classList.add('content--show');
-		this.tentacles.classList.add('tentacles-group--play-animation');
-
-		// Hide bubbles
-		this.bubbles.classList.add('content--hide');
-
-		// Hide sun, show moon and stars
-		this.sun.classList.add('content--hide');
-		this.night.classList.add('content--show');
+		this.addOrRemoveClass(this.tentacles, 'tentacles-group--play-animation', 'add');
+		
+		// Hide bubbles and sun
+		this.addOrRemoveClass([this.bubbles, this.sun], 'content--hide', 'add');
+		
+		// Show moon, stars and tentacles
+		this.addOrRemoveClass([this.tentaclesContainer, this.night], 'content--show', 'add');
 		
 		// Swap tree colors so the shade is on the correct side
-		this.treeShade.classList.add('tree-shade--white');
-		this.tree.classList.add('tree--blue');
+		this.addOrRemoveClass(this.treeShade, 'tree-shade--white', 'add');
+		this.addOrRemoveClass(this.tree, 'tree--blue', 'add');
 
 		// Inverts the colors so it looks like that these items are unaffected by the night swap
-		this.contentClass.classList.add('content--invert');
-		this.contentTitle.classList.add('content--invert');
-		this.siteHeader.classList.add('content--invert');
-		this.fireContainer.classList.add('content--invert');
-		this.icon.classList.add('content--invert');
+		this.addOrRemoveClass([this.contentClass, this.contentTitle, this.siteHeader, this.fireContainer, this.icon], 'content--invert', 'add');
 
 		// Undo all above changes after 2500 milliseconds
 		setTimeout(function() {
-			that.tentaclesContainer.classList.remove('content--show');
-			that.tentacles.classList.remove('tentacles-group--play-animation');
+			that.addOrRemoveClass(that.tentacles, 'tentacles-group--play-animation', 'remove');
+			
+			that.addOrRemoveClass([that.bubbles, that.sun], 'content--hide', 'remove');
+			
+			that.addOrRemoveClass([that.tentaclesContainer, that.night], 'content--show', 'remove');
+			
+			that.addOrRemoveClass(that.treeShade, 'tree-shade--white', 'remove');
+			that.addOrRemoveClass(that.tree, 'tree--blue', 'remove');
 
-			that.bubbles.classList.remove('content--hide');
-
-			that.sun.classList.remove('content--hide');
-			that.night.classList.remove('content--show');
-
-			that.treeShade.classList.remove('tree-shade--white');
-			that.tree.classList.remove('tree--blue');
-
-			that.contentClass.classList.remove('content--invert');
-			that.contentTitle.classList.remove('content--invert');
-			that.siteHeader.classList.remove('content--invert');
-			that.fireContainer.classList.remove('content--invert');
-			that.icon.classList.remove('content--invert');
+			that.addOrRemoveClass([that.contentClass, that.contentTitle, that.siteHeader, that.fireContainer, that.icon], 'content--invert', 'remove');
 		}, 2500);
+	}
+
+	addOrRemoveClass(selector, className, specifier) {
+		// Check if selector is an array
+		if(Array.isArray(selector)) {
+			// Loop through array
+			selector.forEach(function(item) {
+				// Check if each item in array is a nodelist
+				if(NodeList.prototype.isPrototypeOf(item)) {
+					// Check if specifier is add or remove
+					if(specifier === 'add') {
+						// Loop through nodelist and add or remove classname
+						item.forEach(function(element) {
+							element.classList.add(className);
+						})
+					} else {
+						item.forEach(function(element) {
+							element.classList.remove(className);
+						})
+					}
+				// If selector is not a nodelist, add or remove classname directly to selector	
+				} else {
+					if(specifier === 'add') {
+						item.classList.add(className);
+					} else {
+						item.classList.remove(className);
+					}
+				}
+			})
+		// If selector is not an array, check if it's a nodelist
+		} else if(NodeList.prototype.isPrototypeOf(selector)){
+			// Check if specifier is add or remove
+			if(specifier === 'add') {
+				// Loop through nodelist and add or remove classname
+				selector.forEach(function(element) {
+					element.classList.add(className);
+				})
+			} else {
+				selector.forEach(function(element) {
+					element.classList.remove(className);
+				})
+			}
+		// If selector is not a nodelist, add or remove classname directly to selector	
+		} else {
+			if(specifier === 'add') {
+				selector.classList.add(className);
+			} else {
+				selector.classList.remove(className);
+			}
+		}
 	}
 }
 
