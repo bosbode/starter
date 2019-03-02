@@ -10,12 +10,12 @@
 		}
 	}
 
-	ul {
+	& ul {
 		margin: 0;
 		padding: 0;
 	}
 	
-	li:first-child {
+	& li:first-child {
 		margin-top: 0;
 		padding-left: 0;
 
@@ -24,7 +24,7 @@
 		}
 	}
 
-	li {
+	& li {
 		list-style: none;
 		padding: 0;
 
@@ -35,19 +35,27 @@
 		}
 	}
 
-	li:last-child {
+	& ul > .active > a {
+		color: rgba($color-body-text, 1);
+	}
+
+	& li:last-child {
 		padding-right: 0;
 	}
 
-	a {
+	& a {
 		display: flex;
 		align-items: center;
 		font-size: 1rem;
-		color: $color-body-text;
+		color: rgba($color-body-text, 0.6);
 		text-transform: uppercase;
 
 		@include breakpoint(tabletPortrait) {
 			font-size: 1.25rem;
 		}
+	}
+	
+	& a:hover {
+		color: rgba($color-body-text, 1);
 	}
 }
