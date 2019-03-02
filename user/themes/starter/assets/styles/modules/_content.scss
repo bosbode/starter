@@ -283,6 +283,18 @@
 			display: none;
 		}
 
+		& #stars-01 > circle {
+			animation: star-01 2s infinite ease;
+		}
+
+		& #stars-02 > circle {
+			animation: star-02 3s infinite ease;
+		}
+
+		& #stars-03 > circle {
+			animation: star-03 3.5s infinite ease;
+		}
+
 		& .tree-shade--white {
 			fill: #fff;
 		}
@@ -450,7 +462,7 @@
 		}
 
 		@include breakpoint(desktop) {
-			transform: translateX(-50%) scale(1) rotate(-15deg);
+			transform: translateX(-50%) scale(0.8) rotate(-15deg);
 			bottom: 25%;
 		}
 
@@ -466,6 +478,24 @@
 
 	&__animation-container--bird-animate {
 		animation: moveBird 2.2s cubic-bezier(0.47, 0, 0.745, 0.715) 1;
+	}
+}
+
+@keyframes star-01 {
+	50% {
+		fill: rgba($color-body-text, .3);
+	}
+}
+
+@keyframes star-02 {
+	60% {
+		fill: rgba($color-body-text, .3);
+	}
+}
+
+@keyframes star-03 {
+	70% {
+		fill: rgba($color-body-text, .3);
 	}
 }
 
