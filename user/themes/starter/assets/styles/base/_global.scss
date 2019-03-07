@@ -98,3 +98,11 @@ abbr[title] {
         text-decoration: underline dotted;
    }
 }
+
+section {
+    border-bottom: 5px dotted $color-background;
+}
+
+section:last-of-type {
+    border-bottom: none;
+}
