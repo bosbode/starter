@@ -20,7 +20,6 @@ function styles (cb){
 			this.emit('end');
 		})
 		.pipe(gulp.dest('./user/themes/' + config.theme + '/assets/compiled/styles'))
-		cb();
 };
 
 function sass (cb){
@@ -33,7 +32,6 @@ function sass (cb){
 			this.emit('end');
 		})
 		.pipe(gulp.dest('./user/themes/' + config.theme + '/assets/compiled/styles'));
-		cb();
 };
 
 // gulp.task('styles', gulp.series(sass, styles));

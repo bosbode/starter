@@ -5,5 +5,5 @@ let hub = new HubRegistry(['gulp/tasks/*.js']);
 
 gulp.registry(hub);
 
-gulp.task('build', gulp.series(gulp.parallel('clearCompiled', 'clearCache', 'modernizr', 'sass'), gulp.parallel('scripts', 'styles'), gulp.series('criticalCss', 'criticalCssConcat')));
+gulp.task('build', gulp.series(gulp.parallel('clearCompiled', 'clearCache', 'modernizr', 'sass'), gulp.parallel('scripts', 'styles'), 'criticalCss'));
 gulp.task('default', gulp.series(gulp.parallel('clearCompiled', 'clearCache', 'modernizr', 'sass'), gulp.parallel('scripts', 'styles'), 'watch'));
