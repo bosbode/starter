@@ -1,1 +1,5 @@
+<h2>{{ page.header.title }}</h2>
+{% for svg in page.media.files %}
+    {{ getfilecontents(svg.filepath) }}
+{% endfor %}
 {{ page.content }}

@@ -1,19 +1,22 @@
 <section class="content content__bgcolor content__bgcolor--{{ page.header.bgcolor }}" data-matching-link="#{{ page.header.section_title }}-link">
     <div class={% if page.header.top %}"content__grid-container content__grid-container--top"{% else %}"content__grid-container"{% endif %}>
         {% for module in page.collection() %}
-                {% if loop.index == 1 %}
-                <div class="content__bodytext content__bodytext--1">
-                    {{ module.content }}
-                </div>
-                {% elseif loop.index == 2 %}
-                <div class="content__bodytext content__bodytext--2">
-                    {{ module.content }}
-                </div>
-                {% elseif loop.index == 3 %}
-                <div class="content__bodytext content__bodytext--3">
-                    {{ module.content }}
-                </div>
-                {% endif %}
+            {% if loop.index == 1 %}
+            <div class="content__bodytext">
+                {{ page.content }}
+            </div>
+            <div class="content__bodytext content__bodytext--1">
+                {{ module.content }}
+            </div>
+            {% elseif loop.index == 2 %}
+            <div class="content__bodytext content__bodytext--2">
+                {{ module.content }}
+            </div>
+            {% elseif loop.index == 3 %}
+            <div class="content__bodytext content__bodytext--3">
+                {{ module.content }}
+            </div>
+            {% endif %}
         {% endfor %}
     </div>
 </section>
