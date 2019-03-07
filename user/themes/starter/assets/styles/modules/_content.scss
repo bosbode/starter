@@ -17,7 +17,6 @@
 		display: grid;
 		overflow: hidden;
 		border-bottom: 5px dotted $color-background;
-		grid-gap: 0;
 		height: 100%;
 		width: 100vw;
 		grid-template-columns: repeat(12, 1fr);
@@ -28,7 +27,7 @@
 			grid-template-rows: repeat(14, 1fr);
 		}
 
-		&--top {
+		&--full-height {
 			height: 100vh;
 
 			@include breakpoint(tabletPortrait) {
@@ -62,26 +61,20 @@
 
 	&__bodytext {
 		margin: 0 0;
-		grid-column-start: 2;
-		grid-column-end: 12;
-		grid-row-start: 13;
-		grid-row-end: 21;
+		grid-column: 2 / 12;
+		grid-row: 13 / 21;
 		z-index: 2;
 		padding-top: 20px;
 
 		@include breakpoint(tabletPortrait) {
-			grid-column-start: 2;
-			grid-column-end: 9;
-			grid-row-start: 14;
-			grid-row-end: 21;
+			grid-column: 2 / 9;
+			grid-row: 14 / 21;
 			padding-top: 0;
 		}
 
 		@include breakpoint(desktop) {
-			grid-column-start: 3;
-			grid-column-end: 9;
-			grid-row-start: 4;
-			grid-row-end: 13;
+			grid-column: 3 / 9;
+			grid-row: 4 / 13;
 		}
 		
 		& > h1 {
@@ -91,84 +84,75 @@
 			}
 		}
 
-		& > p > img {
+		& > svg {
 			height: 160px;
 			margin: 30px 0;
 		}
 
 		&--switch-position {
 			@include breakpoint(desktop) {
-				grid-column-start: 17;
-				grid-column-end: 23;
+				grid-column: 17 / 23;
 			}
 		}
 	}
 
 	&__bodytext--1 {
-		grid-column-start: 2;
-		grid-column-end: 12;
-		grid-row-start: 2;
-		grid-row-end: 8;
+		grid-column: 2 / 12;
+		grid-row: 2 / 8;
 		padding-top: 0;
 
 		@include breakpoint(tabletPortrait) {
-			grid-column-start: 2;
-			grid-column-end: 9;
-			grid-row-start: 2;
-			grid-row-end: 8;
+			grid-column: 2 / 9;
+			grid-row: 2 / 8;
 		}
 
 		@include breakpoint(desktop) {
-			grid-column-start: 3;
-			grid-column-end: 9;
-			grid-row-start: 4;
-			grid-row-end: 13;
+			grid-column: 3 / 9;
+			grid-row: 7 / 13;
+		}
+
+		& > h2 {
+			margin-top: 0;
 		}
 	}
 	
 	&__bodytext--2 {
-		grid-column-start: 2;
-		grid-column-end: 12;
-		grid-row-start: 9;
-		grid-row-end: 16;
+		grid-column: 2 / 12;
+		grid-row: 9 / 16;
 		padding-top: 0;
 
 		@include breakpoint(tabletPortrait) {
-			grid-column-start: 2;
-			grid-column-end: 9;
-			grid-row-start: 9;
-			grid-row-end: 16;
+			grid-column: 2 / 9;
+			grid-row: 9 / 16;
 		}
 
 		@include breakpoint(desktop) {
-			grid-column-start: 10;
-			grid-column-end: 16;
-			grid-row-start: 4;
-			grid-row-end: 13;
-			padding-top: 210px;
+			grid-column: 10 / 16;
+			grid-row: 7 / 13;
+		}
+
+		& > h2 {
+			margin-top: 0;
 		}
 	}
 
 	&__bodytext--3 {
-		grid-column-start: 2;
-		grid-column-end: 12;
-		grid-row-start: 16;
-		grid-row-end: 23;
+		grid-column: 2 / 12;
+		grid-row: 16 / 23;
 		padding-top: 0;
 
 		@include breakpoint(tabletPortrait) {
-			grid-column-start: 2;
-			grid-column-end: 9;
-			grid-row-start: 16;
-			grid-row-end: 23;
+			grid-column: 2 / 9;
+			grid-row: 16 / 23;
 		}
 
 		@include breakpoint(desktop) {
-			grid-column-start: 17;
-			grid-column-end: 23;
-			grid-row-start: 4;
-			grid-row-end: 13;
-			padding-top: 210px;
+			grid-column: 17 / 23;
+			grid-row: 7 / 13;
+		}
+
+		& > h2 {
+			margin-top: 0;
 		}
 	}
 
@@ -182,33 +166,26 @@
 
 	&__svg-container {
 		position: relative;
-		align-self: center;
+		// align-self: center;
 		z-index: 2;
 
-		grid-column-start: 1;
-		grid-column-end: 13;
-		grid-row-start: 3;
-		grid-row-end: 13;
+		grid-column: 1 / 13;
+		grid-row: 3 / 13;
 
 		@include breakpoint(tabletPortrait) {
-			grid-column-start: 2;
-			grid-column-end: 12;
-			grid-row-start: 2;
-			grid-row-end: 14;
+			grid-column: 2 / 12;
+			grid-row: 2 / 14;
 		}
 
 		@include breakpoint(desktop) {
-			grid-column-start: 11;
-			grid-column-end: 24;
-			grid-row-start: 1;
-			grid-row-end: 15;
+			grid-column: 11 / 24;
+			grid-row: 1 / 15;
 			max-width: 1120px;
 		}
 
 		&--switch-position {
 			@include breakpoint(desktop) {
-				grid-column-start: 2;
-				grid-column-end: 14;
+				grid-column: 2 / 14;
 			}
 		}
 	}
@@ -218,31 +195,24 @@
 		z-index: 2;
 		overflow: hidden;
 
-		grid-column-start: 2;
-		grid-column-end: 12;
-		grid-row-start: 5;
-		grid-row-end: 12;
+		grid-column: 2 / 12;
+		grid-row: 5 / 12;
 
 		@include breakpoint(tabletPortrait) {
-			grid-column-start: 2;
-			grid-column-end: 12;
-			grid-row-start: 3;
-			grid-row-end: 14;
+			grid-column: 2 / 12;
+			grid-row: 3 / 14;
 			align-self: center;
 		}
 
 		@include breakpoint(desktop) {
-			grid-column-start: 11;
-			grid-column-end: 23;
-			grid-row-start: 1;
-			grid-row-end: 15;
+			grid-column: 11 / 23;
+			grid-row: 1 / 15;
 			max-width: 1120px;
 		}
 
 		&--switch-position {
 			@include breakpoint(desktop) {
-				grid-column-start: 3;
-				grid-column-end: 15;
+				grid-column: 3 / 15;
 			}
 		}
 	}
