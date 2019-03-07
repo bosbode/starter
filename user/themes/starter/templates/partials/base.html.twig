@@ -36,9 +36,11 @@
         {% include 'partials/navigation.html.twig' %}
     {% endblock %}
 
-    {% block body %}
-        {% block content %}{% endblock %}
-    {% endblock %}
+    <main>
+      {% block body %}
+          {% block content %}{% endblock %}
+      {% endblock %}
+    </main>
 
     {% block footer %}
         {% include 'partials/footer.html.twig' %}
