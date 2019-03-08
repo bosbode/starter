@@ -18,6 +18,10 @@ class Animations {
 		this.night = document.querySelector('#night');
 		this.contentClass = document.querySelectorAll('.content');
 		this.siteHeader = document.querySelectorAll('.site-header');
+		this.popup = document.querySelectorAll('.pop-up');
+		this.popupGroup = document.querySelector('#pop-up-group');
+		this.popupLove = document.querySelector('#pop-up-love');
+		this.earth = document.querySelector('#earth');
 
 		this.clicked = false;
 		
@@ -25,10 +29,13 @@ class Animations {
 	}
 
 	events() {
+		const that = this;
+
 		this.bubbles.addEventListener('click', this.animateFish.bind(this));
 		this.sun.addEventListener('click', this.nightMode.bind(this));
 		this.fireContainer.addEventListener('click', this.animateSmoke.bind(this));
 		this.birdTree.addEventListener('click', this.flyBird.bind(this));
+		this.earth.addEventListener('click', this.popUp.bind(this));
 		this.addOrRemoveClass(this.birdTree, 'content__animation-bird-tree', 'add');
 	}
 
@@ -114,6 +121,25 @@ class Animations {
 
 			that.addOrRemoveClass([that.contentClass, that.contentTitle, that.siteHeader, that.fireContainer, that.icon], 'content--invert', 'remove');
 		}, 2500);
+	}
+
+	popUp() {
+		const that = this;
+		let number = 1.8;
+
+		this.addOrRemoveClass(this.popup, 'pop-up-animation', 'add');
+		this.popup.forEach(function(item) {
+			item.style.animationDelay = String(number) + "s";
+			number -= 0.2;
+		})
+
+		setTimeout(function() {
+			that.addOrRemoveClass(that.popupGroup, 'pop-up-animation', 'add');
+		}, 1800);
+
+		setTimeout(function() {
+			that.addOrRemoveClass(that.popupLove, 'pop-up-animation', 'add');
+		}, 2200);
 	}
 
 	addOrRemoveClass(selector, className, specifier) {

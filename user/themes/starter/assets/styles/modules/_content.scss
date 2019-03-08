@@ -73,6 +73,7 @@
 		}
 
 		@include breakpoint(desktop) {
+			align-self: center;
 			grid-column: 3 / 9;
 			grid-row: 4 / 13;
 		}
@@ -89,6 +90,26 @@
 			height: auto;
 			width: 100%;
 			margin: 30px 0;
+		}
+
+		& > svg > 
+		#pop-up-group, 
+		#pop-up-love,
+		#pop-up-01, 
+		#pop-up-02,
+		#pop-up-03,
+		#pop-up-04,
+		#pop-up-05,
+		#pop-up-06,
+		#pop-up-07,
+		#pop-up-08,
+		#pop-up-09 {
+			transform: scale(0);
+			transform-origin: center;
+		}
+
+		.pop-up-animation {
+			animation: pop-up 1s 1 forwards;
 		}
 
 		&--switch-position {
@@ -109,6 +130,7 @@
 		}
 
 		@include breakpoint(desktop) {
+			align-self: start;
 			grid-column: 3 / 9;
 			grid-row: 4 / 5;
 		}
@@ -125,6 +147,7 @@
 		}
 
 		@include breakpoint(desktop) {
+			align-self: start;
 			grid-column: 3 / 9;
 			grid-row: 5 / 14;
 		}
@@ -141,6 +164,7 @@
 		}
 
 		@include breakpoint(desktop) {
+			align-self: start;
 			grid-column: 10 / 16;
 			grid-row: 5 / 14;
 		}
@@ -157,6 +181,7 @@
 		}
 
 		@include breakpoint(desktop) {
+			align-self: start;
 			grid-column: 17 / 23;
 			grid-row: 5 / 14;
 		}
@@ -454,6 +479,18 @@
 
 	&__animation-container--bird-animate {
 		animation: moveBird 2.2s cubic-bezier(0.47, 0, 0.745, 0.715) 1;
+	}
+}
+
+@keyframes pop-up {
+	0% {
+		transform: scale(0);
+	} 
+	80% {
+		transform: scale(1.1);
+	}
+	100% {
+		transform: scale(1);
 	}
 }
 
