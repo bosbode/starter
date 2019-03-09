@@ -21,7 +21,7 @@ class Animations {
 		this.popup = document.querySelectorAll('.pop-up');
 		this.popupGroup = document.querySelector('#pop-up-group');
 		this.popupLove = document.querySelector('#pop-up-love');
-		this.earth = document.querySelector('#earth');
+		this.popupTrigger = document.querySelector('#animation-pop-ups');
 
 		this.clicked = false;
 		
@@ -35,7 +35,7 @@ class Animations {
 		this.sun.addEventListener('click', this.nightMode.bind(this));
 		this.fireContainer.addEventListener('click', this.animateSmoke.bind(this));
 		this.birdTree.addEventListener('click', this.flyBird.bind(this));
-		this.earth.addEventListener('click', this.popUp.bind(this));
+		this.popupTrigger.addEventListener('click', this.popUp.bind(this));
 		this.addOrRemoveClass(this.birdTree, 'content__animation-bird-tree', 'add');
 	}
 
