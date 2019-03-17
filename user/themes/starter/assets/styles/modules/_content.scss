@@ -92,24 +92,13 @@
 			margin: 30px 0;
 		}
 
-		& > svg > 
-		#pop-up-group, 
-		#pop-up-love,
-		#pop-up-01, 
-		#pop-up-02,
-		#pop-up-03,
-		#pop-up-04,
-		#pop-up-05,
-		#pop-up-06,
-		#pop-up-07,
-		#pop-up-08,
-		#pop-up-09 {
+		& .pop-up-item--scale {
 			transform: scale(0);
-			transform-origin: center;
 		}
 
-		.pop-up-animation {
+		.pop-up--play-animation {
 			animation: pop-up 1s 1 forwards;
+			transform-origin: center;
 		}
 
 		&--switch-position {

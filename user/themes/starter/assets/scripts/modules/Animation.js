@@ -22,8 +22,13 @@ class Animations {
 		this.popupGroup = document.querySelector('#pop-up-group');
 		this.popupLove = document.querySelector('#pop-up-love');
 		this.popupTrigger = document.querySelector('#animation-pop-ups');
+		this.popupItem = document.querySelectorAll('.pop-up-item');
 
-		this.clicked = false;
+		this.threeClicked = false;
+		this.popupLoveClicked = 1.2;
+
+		this.addOrRemoveClass(this.birdTree, 'content__animation-bird-tree', 'add');
+		this.addOrRemoveClass(this.popupItem, 'pop-up-item--scale', 'add');
 		
 		this.events();
 	}
@@ -35,8 +40,9 @@ class Animations {
 		this.sun.addEventListener('click', this.nightMode.bind(this));
 		this.fireContainer.addEventListener('click', this.animateSmoke.bind(this));
 		this.birdTree.addEventListener('click', this.flyBird.bind(this));
-		this.popupTrigger.addEventListener('click', this.popUp.bind(this));
-		this.addOrRemoveClass(this.birdTree, 'content__animation-bird-tree', 'add');
+		this.popupTrigger.addEventListener('mouseover', this.popUp.bind(this));
+		this.popupTrigger.addEventListener('touchstart', this.popUp.bind(this));
+		this.popupLove.addEventListener('click', this.blowUp.bind(this));
 	}
 
 	animateFish() {
@@ -74,7 +80,7 @@ class Animations {
 	flyBird() {
 		const that = this;
 
-		if (!this.clicked) {
+		if (!this.threeClicked) {
 			// Show bird container and append animation, remove tree shake animation
 			this.addOrRemoveClass(this.birdContainer, 'content--show', 'add');
 			this.addOrRemoveClass(this.birdContainer, 'content__animation-container--bird-animate', 'add');
@@ -125,21 +131,28 @@ class Animations {
 
 	popUp() {
 		const that = this;
-		let number = 1.8;
-
-		this.addOrRemoveClass(this.popup, 'pop-up-animation', 'add');
+		let animationDelayTotal = 2.2;
+		const animationDelayDeduct = 0.2;
+		
+		this.addOrRemoveClass(this.popupLove, 'pop-up--play-animation', 'add');
+		this.popupLove.style.animationDelay = `${ String(animationDelayTotal) }s`;
+		animationDelayTotal -= animationDelayDeduct;
+		
+		this.addOrRemoveClass(this.popupGroup, 'pop-up--play-animation', 'add');
+		this.popupGroup.style.animationDelay = `${ String(animationDelayTotal) }s`;
+		animationDelayTotal -= animationDelayDeduct;
+		
+		this.addOrRemoveClass(this.popup, 'pop-up--play-animation', 'add');
 		this.popup.forEach(function(item) {
-			item.style.animationDelay = String(number) + "s";
-			number -= 0.2;
+			item.style.animationDelay = `${ String(animationDelayTotal) }s`;
+			animationDelayTotal -= animationDelayDeduct;
 		})
+	}
 
-		setTimeout(function() {
-			that.addOrRemoveClass(that.popupGroup, 'pop-up-animation', 'add');
-		}, 1800);
-
-		setTimeout(function() {
-			that.addOrRemoveClass(that.popupLove, 'pop-up-animation', 'add');
-		}, 2200);
+	blowUp() {
+		this.popupLove.style.animationFillMode = 'none';
+		this.popupLove.style.transform = `scale(${ this.popupLoveClicked })`;
+		this.popupLoveClicked += 0.2;
 	}
 
 	addOrRemoveClass(selector, className, specifier) {
