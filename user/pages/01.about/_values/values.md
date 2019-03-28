@@ -10,4 +10,3 @@ content:
 ---
 
 # Focus
-

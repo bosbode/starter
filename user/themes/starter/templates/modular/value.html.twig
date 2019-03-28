@@ -1,0 +1,8 @@
+<h2>{{ page.header.title }}</h2>
+    {% for svg in page.media.files %}
+        {% set file = svg.filename|slice(0, (svg.filename|length - 4)) %}
+        <div class="animation animation--values animation__{{ file }}">
+            {{ getfilecontents(svg.filepath) }}
+        </div>
+    {% endfor %}
+{{ page.content }}
