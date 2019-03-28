@@ -1,11 +1,11 @@
 class Animations {
 	constructor(){
 		this.contentTitle = document.querySelectorAll('.content__bodytext > h1');
-		this.bubbles = document.querySelector('.content__animation-container--bubbles');
-		this.fireContainer = document.querySelector('.content__animation-container--fire');
-		this.tentaclesContainer = document.querySelectorAll('.content__animation-container--tentacles');
-		this.smokeContainer = document.querySelectorAll('.content__animation-container--smoke');
-		this.birdContainer = document.querySelectorAll('.content__animation-container--bird');
+		this.bubbles = document.querySelector('.animation__bubbles');
+		this.fireContainer = document.querySelector('.animation__fire');
+		this.tentaclesContainer = document.querySelectorAll('.animation__tentacles');
+		this.smokeContainer = document.querySelectorAll('.animation__smoke');
+		this.birdContainer = document.querySelectorAll('.animation__bird');
 		this.tentacles = document.querySelector('#tentacle-group');
 		this.fire = document.querySelector('#fire-group');
 		this.smoke = document.querySelector('#smoke-group');
@@ -25,35 +25,36 @@ class Animations {
 		this.popupItem = document.querySelectorAll('.pop-up-item');
 
 		this.threeClicked = false;
-		this.popupLoveClicked = 1.2;
+		this.eventTriggerd = false;
 
-		this.addOrRemoveClass(this.birdTree, 'content__animation-bird-tree', 'add');
-		this.addOrRemoveClass(this.popupItem, 'pop-up-item--scale', 'add');
+		this.addOrRemoveClass(this.birdTree, 'animation__tree', 'add');
 		
 		this.events();
 	}
 
 	events() {
-		const that = this;
-
 		this.bubbles.addEventListener('click', this.animateFish.bind(this));
 		this.sun.addEventListener('click', this.nightMode.bind(this));
 		this.fireContainer.addEventListener('click', this.animateSmoke.bind(this));
 		this.birdTree.addEventListener('click', this.flyBird.bind(this));
-		this.popupTrigger.addEventListener('mouseover', this.popUp.bind(this));
-		this.popupTrigger.addEventListener('touchstart', this.popUp.bind(this));
-		this.popupLove.addEventListener('click', this.blowUp.bind(this));
+
+		if(window.matchMedia('screen and (max-width:1199px)').matches) {
+			this.popupTrigger.addEventListener('click', this.popUp.bind(this));
+		} else {
+			this.popupTrigger.addEventListener('mouseover', this.popUp.bind(this));
+			this.popupTrigger.addEventListener('mouseout', this.resetPopUp.bind(this));
+		}
 	}
 
 	animateFish() {
 		const that = this;
 
 		// Hide bubbles
-		this.addOrRemoveClass(this.bubbles, 'content--hide', 'add');
+		this.addOrRemoveClass(this.bubbles, 'animation--hide', 'add');
 
 		// Undo hide bubbles after 2400 milliseconds
 		setTimeout(function() {
-			that.addOrRemoveClass(that.bubbles, 'content--hide', 'remove');
+			that.addOrRemoveClass(that.bubbles, 'animation--hide', 'remove');
 		}, 1400);
 
 		// Play fish animation
@@ -82,13 +83,13 @@ class Animations {
 
 		if (!this.threeClicked) {
 			// Show bird container and append animation, remove tree shake animation
-			this.addOrRemoveClass(this.birdContainer, 'content--show', 'add');
-			this.addOrRemoveClass(this.birdContainer, 'content__animation-container--bird-animate', 'add');
-			this.addOrRemoveClass(this.birdTree, 'content__animation-bird-tree', 'remove');
+			this.addOrRemoveClass(this.birdContainer, 'animation--show', 'add');
+			this.addOrRemoveClass(this.birdContainer, 'animation__bird-animate', 'add');
+			this.addOrRemoveClass(this.birdTree, 'animation__tree', 'remove');
 	
 			// Hide bird container after 2200 milliseconds
 			setTimeout(function() {
-				that.addOrRemoveClass(that.birdContainer, 'content--show', 'remove');
+				that.addOrRemoveClass(that.birdContainer, 'animation--show', 'remove');
 			}, 2200);
 
 			this.clicked = true;
@@ -102,10 +103,10 @@ class Animations {
 		this.addOrRemoveClass(this.tentacles, 'tentacles-group--play-animation', 'add');
 		
 		// Hide bubbles and sun
-		this.addOrRemoveClass([this.bubbles, this.sun], 'content--hide', 'add');
+		this.addOrRemoveClass([this.bubbles, this.sun], 'animation--hide', 'add');
 		
 		// Show moon, stars and tentacles
-		this.addOrRemoveClass([this.tentaclesContainer, this.night], 'content--show', 'add');
+		this.addOrRemoveClass([this.tentaclesContainer, this.night], 'animation--show', 'add');
 		
 		// Swap tree colors so the shade is on the correct side
 		this.addOrRemoveClass(this.treeShade, 'tree-shade--white', 'add');
@@ -118,9 +119,9 @@ class Animations {
 		setTimeout(function() {
 			that.addOrRemoveClass(that.tentacles, 'tentacles-group--play-animation', 'remove');
 			
-			that.addOrRemoveClass([that.bubbles, that.sun], 'content--hide', 'remove');
+			that.addOrRemoveClass([that.bubbles, that.sun], 'animation--hide', 'remove');
 			
-			that.addOrRemoveClass([that.tentaclesContainer, that.night], 'content--show', 'remove');
+			that.addOrRemoveClass([that.tentaclesContainer, that.night], 'animation--show', 'remove');
 			
 			that.addOrRemoveClass(that.treeShade, 'tree-shade--white', 'remove');
 			that.addOrRemoveClass(that.tree, 'tree--blue', 'remove');
@@ -133,26 +134,32 @@ class Animations {
 		const that = this;
 		let animationDelayTotal = 2.2;
 		const animationDelayDeduct = 0.2;
-		
+
 		this.addOrRemoveClass(this.popupLove, 'pop-up--play-animation', 'add');
-		this.popupLove.style.animationDelay = `${ String(animationDelayTotal) }s`;
+		this.popupLove.style.animationDelay = `${ animationDelayTotal }s`;
 		animationDelayTotal -= animationDelayDeduct;
 		
 		this.addOrRemoveClass(this.popupGroup, 'pop-up--play-animation', 'add');
-		this.popupGroup.style.animationDelay = `${ String(animationDelayTotal) }s`;
+		this.popupGroup.style.animationDelay = `${ animationDelayTotal }s`;
 		animationDelayTotal -= animationDelayDeduct;
 		
 		this.addOrRemoveClass(this.popup, 'pop-up--play-animation', 'add');
 		this.popup.forEach(function(item) {
-			item.style.animationDelay = `${ String(animationDelayTotal) }s`;
+			item.style.animationDelay = `${ animationDelayTotal }s`;
 			animationDelayTotal -= animationDelayDeduct;
 		})
+
+		if(window.matchMedia('screen and (max-width:1199px)').matches) {
+			setTimeout(function(){
+				that.resetPopUp();
+			}, 5000);
+		}
 	}
 
-	blowUp() {
-		this.popupLove.style.animationFillMode = 'none';
-		this.popupLove.style.transform = `scale(${ this.popupLoveClicked })`;
-		this.popupLoveClicked += 0.2;
+	resetPopUp() {
+		this.addOrRemoveClass(this.popupLove, 'pop-up--play-animation', 'remove');
+		this.addOrRemoveClass(this.popupGroup, 'pop-up--play-animation', 'remove');
+		this.addOrRemoveClass(this.popup, 'pop-up--play-animation', 'remove');
 	}
 
 	addOrRemoveClass(selector, className, specifier) {
