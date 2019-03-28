@@ -1,0 +1,33 @@
+.animation__fish {
+	bottom: 32%;
+	left: 47%;
+	transform: translateX(-50%) scale(0.6);
+	max-width: 48px;
+	width: 48px;
+	overflow: hidden;
+
+	@include breakpoint(tabletPortrait) {
+		transform: translateX(-50%) scale(1);
+		bottom: 33%;
+	}
+
+	@include breakpoint(desktop) {
+		transform: translateX(-50%) scale(1.3);
+		bottom: 35%;
+	}
+
+	& .fish-group--play-animation {
+		animation: fish 1.2s steps(10) 1;
+	}
+
+	& > svg {
+		width: 480px; 
+		height: 21px;
+	}
+}
+
+@keyframes fish {
+    to {
+        transform: translateX(-480px);
+    }
+}

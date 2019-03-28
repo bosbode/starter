@@ -1,0 +1,33 @@
+.animation--values {
+	position: static;
+
+	& > svg {
+		height: auto;
+		width: 100%;
+		margin: 30px 0;
+	}
+}
+
+.animation__value-01 {
+
+    & .pop-up-item--scale {
+        transform: scale(0);
+    }
+
+    & .pop-up--play-animation {
+        animation: pop-up 1s 1 forwards;
+        transform-origin: center;
+    }
+}
+
+@keyframes pop-up {
+	0% {
+		transform: scale(0);
+	} 
+	80% {
+		transform: scale(1.1);
+	}
+	100% {
+		transform: scale(1);
+	}
+}

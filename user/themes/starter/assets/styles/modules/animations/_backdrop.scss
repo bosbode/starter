@@ -1,0 +1,51 @@
+.animation__backdrop {
+
+	& > svg {
+
+		width: 100%;
+		height: 100%;
+
+	}
+
+	& #night {
+		display: none;
+	}
+
+	& #stars-01 > circle {
+		animation: star-01 2s infinite ease;
+	}
+
+	& #stars-02 > circle {
+		animation: star-02 3s infinite ease;
+	}
+
+	& #stars-03 > circle {
+		animation: star-03 3.5s infinite ease;
+	}
+
+	& .tree-shade--white {
+		fill: #fff;
+	}
+
+	& .tree--blue {
+		fill: #dde2ff;
+	}
+}
+
+@keyframes star-01 {
+	50% {
+		fill: rgba($color-body-text, .3);
+	}
+	}
+	
+@keyframes star-02 {
+	60% {
+		fill: rgba($color-body-text, .3);
+	}
+}
+	
+@keyframes star-03 {
+	70% {
+		fill: rgba($color-body-text, .3);
+	}
+}

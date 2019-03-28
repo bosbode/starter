@@ -1,23 +1,21 @@
 .animation {
-	position: relative;
+	position: absolute;
+	overflow: hidden;
 
-	#animation__logo {
-
-		svg {
-			width: 30% !important;
-		}
+	&--hide {
+		display: none !important;
 	}
 
-	& > svg {
-		width: 30% !important;
-		opacity: 0;
-		position: absolute;
-		top: 0;
-		left: 50%;
-		transform: translate(-50%, 0);
-	}
-
-	& > svg:hover {
-		opacity: 1;
+	&--show {
+		display: block !important;
 	}
 }
+
+@import "animations/_backdrop";
+@import "animations/_bird";
+@import "animations/_bubbles";
+@import "animations/_fire";
+@import "animations/_fish";
+@import "animations/_tentacles";
+@import "animations/_tree";
+@import "animations/_values";

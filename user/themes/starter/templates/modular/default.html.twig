@@ -1,4 +1,4 @@
-<section class="content content__bgcolor content__bgcolor--{{ page.header.bgcolor }}" data-matching-link="#{{ page.header.section_title }}-link">
+<section class="content content__bgcolor content__bgcolor--{{ page.header.bgcolor }}">
     <div class={% if page.header.fullHeight %}"content__grid-container content__grid-container--full-height"{% else %}"content__grid-container"{% endif %}>
         <div class={% if page.header.switchPosition %}"content__bodytext content__bodytext--switch-position"{% else %}"content__bodytext"{% endif %}>
             {{ page.content }}
@@ -15,15 +15,15 @@
         </div>
         {% set extention = page.header.image|split('.')|last %}
         {% if extention == 'svg' %}
-            <div class={% if page.header.switchPosition %}"content__svg-container content__svg-container--switch-position" {% else %}"content__svg-container" {% endif %}>
+            <div class={% if page.header.switchPosition %}"content__animation-container content__animation-container--switch-position" {% else %}"content__animation-container" {% endif %}>
                 {% for svg in page.media.files %}
                     {% if page.header.image == svg.filename %}
-                        <div class="content__svg">
+                        <div class="animation__backdrop">
                             {{ getfilecontents(svg.filepath) }}
                         </div>
                     {% else %}
                         {% set file = svg.filename|slice(0, (svg.filename|length - 4)) %}
-                        <div class="content__animation-container content__animation-container--{{ file }}">
+                        <div class="animation animation__{{ file }}">
                             {{ getfilecontents(svg.filepath) }}
                         </div>
                     {% endif %}

@@ -1,0 +1,33 @@
+.animation__bubbles {
+	bottom: 30%;
+	left: 45%;
+	transform: translateX(-50%) scale(0.6);
+	max-width: 9px;
+	width: 9px;
+	z-index: 1;
+
+	@include breakpoint(tabletPortrait) {
+		transform: translateX(-50%) scale(1);
+		bottom: 31%;
+	}
+
+	@include breakpoint(desktop) {
+		transform: translateX(-50%) scale(1.6);
+		bottom: 33%;
+	}
+
+	& #bubbles-group {
+		animation: bubbles 1.2s steps(6) infinite;
+	}
+
+	& > svg {
+		width: 54px; 
+		height: 25px;
+	}
+}
+
+@keyframes bubbles {
+    to {
+        transform: translateX(-54px);
+    }
+}

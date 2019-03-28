@@ -1,0 +1,35 @@
+.animation__tentacles {
+	bottom: 15%;
+	left: 50%;
+	transform: translateX(-50%) scale(0.45);
+	max-width: 250px;
+	width: 250px;
+	display: none;
+	overflow: hidden;
+	filter: invert(100%);
+
+	@include breakpoint(tabletPortrait) {
+		transform: translateX(-50%) scale(0.7);
+		bottom: 27%;
+	}
+
+	@include breakpoint(desktop) {
+		transform: translateX(-50%) scale(1);
+		bottom: 35%;
+	}
+
+	& .tentacles-group--play-animation {
+		animation: tentacle 2.5s steps(16) infinite;
+	}
+
+	& > svg {
+		width: 4000px; 
+		height: 250px;
+	}
+}
+
+@keyframes tentacle {
+	to {
+		transform: translateX(-4000px);
+	}
+}

@@ -1,0 +1,45 @@
+.animation__bird {
+	bottom: 20%;
+	left: 30%;
+	transform: translateX(-50%) scale(0.4) rotate(-15deg);
+	max-width: 50px;
+	width: 50px;
+	overflow: hidden;
+	display: none;
+
+	@include breakpoint(tabletPortrait) {
+		transform: translateX(-50%) scale(0.6) rotate(-15deg);
+		bottom: 25%;
+	}
+
+	@include breakpoint(desktop) {
+		transform: translateX(-50%) scale(0.8) rotate(-15deg);
+		bottom: 25%;
+	}
+
+	& #bird-group {
+		animation: flyBird 0.3s steps(2) infinite;
+	}
+
+	& > svg {
+		width: 100px; 
+		height: 56px;
+	}
+}
+
+.animation__bird-animate {
+	animation: moveBird 2.2s cubic-bezier(0.47, 0, 0.745, 0.715) 1;
+}
+
+@keyframes flyBird {
+	to {
+		transform: translateX(-100px);
+	}
+}
+
+@keyframes moveBird {
+	to {
+		left: 110%;
+		bottom: 80%;
+	}
+}
