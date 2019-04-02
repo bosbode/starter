@@ -284,6 +284,35 @@ class User extends Data
             return Grav::instance()['base_url'] . '/' . $avatar['path'];
         }
 
-        return 'https://www.gravatar.com/avatar/' . md5($this->email);
+        return 'https://www.gravatar.com/avatar/' . md5( strtolower( trim($this->email) ) );
+    }
+
+    /**
+     * Serialize user.
+     */
+    public function __sleep()
+    {
+        return [
+            'items',
+            'storage'
+        ];
+    }
+
+    /**
+     * Unserialize user.
+     */
+    public function __wakeup()
+    {
+        $this->gettersVariable = 'items';
+        $this->nestedSeparator = '.';
+
+        if (null === $this->items) {
+            $this->items = [];
+        }
+
+        if (null === $this->blueprints) {
+            $blueprints = new Blueprints;
+            $this->blueprints = $blueprints->get('user/account');
+        }
     }
 }
