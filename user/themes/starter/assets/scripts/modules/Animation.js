@@ -26,8 +26,9 @@ class Animations {
 		this.valueTwoHearts = document.querySelectorAll('.animation__value-02-hearts');
 		this.valueTwoWindow = document.querySelectorAll('.animation__value-02-window');
 		this.valueTwoWebsite = document.querySelectorAll('.animation__value-02-website');
-		this.valueTwoCmsLines = document.querySelectorAll('.animation__value-02-cms-line');
-		this.valueTwoCmsImage = document.querySelectorAll('.animation__value-02-cms-Image');
+		this.valueTwoCmsText = document.querySelectorAll('.animation__value-02-cms-text');
+		this.valueTwoCmsImage = document.querySelectorAll('.animation__value-02-cms-image');
+		this.valueTwoCmsButton = document.querySelector('.animation__value-02-cms-btn');
 
 		this.threeClicked = false;
 		this.eventTriggerd = false;
@@ -153,7 +154,7 @@ class Animations {
 
 		setTimeout(function(){
 			that.resetValueOne();
-		}, 6500);
+		}, 5000);
 		
 	}
 
@@ -165,15 +166,46 @@ class Animations {
 	}
 
 	valueTwo() {
-		let animationDelayTotal = 0;
+		const that = this;
 
 		this.addOrRemoveClass(this.valuePlayButton[1], 'animation--hide', 'add');
+		
+		this.addOrRemoveClass(this.valueTwoCmsButton, 'animation__value-02-cms-btn--play-animation', 'add');
+		
+		setTimeout(() => {
+			let animationDelayTotal = 2;
+			const animationDelayDeduct = 0.1;
 
-		this.addOrRemoveClass(this.valueTwoCmsLines, `animation__value-02-cms-text--play-animation`, 'add');
-		this.valueTwoCmsLines.forEach(function(item) {
-			item.style.animationDelay = `${ animationDelayTotal }s`;
-			animationDelayTotal += 0.8;
-		})
+			that.addOrRemoveClass(that.valueTwoCmsText, 'animation--hide', 'add');
+
+			that.addOrRemoveClass(that.valueTwoCmsImage, 'animation--hide', 'add');
+			that.addOrRemoveClass(that.valueTwoCmsButton, 'animation__value-02-cms-btn--play-animation', 'remove');
+			that.addOrRemoveClass(that.valueTwoCmsButton, 'animation--hide', 'add');
+			
+			that.addOrRemoveClass(that.valueTwoWebsite, 'animation__value-02-website--play-animation', 'add');
+			
+			that.addOrRemoveClass(that.valueTwoWindow, 'animation__value-02-window--play-animation', 'add');
+
+			this.addOrRemoveClass(this.valueTwoHearts, 'animation__value-02-hearts--play-animation', 'add');
+			this.valueTwoHearts.forEach(function(item) {
+				item.style.animationDelay = `${ animationDelayTotal }s`;
+				animationDelayTotal += animationDelayDeduct;
+			})
+		}, 2000);
+
+		setTimeout(() => {
+			that.resetValueTwo();
+		}, 8000);
+	}
+
+	resetValueTwo() {
+		this.addOrRemoveClass(this.valueTwoCmsText, 'animation--hide', 'remove');
+		this.addOrRemoveClass(this.valueTwoCmsButton, 'animation--hide', 'remove');
+		this.addOrRemoveClass(this.valueTwoCmsImage, 'animation--hide', 'remove');
+		this.addOrRemoveClass(this.valueTwoWebsite, 'animation__value-02-website--play-animation', 'remove');
+		this.addOrRemoveClass(this.valueTwoWindow, 'animation__value-02-window--play-animation', 'remove');
+		this.addOrRemoveClass(this.valueTwoHearts, 'animation__value-02-hearts--play-animation', 'remove');
+		this.addOrRemoveClass(this.valuePlayButton[1], 'animation--hide', 'remove');
 	}
 
 	addOrRemoveClass(selector, className, specifier) {

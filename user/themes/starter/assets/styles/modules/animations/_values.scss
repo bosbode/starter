@@ -27,7 +27,6 @@
 .animation__value-02 {
 
 	&-cms-text {
-		position: absolute;
 		z-index: 1;
 		top: 42%;
 		left: 39%;
@@ -35,30 +34,55 @@
 		& > svg {
 			margin: 0;
 		}
-
-		&--play-animation {
-			animation: cms-text 0.8s 1 forwards;
-		}
 	}
 
-    &-website {
-		display: none;
-	}
-
-	&-heart {
-		transform: scale(0);
-	}
-
-	&-cms-line {
-		transform: scaleX(0);
-	}
-
-	&-cms-image {
-		transform: scale(0);
+	&-window {
 		transform-origin: center;
 
 		&--play-animation {
-			animation: pop-up 1s 1 forwards;
+			transform: scale(0);
+			transition: transform 0.6s 1.8s;
+		}
+	}
+
+	&-website {
+		opacity: 0;
+
+		&--play-animation {
+			opacity: 1;
+			transition: opacity 0.5s 0.5s;
+		}
+	}
+
+	&-hearts {
+		transform: scale(0);
+		transform-origin: center;
+		
+		&--play-animation {
+			animation: pop-up 0.7s 1 forwards;
+		}
+	}
+
+	&-cms-image {
+		z-index: 1;
+		top: 56%;
+		left: 39%;
+		// transform: scale(0);
+		// transform-origin: center center;
+
+		// &--play-animation {
+		// 	animation: pop-up 1s 1 forwards;
+		// }
+	}
+
+	&-cms-btn {
+		z-index: 1;
+		top: 60%;
+		right: 39%;
+		transform-origin: center center;
+
+		&--play-animation {
+			animation: pop-in 0.8s 1s 1 forwards;
 		}
 	}
 }
@@ -75,8 +99,14 @@
 	}
 }
 
-@keyframes cms-text {
-	to {
-		transform: scaleX(1);
+@keyframes pop-in {
+	0% {
+		transform: scale(1);
+	} 
+	80% {
+		transform: scale(0.8);
+	}
+	100% {
+		transform: scale(1);
 	}
 }
