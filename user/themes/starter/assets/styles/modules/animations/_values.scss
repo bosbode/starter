@@ -1,5 +1,5 @@
 .animation--values {
-	position: static;
+	position: relative;
 
 	& > svg {
 		height: auto;
@@ -8,16 +8,59 @@
 	}
 }
 
+.animation__value-animation-container {
+	position: relative;
+}
+
 .animation__value-01 {
 
     & .pop-up-item--scale {
-        transform: scale(0);
+		transform: scale(0);
+		transform-origin: center;
     }
 
     & .pop-up--play-animation {
         animation: pop-up 1s 1 forwards;
-        transform-origin: center;
-    }
+	}
+}
+
+.animation__value-02 {
+
+	&-cms-text {
+		position: absolute;
+		z-index: 1;
+		top: 42%;
+		left: 39%;
+
+		& > svg {
+			margin: 0;
+		}
+
+		&--play-animation {
+			animation: cms-text 0.8s 1 forwards;
+		}
+	}
+
+    &-website {
+		display: none;
+	}
+
+	&-heart {
+		transform: scale(0);
+	}
+
+	&-cms-line {
+		transform: scaleX(0);
+	}
+
+	&-cms-image {
+		transform: scale(0);
+		transform-origin: center;
+
+		&--play-animation {
+			animation: pop-up 1s 1 forwards;
+		}
+	}
 }
 
 @keyframes pop-up {
@@ -29,5 +72,11 @@
 	}
 	100% {
 		transform: scale(1);
+	}
+}
+
+@keyframes cms-text {
+	to {
+		transform: scaleX(1);
 	}
 }

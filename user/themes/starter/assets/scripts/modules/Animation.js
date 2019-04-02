@@ -21,8 +21,13 @@ class Animations {
 		this.popup = document.querySelectorAll('.pop-up');
 		this.popupGroup = document.querySelector('#pop-up-group');
 		this.popupLove = document.querySelector('#pop-up-love');
-		this.popupTrigger = document.querySelector('#animation-pop-ups');
+		this.valuePlayButton = document.querySelectorAll('.btn__play--values');
 		this.popupItem = document.querySelectorAll('.pop-up-item');
+		this.valueTwoHearts = document.querySelectorAll('.animation__value-02-hearts');
+		this.valueTwoWindow = document.querySelectorAll('.animation__value-02-window');
+		this.valueTwoWebsite = document.querySelectorAll('.animation__value-02-website');
+		this.valueTwoCmsLines = document.querySelectorAll('.animation__value-02-cms-line');
+		this.valueTwoCmsImage = document.querySelectorAll('.animation__value-02-cms-Image');
 
 		this.threeClicked = false;
 		this.eventTriggerd = false;
@@ -37,13 +42,8 @@ class Animations {
 		this.sun.addEventListener('click', this.nightMode.bind(this));
 		this.fireContainer.addEventListener('click', this.animateSmoke.bind(this));
 		this.birdTree.addEventListener('click', this.flyBird.bind(this));
-
-		if(window.matchMedia('screen and (max-width:1199px)').matches) {
-			this.popupTrigger.addEventListener('click', this.popUp.bind(this));
-		} else {
-			this.popupTrigger.addEventListener('mouseover', this.popUp.bind(this));
-			this.popupTrigger.addEventListener('mouseout', this.resetPopUp.bind(this));
-		}
+		this.valuePlayButton[0].addEventListener('click', this.valueOne.bind(this));		
+		this.valuePlayButton[1].addEventListener('click', this.valueTwo.bind(this));		
 	}
 
 	animateFish() {
@@ -130,10 +130,12 @@ class Animations {
 		}, 2500);
 	}
 
-	popUp() {
+	valueOne() {
 		const that = this;
 		let animationDelayTotal = 2.2;
 		const animationDelayDeduct = 0.2;
+
+		this.addOrRemoveClass(this.valuePlayButton[0], 'animation--hide', 'add');
 
 		this.addOrRemoveClass(this.popupLove, 'pop-up--play-animation', 'add');
 		this.popupLove.style.animationDelay = `${ animationDelayTotal }s`;
@@ -149,17 +151,29 @@ class Animations {
 			animationDelayTotal -= animationDelayDeduct;
 		})
 
-		if(window.matchMedia('screen and (max-width:1199px)').matches) {
-			setTimeout(function(){
-				that.resetPopUp();
-			}, 5000);
-		}
+		setTimeout(function(){
+			that.resetValueOne();
+		}, 6500);
+		
 	}
 
-	resetPopUp() {
+	resetValueOne() {
 		this.addOrRemoveClass(this.popupLove, 'pop-up--play-animation', 'remove');
 		this.addOrRemoveClass(this.popupGroup, 'pop-up--play-animation', 'remove');
 		this.addOrRemoveClass(this.popup, 'pop-up--play-animation', 'remove');
+		this.addOrRemoveClass(this.valuePlayButton[0], 'animation--hide', 'remove');
+	}
+
+	valueTwo() {
+		let animationDelayTotal = 0;
+
+		this.addOrRemoveClass(this.valuePlayButton[1], 'animation--hide', 'add');
+
+		this.addOrRemoveClass(this.valueTwoCmsLines, `animation__value-02-cms-text--play-animation`, 'add');
+		this.valueTwoCmsLines.forEach(function(item) {
+			item.style.animationDelay = `${ animationDelayTotal }s`;
+			animationDelayTotal += 0.8;
+		})
 	}
 
 	addOrRemoveClass(selector, className, specifier) {

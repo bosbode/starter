@@ -1,8 +1,28 @@
 <h2>{{ page.header.title }}</h2>
-    {% for svg in page.media.files %}
-        {% set file = svg.filename|slice(0, (svg.filename|length - 4)) %}
-        <div class="animation animation--values animation__{{ file }}">
-            {{ getfilecontents(svg.filepath) }}
-        </div>
-    {% endfor %}
+    <div class="animation__value-animation-container">
+        {% for svg in page.media.files %}
+            {% set file = svg.filename|slice(0, (svg.filename|length - 4)) %}
+            {% if loop.length > 1 %}
+                {% if page.header.image == svg.filename %}
+                    <div class="animation animation--values animation__{{ file }}">
+                        {{ getfilecontents(svg.filepath) }}
+                        <p class="btn__play btn__play--values">
+                            <i class="fas fa-play"></i>
+                        </p>
+                    </div>
+                {% else %}
+                    <div class="animation animation--values animation__{{ file }}">
+                        {{ getfilecontents(svg.filepath) }}
+                    </div>
+                {% endif %}
+            {% else %}
+                <div class="animation animation--values animation__{{ file }}">
+                    {{ getfilecontents(svg.filepath) }}
+                    <p class="btn__play btn__play--values">
+                        <i class="fas fa-play"></i>
+                    </p>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
 {{ page.content }}
