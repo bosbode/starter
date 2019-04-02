@@ -173,7 +173,7 @@ class Animations {
 		this.addOrRemoveClass(this.valueTwoCmsButton, 'animation__value-02-cms-btn--play-animation', 'add');
 		
 		setTimeout(() => {
-			let animationDelayTotal = 2;
+			let animationDelayTotal = 2.3;
 			const animationDelayDeduct = 0.1;
 
 			that.addOrRemoveClass(that.valueTwoCmsText, 'animation--hide', 'add');

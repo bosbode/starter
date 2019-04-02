@@ -63,23 +63,26 @@
 		}
 	}
 
-	&-cms-image {
-		z-index: 1;
-		top: 56%;
-		left: 39%;
-		// transform: scale(0);
-		// transform-origin: center center;
-
-		// &--play-animation {
-		// 	animation: pop-up 1s 1 forwards;
-		// }
-	}
-
 	&-cms-btn {
 		z-index: 1;
-		top: 60%;
+		top: 57%;
 		right: 39%;
 		transform-origin: center center;
+		
+		& > svg {
+			width: 36px;
+			height: auto;
+		}
+
+		@include breakpoint(tabletPortrait) {
+			top: 60%;
+			right: 39%;
+
+			& > svg {
+				width: 50px;
+				height: auto;
+			}
+		}
 
 		&--play-animation {
 			animation: pop-in 0.8s 1s 1 forwards;
