@@ -30,8 +30,7 @@ class Animations {
 		this.valueTwoCmsImage = document.querySelectorAll('.animation__value-02-cms-image');
 		this.valueTwoCmsButton = document.querySelector('.animation__value-02-cms-btn');
 
-		this.threeClicked = false;
-		this.eventTriggerd = false;
+		this.treeClicked = false;
 
 		this.addOrRemoveClass(this.birdTree, 'animation__tree', 'add');
 		
@@ -82,7 +81,7 @@ class Animations {
 	flyBird() {
 		const that = this;
 
-		if (!this.threeClicked) {
+		if (!this.treeClicked) {
 			// Show bird container and append animation, remove tree shake animation
 			this.addOrRemoveClass(this.birdContainer, 'animation--show', 'add');
 			this.addOrRemoveClass(this.birdContainer, 'animation__bird-animate', 'add');
@@ -93,7 +92,7 @@ class Animations {
 				that.addOrRemoveClass(that.birdContainer, 'animation--show', 'remove');
 			}, 2200);
 
-			this.clicked = true;
+			this.treeClicked = true;
 		}
 	}
 
