@@ -84,6 +84,26 @@
 			}
 		}
 
+		@include breakpoint(desktop) {
+			top: 60%;
+			right: 38%;
+
+			& > svg {
+				width: 40px;
+				height: auto;
+			}
+		}
+
+		@include breakpoint(desktopWide) {
+			top: 60%;
+			right: 39%;
+
+			& > svg {
+				width: 50px;
+				height: auto;
+			}
+		}
+
 		&--play-animation {
 			animation: pop-in 0.8s 1s 1 forwards;
 		}
