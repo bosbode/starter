@@ -30,6 +30,13 @@ class Animations {
 		this.valueTwoCmsImage = document.querySelectorAll('.animation__value-02-cms-image');
 		this.valueTwoCmsButton = document.querySelector('.animation__value-02-cms-btn');
 
+		this.valueThreeBrowsers = document.querySelectorAll('.animation__value-03-browsers');
+		this.valueThreeBrowserText = document.querySelectorAll('.animation__value-03-browser-text');
+		this.valueThreeBolts = document.querySelectorAll('.animation__value-03-bolts');
+		this.valueThreeMainBrowser = document.querySelector('.animation__value-03-main-browser');
+		this.valueThreeMainBolt = document.querySelector('.animation__value-03-main-bolt');
+		this.valueThreeWebsite = document.querySelector('.animation__value-03-website');
+
 		this.treeClicked = false;
 
 		this.addOrRemoveClass(this.birdTree, 'animation__tree', 'add');
@@ -44,6 +51,7 @@ class Animations {
 		this.birdTree.addEventListener('click', this.flyBird.bind(this));
 		this.valuePlayButton[0].addEventListener('click', this.valueOne.bind(this));		
 		this.valuePlayButton[1].addEventListener('click', this.valueTwo.bind(this));		
+		this.valuePlayButton[2].addEventListener('click', this.valueThree.bind(this));		
 	}
 
 	animateFish() {
@@ -115,7 +123,7 @@ class Animations {
 		// Inverts the colors so it looks like that these items are unaffected by the night swap
 		this.addOrRemoveClass([this.contentClass, this.contentTitle, this.siteHeader, this.fireContainer, this.icon], 'content--invert', 'add');
 
-		// Undo all above changes after 2500 milliseconds
+		// Undo all above changes after 2.5 seconds
 		setTimeout(function() {
 			that.addOrRemoveClass(that.tentacles, 'tentacles-group--play-animation', 'remove');
 			
@@ -146,32 +154,31 @@ class Animations {
 		animationDelayTotal -= animationDelayDeduct;
 		
 		this.addOrRemoveClass(this.popup, 'pop-up--play-animation', 'add');
-		this.popup.forEach(function(item) {
+		this.popup.forEach(function(item, index, arr) {
 			item.style.animationDelay = `${ animationDelayTotal }s`;
 			animationDelayTotal -= animationDelayDeduct;
 		})
 
-		setTimeout(function(){
-			that.resetValueOne();
-		}, 5000);
-		
+		this.addListenerMulti(this.popupLove, 'webkitAnimationEnd animationend', that.resetValueOne.bind(that));
 	}
 
 	resetValueOne() {
-		this.addOrRemoveClass(this.popupLove, 'pop-up--play-animation', 'remove');
-		this.addOrRemoveClass(this.popupGroup, 'pop-up--play-animation', 'remove');
-		this.addOrRemoveClass(this.popup, 'pop-up--play-animation', 'remove');
-		this.addOrRemoveClass(this.valuePlayButton[0], 'animation--hide', 'remove');
+		setTimeout(() => {
+			this.addOrRemoveClass(this.popupLove, 'pop-up--play-animation', 'remove');
+			this.addOrRemoveClass(this.popupGroup, 'pop-up--play-animation', 'remove');
+			this.addOrRemoveClass(this.popup, 'pop-up--play-animation', 'remove');
+			this.addOrRemoveClass(this.valuePlayButton[0], 'animation--hide', 'remove');
+		}, 1000);
 	}
 
 	valueTwo() {
-		const that = this;
+		const that = this;  
 
 		this.addOrRemoveClass(this.valuePlayButton[1], 'animation--hide', 'add');
 		
 		this.addOrRemoveClass(this.valueTwoCmsButton, 'animation__value-02-cms-btn--play-animation', 'add');
-		
-		setTimeout(() => {
+
+		this.addListenerMulti(this.valueTwoCmsButton, 'webkitAnimationEnd animationend', function(){
 			let animationDelayTotal = 2.3;
 			const animationDelayDeduct = 0.1;
 
@@ -185,26 +192,68 @@ class Animations {
 			
 			that.addOrRemoveClass(that.valueTwoWindow, 'animation__value-02-window--play-animation', 'add');
 
-			this.addOrRemoveClass(this.valueTwoHearts, 'animation__value-02-hearts--play-animation', 'add');
-			this.valueTwoHearts.forEach(function(item) {
+			that.addOrRemoveClass(that.valueTwoHearts, 'animation__value-02-hearts--play-animation', 'add');
+			that.valueTwoHearts.forEach(function(item, index, arr) {
 				item.style.animationDelay = `${ animationDelayTotal }s`;
 				animationDelayTotal += animationDelayDeduct;
-			})
-		}, 2000);
-
-		setTimeout(() => {
-			that.resetValueTwo();
-		}, 8000);
+				
+				if (Object.is(arr.length - 1, index)) {
+					that.addListenerMulti(item, 'webkitAnimationEnd animationend', that.resetValueTwo.bind(that));
+				}
+			})	
+		})
 	}
 
 	resetValueTwo() {
-		this.addOrRemoveClass(this.valueTwoCmsText, 'animation--hide', 'remove');
-		this.addOrRemoveClass(this.valueTwoCmsButton, 'animation--hide', 'remove');
-		this.addOrRemoveClass(this.valueTwoCmsImage, 'animation--hide', 'remove');
-		this.addOrRemoveClass(this.valueTwoWebsite, 'animation__value-02-website--play-animation', 'remove');
-		this.addOrRemoveClass(this.valueTwoWindow, 'animation__value-02-window--play-animation', 'remove');
-		this.addOrRemoveClass(this.valueTwoHearts, 'animation__value-02-hearts--play-animation', 'remove');
-		this.addOrRemoveClass(this.valuePlayButton[1], 'animation--hide', 'remove');
+		setTimeout(() => {
+			this.addOrRemoveClass(this.valueTwoCmsText, 'animation--hide', 'remove');
+			this.addOrRemoveClass(this.valueTwoCmsButton, 'animation--hide', 'remove');
+			this.addOrRemoveClass(this.valueTwoCmsImage, 'animation--hide', 'remove');
+			this.addOrRemoveClass(this.valueTwoWebsite, 'animation__value-02-website--play-animation', 'remove');
+			this.addOrRemoveClass(this.valueTwoWindow, 'animation__value-02-window--play-animation', 'remove');
+			this.addOrRemoveClass(this.valueTwoHearts, 'animation__value-02-hearts--play-animation', 'remove');
+			this.addOrRemoveClass(this.valuePlayButton[1], 'animation--hide', 'remove');
+		}, 1000);
+	}
+
+	valueThree() {
+		const that = this;
+		let animationDelayTotal = 0;
+		const animationDelay = 0.2;
+
+		this.addOrRemoveClass(this.valuePlayButton[2], 'animation--hide', 'add');
+
+		this.addOrRemoveClass(this.valueThreeBrowsers, 'animation__value-03-browsers--play-animation', 'add');
+		this.addOrRemoveClass(this.valueThreeBolts, 'animation__value-03-bolts--play-animation', 'add');
+		this.valueThreeBrowsers.forEach(function(item, index, arr) {
+			item.style.animationDelay = `${ animationDelayTotal }s`;
+			animationDelayTotal += animationDelay;
+		})
+
+		that.addOrRemoveClass(that.valueThreeMainBrowser, 'animation__value-03-main-browser--play-animation', 'add');
+		
+		this.addListenerMulti(this.valueThreeMainBrowser, 'webkitAnimationEnd animationend', function(){
+			that.addOrRemoveClass(that.valueThreeMainBolt, 'animation__value-03-main-bolt--play-animation', 'add');
+		})
+
+		this.addListenerMulti(this.valueThreeMainBolt, 'webkitAnimationEnd animationend', function(){
+			that.addOrRemoveClass(that.valueThreeWebsite, 'animation__value-03-website--play-animation', 'add');
+		})
+
+		this.addListenerMulti(this.valueThreeBolts[0], 'webkitAnimationEnd animationend', this.resetValueThree.bind(this));
+	}
+
+	resetValueThree() {
+		this.addOrRemoveClass(this.valueThreeBrowsers, 'animation__value-03-browsers--play-animation', 'remove');
+		this.addOrRemoveClass(this.valueThreeBolts, 'animation__value-03-bolts--play-animation', 'remove');
+		this.addOrRemoveClass(this.valueThreeMainBolt, 'animation__value-03-main-bolt--play-animation', 'remove');
+		this.addOrRemoveClass(this.valueThreeWebsite, 'animation__value-03-website--play-animation', 'remove');
+		this.addOrRemoveClass(this.valueThreeMainBrowser, 'animation__value-03-main-browser--play-animation', 'remove');
+		this.addOrRemoveClass(this.valuePlayButton[2], 'animation--hide', 'remove');
+	}
+
+	addListenerMulti(selector, events, cb) {
+		events.split(' ').forEach(e => selector.addEventListener(e, cb, false));
 	}
 
 	addOrRemoveClass(selector, className, specifier) {

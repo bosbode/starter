@@ -20,8 +20,8 @@
     }
 
     & .pop-up--play-animation {
-        animation: pop-up 1s 1 forwards;
-	}
+			animation: pop-up 0.8s 1 forwards;
+		}
 }
 
 .animation__value-02 {
@@ -38,6 +38,7 @@
 
 	&-window {
 		transform-origin: center;
+		transform: scale(1);
 
 		&--play-animation {
 			transform: scale(0);
@@ -110,6 +111,62 @@
 	}
 }
 
+.animation__value-03 { 
+	
+	&-browsers {
+		transform: scale(0);
+		transform-origin: center;
+		
+		&--play-animation {
+			animation: pop-up 0.8s 1 forwards;
+		}
+	}
+
+	&-browser-text {
+		opacity: 0;
+
+		&--play-animation {
+			opacity: 1;
+			transition: opacity 0.5s;
+		}
+	}
+
+	&-main-browser {
+		transform: scale(0);
+		transform-origin: center;
+
+		&--play-animation {
+			animation: pop-up 0.8s 1s 1 forwards;
+		}
+	}
+
+	&-website {
+		opacity: 0;
+
+		&--play-animation {
+			opacity: 1;
+			transition: opacity 0.5s;
+		}
+	}
+
+	&-main-bolt {
+		opacity: 0;
+		
+		&--play-animation {
+			animation: appear 0.5s 1;
+		}
+	}
+
+	&-bolts {
+		opacity: 0;
+		
+		&--play-animation {
+			animation: pulse 2s 3;
+		}
+	}
+
+}
+
 @keyframes pop-up {
 	0% {
 		transform: scale(0);
@@ -131,5 +188,23 @@
 	}
 	100% {
 		transform: scale(1);
+	}
+}
+
+@keyframes pulse {
+	0% {
+		opacity: 1;
+	} 
+	50% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes appear {
+	to {
+		opacity: 1;
 	}
 }
