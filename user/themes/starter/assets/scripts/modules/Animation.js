@@ -38,20 +38,20 @@ class Animations {
 		this.valueThreeWebsite = document.querySelector('.animation__value-03-website');
 
 		this.treeClicked = false;
-
-		this.addOrRemoveClass(this.birdTree, 'animation__tree', 'add');
 		
 		this.events();
 	}
 
 	events() {
-		this.bubbles.addEventListener('click', this.animateFish.bind(this));
-		this.sun.addEventListener('click', this.nightMode.bind(this));
-		this.fireContainer.addEventListener('click', this.animateSmoke.bind(this));
-		this.birdTree.addEventListener('click', this.flyBird.bind(this));
-		this.valuePlayButton[0].addEventListener('click', this.valueOne.bind(this));		
-		this.valuePlayButton[1].addEventListener('click', this.valueTwo.bind(this));		
-		this.valuePlayButton[2].addEventListener('click', this.valueThree.bind(this));		
+		if(this.bubbles && this.sun && this.fireContainer && this.birdTree && this.valuePlayButton) {
+			this.bubbles.addEventListener('click', this.animateFish.bind(this));
+			this.sun.addEventListener('click', this.nightMode.bind(this));
+			this.fireContainer.addEventListener('click', this.animateSmoke.bind(this));
+			this.birdTree.addEventListener('click', this.flyBird.bind(this));
+			this.valuePlayButton[0].addEventListener('click', this.valueOne.bind(this));
+			this.valuePlayButton[1].addEventListener('click', this.valueTwo.bind(this));
+			this.valuePlayButton[2].addEventListener('click', this.valueThree.bind(this));
+		}
 	}
 
 	animateFish() {
