@@ -55,12 +55,6 @@
 		}
 	}
 
-	&__bgcolor{
-		&--pink{
-			background-color: $color-background-pink;
-		}
-	}
-
 	&__bodytext {
 		margin: 0 0;
 		grid-column: 2 / 12;
