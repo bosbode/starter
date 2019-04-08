@@ -39,19 +39,23 @@ class Animations {
 
 		this.treeClicked = false;
 		
-		this.events();
+		this.initialize();
+	}
+
+	initialize() {
+		if(this.bubbles && this.sun && this.fireContainer && this.birdTree && this.valuePlayButton) {
+			this.events();
+		}
 	}
 
 	events() {
-		if(this.bubbles && this.sun && this.fireContainer && this.birdTree && this.valuePlayButton) {
-			this.bubbles.addEventListener('click', this.animateFish.bind(this));
-			this.sun.addEventListener('click', this.nightMode.bind(this));
-			this.fireContainer.addEventListener('click', this.animateSmoke.bind(this));
-			this.birdTree.addEventListener('click', this.flyBird.bind(this));
-			this.valuePlayButton[0].addEventListener('click', this.valueOne.bind(this));
-			this.valuePlayButton[1].addEventListener('click', this.valueTwo.bind(this));
-			this.valuePlayButton[2].addEventListener('click', this.valueThree.bind(this));
-		}
+		this.bubbles.addEventListener('click', this.animateFish.bind(this));
+		this.sun.addEventListener('click', this.nightMode.bind(this));
+		this.fireContainer.addEventListener('click', this.animateSmoke.bind(this));
+		this.birdTree.addEventListener('click', this.flyBird.bind(this));
+		this.valuePlayButton[0].addEventListener('click', this.valueOne.bind(this));
+		this.valuePlayButton[1].addEventListener('click', this.valueTwo.bind(this));
+		this.valuePlayButton[2].addEventListener('click', this.valueThree.bind(this));
 	}
 
 	animateFish() {
