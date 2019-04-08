@@ -1,19 +1,7 @@
-.glide {
-    &__control-container {
-        display: flex;
-    }
+.glide, .glide__slides, .glide__track {
+    height: 100%;
 
-    &__control {
-        font-size: 1.3rem;
-        bottom: 0;
-        z-index: 2;
-        color: $color-primary;
-        cursor: pointer;
-        line-height: 1;
-
-        &--left {
-            margin-left: auto;
-            margin-right: 10px;
-        }
+    @include breakpoint(tabletPortrait) {
+        height: auto;
     }
 }
