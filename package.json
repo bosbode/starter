@@ -11,7 +11,7 @@
     "lazysizes": "^4.1.7",
     "normalize.css": "^8.0.1",
     "picturefill": "^3.0.3",
-    "rfs": "^8.0.3",
+    "rfs": "^7.1.9",
     "waypoints": "^4.0.1"
   },
   "devDependencies": {
