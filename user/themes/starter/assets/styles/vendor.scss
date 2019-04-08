@@ -4,7 +4,8 @@
 @import "regular";
 @import "brands";
 @import "solid";
-@import "_rfs.scss";
-// @import "slick.scss";
-// @import "slick-theme.scss";
+@import "rfs.scss";
+
+@import "glide.core.scss";
+@import "glide.theme.scss";
 // @import url('../../../../../../node_modules/fullpage.js/dist/fullpage.css');

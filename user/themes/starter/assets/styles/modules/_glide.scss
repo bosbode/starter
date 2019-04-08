@@ -1,0 +1,19 @@
+.glide {
+    &__control-container {
+        display: flex;
+    }
+
+    &__control {
+        font-size: 1.3rem;
+        bottom: 0;
+        z-index: 2;
+        color: $color-primary;
+        cursor: pointer;
+        line-height: 1;
+
+        &--left {
+            margin-left: auto;
+            margin-right: 10px;
+        }
+    }
+}
