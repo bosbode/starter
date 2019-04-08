@@ -3,16 +3,18 @@
 // import StickyHeader from "./modules/StickyHeader";
 // import Modal from "./modules/Modal";
 // import Webfont from "./modules/Webfont";
-// import Slick from "./modules/Slick";
+import Glide from "./modules/Glide";
 // import ObjectFit from "./modules/ObjectFit";
 import Animations from "./modules/Animation";
+// import Video from "./modules/Video";
 
 
 // let mobileMenu = new MobileMenu;
-// let slick = new Slick;
+let glide = new Glide;
 // let fullpage = new FullPage;
 // let objectfit = new ObjectFit;
 // let stickyHeader = new StickyHeader;
 // let modal = new Modal;
 // let webfont = Webfont();
 let animations = new Animations();
+// let video = new Video();

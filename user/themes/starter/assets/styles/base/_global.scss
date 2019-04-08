@@ -78,9 +78,9 @@ a {
     }
 }
 
-ol > li, ul > li {
-    padding-right: 30px;
-}
+// ol > li, ul > li {
+//     padding-right: 30px;
+// }
 
 abbr[title]:after {
     content: " (" attr(title) ")";
@@ -105,4 +105,9 @@ section {
 
 section:last-of-type {
     border-bottom: none;
+}
+
+video {
+    width: 100%;
+    height: auto;
 }
