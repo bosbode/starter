@@ -1,5 +1,5 @@
 ---
-title: Laagdrempelig in gebruik voor iedereen
+title: Laagdrempelig in gebruik
 image: value-02.svg
 ---
 
