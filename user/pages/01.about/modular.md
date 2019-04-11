@@ -8,6 +8,9 @@ content:
         by: default
         dir: asc
         custom:
+            - _landing
+            - _values
+            - _about
 ---
 
 
