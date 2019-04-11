@@ -18,11 +18,14 @@ class Animations {
 		this.night = document.querySelector('#night');
 		this.contentClass = document.querySelectorAll('.content');
 		this.siteHeader = document.querySelectorAll('.site-header');
-		this.popup = document.querySelectorAll('.pop-up');
+		
+		this.valuePlayButton = document.querySelectorAll('.btn__play--values');
+		
+		this.popup = document.querySelectorAll('.animation__value-01-pop-up');
 		this.popupGroup = document.querySelector('#pop-up-group');
 		this.popupLove = document.querySelector('#pop-up-love');
-		this.valuePlayButton = document.querySelectorAll('.btn__play--values');
-		this.popupItem = document.querySelectorAll('.pop-up-item');
+		this.popupItem = document.querySelectorAll('.animation__value-01-pop-up-item');
+
 		this.valueTwoHearts = document.querySelectorAll('.animation__value-02-hearts');
 		this.valueTwoWindow = document.querySelectorAll('.animation__value-02-window');
 		this.valueTwoWebsite = document.querySelectorAll('.animation__value-02-website');
@@ -149,15 +152,15 @@ class Animations {
 
 		this.addOrRemoveClass(this.valuePlayButton[0], 'animation--hide', 'add');
 
-		this.addOrRemoveClass(this.popupLove, 'pop-up--play-animation', 'add');
+		this.addOrRemoveClass(this.popupLove, 'animation__value-01-pop-up--play-animation', 'add');
 		this.popupLove.style.animationDelay = `${ animationDelayTotal }s`;
 		animationDelayTotal -= animationDelayDeduct;
 		
-		this.addOrRemoveClass(this.popupGroup, 'pop-up--play-animation', 'add');
+		this.addOrRemoveClass(this.popupGroup, 'animation__value-01-pop-up--play-animation', 'add');
 		this.popupGroup.style.animationDelay = `${ animationDelayTotal }s`;
 		animationDelayTotal -= animationDelayDeduct;
 		
-		this.addOrRemoveClass(this.popup, 'pop-up--play-animation', 'add');
+		this.addOrRemoveClass(this.popup, 'animation__value-01-pop-up--play-animation', 'add');
 		this.popup.forEach(function(item, index, arr) {
 			item.style.animationDelay = `${ animationDelayTotal }s`;
 			animationDelayTotal -= animationDelayDeduct;
@@ -168,9 +171,9 @@ class Animations {
 
 	resetValueOne() {
 		setTimeout(() => {
-			this.addOrRemoveClass(this.popupLove, 'pop-up--play-animation', 'remove');
-			this.addOrRemoveClass(this.popupGroup, 'pop-up--play-animation', 'remove');
-			this.addOrRemoveClass(this.popup, 'pop-up--play-animation', 'remove');
+			this.addOrRemoveClass(this.popupLove, 'animation__value-01-pop-up--play-animation', 'remove');
+			this.addOrRemoveClass(this.popupGroup, 'animation__value-01-pop-up--play-animation', 'remove');
+			this.addOrRemoveClass(this.popup, 'animation__value-01-pop-up--play-animation', 'remove');
 			this.addOrRemoveClass(this.valuePlayButton[0], 'animation--hide', 'remove');
 		}, 1000);
 	}

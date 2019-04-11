@@ -1,4 +1,4 @@
-<section class="content content__bgcolor content__bgcolor--{{ page.header.bgcolor }}" data-matching-link="#{{ page.header.section_title }}-link">
+<section class="content" data-matching-link="#{{ page.header.section_title }}-link">
     <div class={% if page.header.top %}"content__grid-container content__grid-container--top"{% else %}"content__grid-container"{% endif %}>
         {% for module in page.collection() %}
             {% if loop.index == 1 %}

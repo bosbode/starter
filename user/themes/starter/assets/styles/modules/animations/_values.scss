@@ -14,12 +14,12 @@
 
 .animation__value-01 {
 
-    & .pop-up-item--scale {
+    &-pop-up-item--scale {
 		transform: scale(0);
 		transform-origin: center;
     }
 
-    & .pop-up--play-animation {
+    &-pop-up--play-animation {
 			animation: pop-up 0.8s 1 forwards;
 		}
 }
