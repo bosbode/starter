@@ -1,5 +1,6 @@
 .content {
 	width: 100vw;
+	background-color: $color-background;
 
 	&--invert {
 		filter: invert(100%);
