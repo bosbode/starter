@@ -1,3 +1,4 @@
+import OutdatedBrowser from "./modules/OutdatedBrowser";
 // import FullPage from "./modules/FullPage";
 // import MobileMenu from "./modules/MobileMenu";
 // import StickyHeader from "./modules/StickyHeader";
@@ -9,6 +10,7 @@ import Animations from "./modules/Animation";
 // import Video from "./modules/Video";
 
 
+let outdatedBrowser = new OutdatedBrowser;
 // let mobileMenu = new MobileMenu;
 let glide = new Glide;
 // let fullpage = new FullPage;
