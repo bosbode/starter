@@ -36,14 +36,16 @@
         {% include 'partials/navigation.html.twig' %}
     {% endblock %}
 
-    <main>
-      {% block body %}
-          {% block content %}{% endblock %}
-      {% endblock %}
-    </main>
+    {% block body %}
+        {% block content %}{% endblock %}
+    {% endblock %}
 
     {% block footer %}
         {% include 'partials/footer.html.twig' %}
+    {% endblock %}
+    
+    {% block outdatedBrowser %}
+        {% include 'partials/outdatedBrowser.html.twig' %}
     {% endblock %}
 
     {% block stylesheets %}
