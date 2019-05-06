@@ -1,0 +1,39 @@
+<section class={% if page.header.fullHeight %}"content content--full-height"{% else %}"content"{% endif %}>
+    <div class={% if page.header.switchPosition %}"content__container content__container--switch-position"{% else %}"content__container"{% endif %}>
+        <div class="content__bodytext content__bodytext--work">
+            {{ page.content }}
+        </div>
+        {# <div class={% if page.header.switchPosition %}"content__img-container content__img-container--switch-position"{% else %}"content__img-container"{% endif %}>
+            {% for img in page.media.images %}
+                <video class="content__video" poster="{{ img.url }}">
+                    {% for video in page.media.videos %}
+                        <source data-src="{{ video.url }}" type="video/mp4">
+                    {% endfor %}
+                    Your browser does not support the video tag.
+                </video>
+                <p class="btn__play btn__play--values">
+                    <i class="fas fa-play"></i>
+                </p>
+            {% endfor %}
+        </div> #}
+        <div class="content__img-container">
+            {% if page.media.images|length > 1 %}
+                <div class="glide">
+                    <div class="glide__track" data-glide-el="track">
+                        <ul class="glide__slides">
+                            {% for img in page.media.images %}
+                                <li class="glide__slide">
+                                    <img class={% if page.header.imgPosition %}"lazyload content__img content__img--{{ page.header.imgPosition }}"{% else %}"lazyload content__img"{% endif %} data-src="{{ img.url }}" />
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            {% else %}
+                {% for img in page.media.images %}
+                    <img class={% if page.header.imgPosition %}"lazyload content__img content__img--{{ page.header.imgPosition }}"{% else %}"lazyload content__img"{% endif %} data-src="{{ img.url }}" />
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+</section>

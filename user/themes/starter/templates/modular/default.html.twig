@@ -1,55 +1,21 @@
-<section class="content">
-    <div class={% if page.header.fullHeight %}"content__grid-container content__grid-container--full-height"{% else %}"content__grid-container"{% endif %}>
-        <div class={% if page.header.switchPosition %}"content__bodytext content__bodytext--switch-position"{% else %}"content__bodytext"{% endif %}>
+<section class={% if page.header.fullHeight %}"content content--full-height"{% else %}"content"{% endif %}>
+    <div class={% if page.header.switchPosition %}"content__container content__container--switch-position"{% else %}"content__container"{% endif %}>
+        <div class="content__bodytext">
             {{ page.content }}
         </div>
-        {% set extention = page.header.image|split('.')|last %}
-        {% if extention == 'svg' %}
-            <div class={% if page.header.switchPosition %}"content__animation-container content__animation-container--switch-position" {% else %}"content__animation-container" {% endif %}>
-                {% for svg in page.media.files %}
-                    {% if page.header.image == svg.filename %}
-                        <div class="animation__backdrop">
-                            {{ getfilecontents(svg.filepath) }}
-                        </div>
-                    {% else %}
-                        {% set file = svg.filename|slice(0, (svg.filename|length - 4)) %}
-                        <div class="animation animation__{{ file }}">
-                            {{ getfilecontents(svg.filepath) }}
-                        </div>
-                    {% endif %}
-                {% endfor %}
-            </div>
-        {% elseif extention == 'jpg' %}
-            {# <div class={% if page.header.switchPosition %}"content__img-container content__img-container--switch-position"{% else %}"content__img-container"{% endif %}>
-                {% for img in page.media.images %}
-                    <video class="content__video" poster="{{ img.url }}">
-                        {% for video in page.media.videos %}
-                            <source data-src="{{ video.url }}" type="video/mp4">
-                        {% endfor %}
-                        Your browser does not support the video tag.
-                    </video>
-                    <p class="btn__play btn__play--values">
-                        <i class="fas fa-play"></i>
-                    </p>
-                {% endfor %}
-            </div> #}
-            <div class={% if page.header.switchPosition %}"content__img-container content__img-container--switch-position"{% else %}"content__img-container"{% endif %}>
-                <div class="glide">
-                    <div class="glide__track" data-glide-el="track">
-                        <ul class="glide__slides">
-                            {% for img in page.media.images %}
-                                <li class="glide__slide">
-                                    <img class={% if page.header.imgPosition %}"lazyload content__img content__img--{{ page.header.imgPosition }}"{% else %}"lazyload content__img"{% endif %} data-src="{{ img.url }}" />
-                                </li>
-                            {% endfor %}
-                        </ul>
+        <div class="content__animation-container">
+            {% for svg in page.media.files %}
+                {% if page.header.image == svg.filename %}
+                    <div class="animation__backdrop">
+                        {{ getfilecontents(svg.filepath) }}
                     </div>
-                </div>
-            </div>
-        {% else %}
-            <div class={% if page.header.switchPosition %}"content__img-container content__img-container--switch-position"{% else %}"content__img-container"{% endif %}>
-                <p>Set image name in page header</p>
-            </div>
-        {% endif %}
+                {% else %}
+                    {% set file = svg.filename|slice(0, (svg.filename|length - 4)) %}
+                    <div class="animation animation__{{ file }}">
+                        {{ getfilecontents(svg.filepath) }}
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
     </div>
 </section>
