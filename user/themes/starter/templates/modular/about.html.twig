@@ -1,0 +1,19 @@
+<section class={% if page.header.fullHeight %}"content content--full-height"{% else %}"content"{% endif %}>
+    <div class="content__bodytext content__bodytext--h1">
+        <h1>{{ page.title }}</h1>
+    </div>
+    <div class={% if page.header.top %}"content__container content__container--top"{% else %}"content__container"{% endif %}>
+        {% for column in page.content|split('<hr />') %}
+            <div class="content__bodytext content__about--{{ loop.index }}">
+                {{ column }}
+
+                {% if page.header.socials and loop.index == 2 %}
+                    {% for social in page.header.socials %}
+                        <a href="{{ social.url }}" class="btn btn__social" target="_blank"><i class="fab fa-{{ social.icon }} fa-fw"></i>{{ social.name }}</a>
+                    {% endfor %}
+                {% endif %}
+
+            </div>
+        {% endfor %}
+    </div>
+</section>
