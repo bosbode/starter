@@ -78,6 +78,14 @@ a {
     }
 }
 
+hr {
+    border: none;
+}
+
+ul, ol {
+    @include responsive-font-size(1.5rem); 
+}
+
 // ol > li, ul > li {
 //     padding-right: 30px;
 // }
@@ -91,7 +99,7 @@ abbr[title]:after {
 }
 
 abbr[title] {
-    cursor:help;
+    cursor: help;
     text-decoration: none;
 
     @include breakpoint(desktop) { 
