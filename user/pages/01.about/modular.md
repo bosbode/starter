@@ -1,6 +1,6 @@
 ---
 title: Happy Kemper - About
-menu: About
+menu: Over
 onpage_menu: false
 content:
     items: @self.modular
@@ -11,6 +11,7 @@ content:
             - _landing
             - _values
             - _about
+            - _contact
 ---
 
 

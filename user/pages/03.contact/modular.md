@@ -7,7 +7,6 @@ content:
     order:
         by: default
         dir: asc
-        custom:
 ---
 
 

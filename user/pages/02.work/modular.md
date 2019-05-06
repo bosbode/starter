@@ -1,6 +1,6 @@
 ---
 title: Happy Kemper - Work
-menu: Work
+menu: Werk
 onpage_menu: false
 content:
     items: @self.modular
@@ -8,6 +8,9 @@ content:
         by: default
         dir: asc
         custom:
+                - _walkinfish
+                - _wieisjohn
+                - _dept
 ---
 
 

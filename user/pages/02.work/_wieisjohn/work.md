@@ -7,7 +7,7 @@ site: https://wieisjohn.com
 github: https://github.com/bosbode/wie-is-john
 imgPosition: left
 switchPosition: true
-fullHeight: true
+fullHeight: false
 ---
 
 # WIE IS JOHN?
