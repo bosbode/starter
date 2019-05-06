@@ -9,7 +9,7 @@ class OutdatedBrowser {
 		outdatedBrowser({
 			bgColor: '#bea2af',
 			color: '#ffffff',
-			lowerThan: 'grid-template-columns',
+			lowerThan: 'flex',
 			languagePath: ''
 		})
 	}
