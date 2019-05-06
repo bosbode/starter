@@ -7,13 +7,18 @@
 		text-transform: uppercase;
 		font-weight: 600;
 		margin: 0;
-		width: 65px;
+		width: 50px;
 		text-align: center;
 		color: white;
 		background: rgba($color-primary, .6);
 		padding: 5px;
-		border-radius: 15px;
+		border-radius: 10px;
 		z-index: 2;
+
+		@include breakpoint(tabletPortrait) {
+			width: 65px;
+			border-radius: 15px;
+		}
 	
 		&:hover {
 			transform: translate(-50%, -50%) scale(1.2);
@@ -25,6 +30,17 @@
 		
 		& > a:first-child {
 			margin-right: 10px;
+		}
+	}
+
+	&__social {
+		display: inline;
+		font-size: 1.3rem;
+		
+		& > img {
+			height: 30px;
+			width: 30px;
+			fill: $color-primary;
 		}
 	}
 }
