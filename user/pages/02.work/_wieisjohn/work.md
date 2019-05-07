@@ -12,4 +12,20 @@ fullHeight: false
 
 # WIE IS JOHN?
 
-Bacon ipsum dolor amet landjaeger corned beef turducken burgdoggen sirloin kevin pork chop jerky andouille. Spare ribs swine beef ribs beef corned beef andouille rump prosciutto pork loin ribeye flank chicken shank burgdoggen landjaeger. Pastrami biltong andouille ham hock chuck. Pork sausage shank porchetta tongue frankfurter landjaeger salami t-bone.
+In samenwerking met kunstschilder [John ten Berge](https://wieisjohn.com), heeft Happy Kemper een digitaal visitekaartje ontworpen en ontwikkeld. De website bestaat uit een enkele pagina met daarop foto impressies en contactgegevens.
+
+De website is 'mobile friendly' en tot stand gekomen met de volgende technieken:
+
+- BEM
+- Grav
+- Twig
+- CSS
+- Gulp
+- ES6
+
+*[BEM]: Block Element Modifier
+*[Grav]: CMS (Content Management System)
+*[Twig]: PHP Template Engine
+*[CSS]: Cascading Style Sheets
+*[Gulp]: The streaming build system (automation tool)
+*[ES6]: Javascript

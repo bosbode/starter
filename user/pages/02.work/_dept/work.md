@@ -1,12 +1,14 @@
 ---
 imgPosition: left
-switchPosition: true
+switchPosition: false
 fullHeight: false
 ---
 
 # DEPT
 
 Bij TamTam (part of Dept) heb ik gewerkt aan diverse features en bug fixes voor klanten zoals Bastion Hotels, de Alliantie, Feyenoord Webshop, Hans Anders, Kempen, Staffing Groep, VVV Zeeland, Arla Protein en Gazelle PUUR_NL etc.
+
+De projecten zijn tot stand gekomen met de volgende technieken:
 
 - BEM
 - Nunjucks

@@ -7,10 +7,12 @@ socials:
         network: LinkedIn
         url: 'https://nl.linkedin.com/in/bosse-kemper-04086935'
         icon: linkedin-in
+        title: LinkedIn
     -
         network: Instagram
         url: 'https://www.instagram.com/bosse_kemper'
         icon: instagram
+        title: Instagram
 ---
 
 Happy Kemper kan jou helpen met het creëren van jouw digitale uitingen. Wat ik belangrijk vind is dat we samen zoeken naar de beste oplossing voor jouw specifieke vraag, van volledige websites tot verhalende web animaties. Ik ben graag betrokken bij het gehele proces en draag grote zorg voor het werk wat ik doe.  

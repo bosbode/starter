@@ -172,7 +172,7 @@
 				content: "> " attr(title) "";
 			
 				@include breakpoint(desktop) { 
-					top: 50px;
+					top: 55px;
 			   }
 			}
 		}
@@ -350,13 +350,13 @@
 		@include breakpoint(tabletPortrait) {
 			// grid-column: 2 / 12;
 			// grid-row: 3 / 14;
+			margin: 0;
 		}
 
 		@include breakpoint(desktop) {
 			// grid-column: 11 / 23;
 			// grid-row: 1 / 15;
 			width: 58.32%;
-			margin: 0;
 		}
 	}
 
