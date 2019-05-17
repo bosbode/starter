@@ -18,12 +18,13 @@
         </div> #}
         <div class="content__img-container">
             {% if page.media.images|length > 1 %}
-                <div class="glide">
+                <div class="glide" data-autoplay="{{ page.header.autoplay }}">
                     <div class="glide__track" data-glide-el="track">
                         <ul class="glide__slides">
                             {% for img in page.media.images %}
                                 <li class="glide__slide">
-                                    <img class={% if page.header.imgPosition %}"lazyload content__img content__img--{{ page.header.imgPosition }}"{% else %}"lazyload content__img"{% endif %} data-src="{{ img.url }}" />
+                                    {% set service_image = img.derivatives(311,1246,327).sizes('(max-width:375px) 311px, (max-width:768px) 638px, 50vw') %}
+                                    <img title="{{ page.header.title }}" alt="{{ page.header.alt }}" class="lazyload content__img content__img--glide" data-src="{{ service_image.url(false) }}" data-srcset="{{ service_image.srcset(false) }}"> 
                                 </li>
                             {% endfor %}
                         </ul>
@@ -31,7 +32,8 @@
                 </div>
             {% else %}
                 {% for img in page.media.images %}
-                    <img class={% if page.header.imgPosition %}"lazyload content__img content__img--{{ page.header.imgPosition }}"{% else %}"lazyload content__img"{% endif %} data-src="{{ img.url }}" />
+                    {% set service_image = img.derivatives(311,1246,327).sizes('(max-width:375px) 311px, (max-width:768px) 638px, 50vw') %}
+                    <img title="{{ page.header.title }}" alt="{{ page.header.alt }}" class="lazyload content__img" data-src="{{ service_image.url(false) }}" data-srcset="{{ service_image.srcset(false) }}"> 
                 {% endfor %}
             {% endif %}
         </div>

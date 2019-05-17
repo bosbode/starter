@@ -1,7 +1,8 @@
-// .glide, .glide__slides, .glide__track {
-//     height: 100%;
-
-//     @include breakpoint(tabletPortrait) {
-//         height: auto;
-//     }
-// }
+.glide, .glide__slides, .glide__track {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    font-size: 0;
+}

@@ -1,13 +1,9 @@
 ---
-title: Happy Kemper - Work
-menu: Work
-bgcolor: pink
-image: thewalkinfish.jpg
-site: https://thewalkinfish.com
-github: https://github.com/bosbode/walkin-fish
-imgPosition: center
 switchPosition: false
 fullHeight: false
+autoplay: 3000
+title: The Walk'in Fish
+alt: Restaurant The Walk'in Fish website impressions
 ---
 
 # THE WALK’IN FISH

@@ -338,11 +338,13 @@
 	}
 
 	&__img-container {
-		// position: relative;
+		position: relative;
 		// z-index: 2;
 		// align-self: center;
 		margin: 8.33% 0;
 		width: 100%;
+		height: 0;
+		padding-top: 56.25%;
 
 		// grid-column: 2 / 12;
 		// grid-row: 5 / 12;
@@ -357,29 +359,21 @@
 			// grid-column: 11 / 23;
 			// grid-row: 1 / 15;
 			width: 58.32%;
+			padding-top: 32.81%;
 		}
 	}
 
 	&__img {
-		object-fit: cover;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
 		width: 100%;
 		height: auto;
+	}
 
-		// @include breakpoint(tabletPortrait) {
-		// 	object-fit: contain;
-		// 	// height: auto;
-		// }
-	}
-	
-	&__img--left {
-		object-position: left;
-	}
-	
-	&__img--right {
-		object-position: right;
-	}
-	
-	&__img--center {
-		object-position: center;
+	&__img--glide {
+		position: static;
 	}
 }

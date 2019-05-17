@@ -1,13 +1,8 @@
 ---
-title: Happy Kemper - Work
-menu: Work
-bgcolor: pink
-image: wieisjohn.jpg
-site: https://wieisjohn.com
-github: https://github.com/bosbode/wie-is-john
-imgPosition: left
 switchPosition: true
 fullHeight: false
+title: Wie is John
+alt: Wie is John website screenshot
 ---
 
 # WIE IS JOHN?

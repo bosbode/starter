@@ -1,7 +1,8 @@
 ---
-imgPosition: left
 switchPosition: false
 fullHeight: false
+title: Dept
+alt: Dept logo
 ---
 
 # DEPT
