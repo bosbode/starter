@@ -30,7 +30,7 @@ function criticalCss (done) {
         width: 1920,
         height: 1080,
         dest: './user/themes/' + config.theme + '/assets/compiled/styles/main.critical.css',
-        include: ['.content__img-container', '.content__img', '.content__img--left', '.content__img--right', '.content__img--center']
+        include: ['.content__img-container', '.content__img', '.glide', '.glide__slides', '.glide__track', '.glide__slide']
     })
     done();
 };
