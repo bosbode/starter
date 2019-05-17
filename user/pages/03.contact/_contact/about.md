@@ -1,6 +1,6 @@
 ---
 switchPosition: true
-fullHeight: false
+fullHeight: true
 title: Contact
 socials:
     -
