@@ -30,7 +30,7 @@ function criticalCss (done) {
         width: 1920,
         height: 1080,
         dest: './user/themes/' + config.theme + '/assets/compiled/styles/main.critical.css',
-        include: ['.content__img-container', '.content__img', '.glide', '.glide__slides', '.glide__track', '.glide__slide']
+        include: ['.content__img-container', '.content__img', '.content__img--glide', '.glide', '.glide__slides', '.glide__track', '.glide__slide', '.glide--ltr', .'glide--carousel', '.glide--swipeable', '.glide__slide--clone']
     })
     done();
 };
