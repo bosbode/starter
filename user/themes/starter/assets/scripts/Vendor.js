@@ -1,3 +1,3 @@
-import "../compiled/scripts/modernizr";
+// import "../compiled/scripts/modernizr";
 import "lazysizes";
 import "picturefill";
