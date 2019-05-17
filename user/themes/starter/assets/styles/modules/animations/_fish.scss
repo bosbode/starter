@@ -28,6 +28,6 @@
 
 @keyframes fish {
     to {
-        transform: translateX(-480px);
+        transform: translate3d(-480px, 0, 0);
     }
 }

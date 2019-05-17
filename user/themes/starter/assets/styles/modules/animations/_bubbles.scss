@@ -28,6 +28,6 @@
 
 @keyframes bubbles {
     to {
-        transform: translateX(-54px);
+        transform: translate3d(-54px, 0, 0);
     }
 }

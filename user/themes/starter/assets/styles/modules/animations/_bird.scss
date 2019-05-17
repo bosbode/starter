@@ -6,6 +6,7 @@
 	width: 50px;
 	overflow: hidden;
 	display: none;
+	z-index: 2;
 
 	@include breakpoint(tabletPortrait) {
 		transform: translateX(-50%) scale(0.6) rotate(-15deg);
@@ -33,13 +34,12 @@
 
 @keyframes flyBird {
 	to {
-		transform: translateX(-100px);
+		transform: translate3d(-100px, 0, 0);
 	}
 }
 
 @keyframes moveBird {
 	to {
-		left: 150%;
-		bottom: 80%;
+		transform: translate3d(50vw, -50vh, 0);
 	}
 }
