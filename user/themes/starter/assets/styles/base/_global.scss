@@ -86,10 +86,6 @@ ul, ol {
     @include responsive-font-size(1.5rem); 
 }
 
-// ol > li, ul > li {
-//     padding-right: 30px;
-// }
-
 abbr[title]:after {
     content: " (" attr(title) ")";
 
