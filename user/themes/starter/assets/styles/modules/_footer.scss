@@ -1,16 +1,34 @@
 .footer {
     background-color: $color-body-text;
     color: $color-background;
-    display: grid;
-	grid-template-columns: repeat(12, 1fr);
-	grid-template-rows: repeat(auto);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     width: 100vw;
     overflow: hidden;
-    padding: 20px 0;
+    padding: 20px 8.33%;
+    margin-top: -132px;
     
     @include breakpoint(tabletPortrait) {
-		grid-template-columns: repeat(24, 1fr);
-		grid-template-rows: repeat(auto);
+        align-items: center;
+        flex-direction: row;
+        margin-top: -64px;
+    }
+
+    &__address--number {
+        margin-top: 10px;
+
+        @include breakpoint(tabletPortrait) {
+            margin-top: 0;
+        }
+    }
+
+    &__social {
+        margin-top: 20px;
+
+        @include breakpoint(tabletPortrait) {
+            margin-top: 0;
+        }
     }
 
     & p {
@@ -18,60 +36,7 @@
         margin: 0;
     }
     
-    &__address--email {
-        grid-column-start: 2;
-		grid-column-end: 11;
-		z-index: 2;
-        align-self: center;
-        
-        @include breakpoint(tabletPortrait) {
-			grid-column-start: 3;
-			grid-column-end: 12;
-		}
-
-		@include breakpoint(desktop) {
-			grid-column-start: 3;
-			grid-column-end: 7;
-		}
-    }
-
-    &__address--number {
-		grid-column-start: 2;
-		grid-column-end: 11;
-        align-self: top;
-
-        @include breakpoint(tabletPortrait) {
-			grid-column-start: 3;
-            grid-column-end: 24;
-		}
-
-		@include breakpoint(desktop) {
-			grid-column-start: 7;
-            grid-column-end: 10;
-            align-self: center;
-        }
-        
-        & p {
-            margin-top: 5px;
-        }
-    }
-    
-    &__copyright {
-		grid-column-start: 2;
-		grid-column-end: 11;
-        align-self: top;
-        margin-top: 20px;
-
-        @include breakpoint(tabletPortrait) {
-			grid-column-start: 3;
-            grid-column-end: 11;
-		}
-
-		@include breakpoint(desktop) {
-			grid-column-start: 10;
-            grid-column-end: 21;
-            align-self: center;
-            margin-top: 0;
-		}
+    & > * {
+        margin-right: 40px;
     }
 }
