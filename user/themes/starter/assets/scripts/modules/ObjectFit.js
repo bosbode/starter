@@ -1,5 +1,3 @@
-import $ from "jquery";
-
 class ObjectFit {
 	constructor(){
 		this.imageContainer = $(".carousel");
