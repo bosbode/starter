@@ -6,3 +6,8 @@
     bottom: 0;
     font-size: 0;
 }
+
+.glide__slides {
+    perspective: 2000;
+    backface-visibility: hidden;
+}
