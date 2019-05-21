@@ -1,4 +1,3 @@
-import $ from "jquery";
 import lottie from "lottie-web";
 
 class BodyMovin {

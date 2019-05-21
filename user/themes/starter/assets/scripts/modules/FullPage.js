@@ -1,4 +1,3 @@
-import $ from 'jquery';
 import fullpage from 'fullpage.js';
 
 class FullPage {
