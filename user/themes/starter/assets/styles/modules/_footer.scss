@@ -7,12 +7,10 @@
     width: 100vw;
     overflow: hidden;
     padding: 20px 8.33%;
-    margin-top: -132px;
     
     @include breakpoint(tabletPortrait) {
         align-items: center;
         flex-direction: row;
-        margin-top: -64px;
     }
 
     &__address--number {
