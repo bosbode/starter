@@ -23,8 +23,8 @@
                         <ul class="glide__slides">
                             {% for img in page.media.images %}
                                 <li class="glide__slide">
-                                    {% set service_image = img.derivatives(311,1246,327).sizes('(max-width:375px) 311px, (max-width:768px) 638px, 50vw') %}
-                                    <img title="{{ page.header.title }}" alt="{{ page.header.alt }}" class="lazyload content__img content__img--glide" data-src="{{ service_image.url(false) }}" data-srcset="{{ service_image.srcset(false) }}"> 
+                                    {% set service_image = img.derivatives(315,1260,315).sizes('(max-width:600px) 315px, (max-width:1200px) 638px, 50vw') %}
+                                    <img title="{{ page.header.title }}" alt="{{ page.header.alt }}" class="lazyload content__img content__img--glide" data-src="{{ service_image.url(false) }}" data-srcset="{{ service_image.srcset(false) }}" sizes="{{ service_image.sizes(false) }}"> 
                                 </li>
                             {% endfor %}
                         </ul>
@@ -32,8 +32,8 @@
                 </div>
             {% else %}
                 {% for img in page.media.images %}
-                    {% set service_image = img.derivatives(311,1246,327).sizes('(max-width:375px) 311px, (max-width:768px) 638px, 50vw') %}
-                    <img title="{{ page.header.title }}" alt="{{ page.header.alt }}" class="lazyload content__img" data-src="{{ service_image.url(false) }}" data-srcset="{{ service_image.srcset(false) }}"> 
+                    {% set service_image = img.derivatives(315,1260,315).sizes('(max-width:600px) 315px, (max-width:1200px) 638px, 50vw') %}
+                    <img title="{{ page.header.title }}" alt="{{ page.header.alt }}" class="lazyload content__img" data-src="{{ service_image.url(false) }}" data-srcset="{{ service_image.srcset(false) }}" sizes="{{ service_image.sizes(false) }}"> 
                 {% endfor %}
             {% endif %}
         </div>
