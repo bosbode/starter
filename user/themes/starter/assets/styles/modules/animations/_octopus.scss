@@ -30,7 +30,7 @@
 
 .animation__octopus-head {
 	& .octopus-head-group--play-animation {
-		animation: head .8s steps(8) 1;
+		animation: head .4s .5s steps(8) 1;
 	}
 	
 	& > svg {
