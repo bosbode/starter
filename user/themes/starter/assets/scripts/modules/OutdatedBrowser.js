@@ -9,7 +9,7 @@ class OutdatedBrowser {
 		outdatedBrowser({
 			bgColor: '#bea2af',
 			color: '#ffffff',
-			lowerThan: 'flex',
+			lowerThan: 'font-variation-settings',
 			languagePath: ''
 		})
 	}
