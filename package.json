@@ -39,6 +39,7 @@
     "gulp-watch": "^5.0.1",
     "postcss-hexrgba": "^1.0.1",
     "uglifyjs-webpack-plugin": "^2.1.2",
+    "vanilla-tilt": "^1.7.0",
     "webpack": "^4.29.6"
   }
 }

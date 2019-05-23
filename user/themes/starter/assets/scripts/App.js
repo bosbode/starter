@@ -7,6 +7,7 @@ import OutdatedBrowser from "./modules/OutdatedBrowser";
 import Glide from "./modules/Glide";
 // import ObjectFit from "./modules/ObjectFit";
 import Animations from "./modules/Animation";
+import Tilt from "./modules/Tilt";
 // import Video from "./modules/Video";
 
 
@@ -19,4 +20,5 @@ let glide = new Glide;
 // let modal = new Modal;
 // let webfont = Webfont();
 let animations = new Animations();
+let tilt = new Tilt();
 // let video = new Video();
