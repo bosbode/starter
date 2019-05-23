@@ -1,6 +1,6 @@
 ---
 switchPosition: true
-fullHeight: true
+fullHeight: false
 title: Wie ben ik!?
 ---
 
