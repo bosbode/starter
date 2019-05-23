@@ -1,5 +1,5 @@
 ---
-title: Happy Kemper - Work
+title: Happy Kemper - Werk
 menu: Werk
 onpage_menu: false
 content:
