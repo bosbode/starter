@@ -19,7 +19,7 @@
 	}
 
 	& #bird-group {
-		animation: flyBird 0.3s steps(2) infinite;
+		animation: flyBird 0.2s steps(2) infinite;
 	}
 
 	& > svg {
@@ -29,7 +29,15 @@
 }
 
 .animation__bird-animate {
-	animation: moveBird 2.2s cubic-bezier(0.47, 0, 0.745, 0.715) 1;
+	animation: moveBird 1.6s cubic-bezier(0.47, 0, 0.745, 0.715) 1;
+
+	@include breakpoint(tabletPortrait) {
+		animation-duration: 1.8s;
+	}
+
+	@include breakpoint(desktop) {
+		animation-duration: 2.4s;
+	}
 }
 
 @keyframes flyBird {

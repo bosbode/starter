@@ -6,7 +6,7 @@ class Animations {
 		this.tentaclesContainer = document.querySelectorAll('.animation__octopus-tentacles');
 		this.octopusHeadContainer = document.querySelectorAll('.animation__octopus-head');
 		this.smokeContainer = document.querySelectorAll('.animation__smoke');
-		this.birdContainer = document.querySelectorAll('.animation__bird');
+		this.birdContainer = document.querySelector('.animation__bird');
 		this.octopusTentacles = document.querySelector('#octopus-tentacle-group');
 		this.octopusHead = document.querySelector('#octopus-head-group');
 		this.fire = document.querySelector('#fire-group');
@@ -104,10 +104,10 @@ class Animations {
 			this.addOrRemoveClass(this.birdContainer, 'animation__bird-animate', 'add');
 			this.addOrRemoveClass(this.birdTree, 'animation__tree', 'remove');
 	
-			// Hide bird container after 2200 milliseconds
-			setTimeout(function() {
+			// Hide bird container after animation is ended
+			this.addListenerMulti(this.birdContainer, 'webkitAnimationEnd animationend', function(){
 				that.addOrRemoveClass(that.birdContainer, 'animation--show', 'remove');
-			}, 2200);
+			})
 
 			this.treeClicked = true;
 		}
