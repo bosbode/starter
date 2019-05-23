@@ -1,4 +1,4 @@
-.animation__tentacles {
+.animation__octopus-tentacles, .animation__octopus-head {
 	bottom: 15%;
 	left: 50%;
 	transform: translateX(-50%) scale(0.45);
@@ -18,18 +18,35 @@
 		bottom: 35%;
 	}
 
-	& .tentacles-group--play-animation {
-		animation: tentacle 2.5s steps(16) infinite;
+	& .octopus-tentacles-group--play-animation {
+		animation: tentacle 0.6s steps(4) infinite;
 	}
 
 	& > svg {
-		width: 4000px; 
+		width: 1000px; 
+		height: 250px;
+	}
+}
+
+.animation__octopus-head {
+	& .octopus-head-group--play-animation {
+		animation: head .8s steps(8) 1;
+	}
+	
+	& > svg {
+		width: 2000px; 
 		height: 250px;
 	}
 }
 
 @keyframes tentacle {
 	to {
-		transform: translate3d(-4000px, 0, 0);
+		transform: translate3d(-1000px, 0, 0);
+	}
+}
+
+@keyframes head {
+	to {
+		transform: translate3d(-2000px, 0, 0);
 	}
 }

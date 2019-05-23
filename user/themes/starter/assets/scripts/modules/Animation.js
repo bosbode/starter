@@ -3,10 +3,12 @@ class Animations {
 		this.contentTitle = document.querySelectorAll('.content__bodytext > h1');
 		this.bubbles = document.querySelector('.animation__bubbles');
 		this.fireContainer = document.querySelector('.animation__fire');
-		this.tentaclesContainer = document.querySelectorAll('.animation__tentacles');
+		this.tentaclesContainer = document.querySelectorAll('.animation__octopus-tentacles');
+		this.octopusHeadContainer = document.querySelectorAll('.animation__octopus-head');
 		this.smokeContainer = document.querySelectorAll('.animation__smoke');
 		this.birdContainer = document.querySelectorAll('.animation__bird');
-		this.tentacles = document.querySelector('#tentacle-group');
+		this.octopusTentacles = document.querySelector('#octopus-tentacle-group');
+		this.octopusHead = document.querySelector('#octopus-head-group');
 		this.fire = document.querySelector('#fire-group');
 		this.smoke = document.querySelector('#smoke-group');
 		this.birdTree = document.querySelector('#tree-top');
@@ -115,13 +117,14 @@ class Animations {
 		const that = this;
 
 		// Shows and appends tentacle animation
-		this.addOrRemoveClass(this.tentacles, 'tentacles-group--play-animation', 'add');
+		this.addOrRemoveClass(this.octopusTentacles, 'octopus-tentacles-group--play-animation', 'add');
+		this.addOrRemoveClass(this.octopusHead, 'octopus-head-group--play-animation', 'add');
+		
+		// Show moon, stars and tentacles
+		this.addOrRemoveClass([this.tentaclesContainer, this.octopusHeadContainer, this.night], 'animation--show', 'add');
 		
 		// Hide bubbles and sun
 		this.addOrRemoveClass([this.bubbles, this.sun], 'animation--hide', 'add');
-		
-		// Show moon, stars and tentacles
-		this.addOrRemoveClass([this.tentaclesContainer, this.night], 'animation--show', 'add');
 		
 		// Swap tree colors so the shade is on the correct side
 		this.addOrRemoveClass(this.treeShade, 'tree-shade--white', 'add');
@@ -132,11 +135,12 @@ class Animations {
 
 		// Undo all above changes after 2.5 seconds
 		setTimeout(function() {
-			that.addOrRemoveClass(that.tentacles, 'tentacles-group--play-animation', 'remove');
+			that.addOrRemoveClass(that.octopusTentacles, 'octopus-tentacles-group--play-animation', 'remove');
+			that.addOrRemoveClass(that.octopusHead, 'octopus-head-group--play-animation', 'remove');
+			
+			that.addOrRemoveClass([that.tentaclesContainer, that.octopusHeadContainer, that.night], 'animation--show', 'remove');
 			
 			that.addOrRemoveClass([that.bubbles, that.sun], 'animation--hide', 'remove');
-			
-			that.addOrRemoveClass([that.tentaclesContainer, that.night], 'animation--show', 'remove');
 			
 			that.addOrRemoveClass(that.treeShade, 'tree-shade--white', 'remove');
 			that.addOrRemoveClass(that.tree, 'tree--blue', 'remove');
