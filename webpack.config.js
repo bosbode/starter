@@ -25,6 +25,12 @@ module.exports = {
 		}]
 	},
 	plugins: [
-    new UglifyJsPlugin()
+    new UglifyJsPlugin({
+			uglifyOptions: {
+				compress: {
+					drop_debugger: false
+				}
+			}
+		})
   ]
 }
