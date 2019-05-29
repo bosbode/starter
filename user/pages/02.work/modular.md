@@ -1,6 +1,7 @@
 ---
 title: Happy Kemper - Werk
 menu: Werk
+pageClass: work
 onpage_menu: false
 content:
     items: @self.modular
