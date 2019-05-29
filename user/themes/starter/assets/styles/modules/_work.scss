@@ -1,0 +1,7 @@
+.work {
+	& > .content {
+		@include breakpoint(desktop) {
+			height: 100vh;
+		}
+	}
+}
