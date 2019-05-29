@@ -34,18 +34,18 @@
 
 @keyframes star-01 {
 	50% {
-		fill: rgba($color-body-text, .3);
+		opacity: .3;
 	}
 }
 	
 @keyframes star-02 {
 	60% {
-		fill: rgba($color-body-text, .3);
+		opacity: .3;
 	}
 }
 	
 @keyframes star-03 {
 	70% {
-		fill: rgba($color-body-text, .3);
+		opacity: .3;
 	}
 }
