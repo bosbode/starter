@@ -9,29 +9,3 @@ metadata:
 title: Happy Kemper
 email: bosse@happykemper.com
 description: "Place discription here"
-
-# Links to include in navigation
-# For external links add external: true
-
-# links:
-#       - title: About
-#         url: '#'
-#         id: 'link-01'
-#       - title: Work
-#         url: '#'
-#         id: 'link-02'
-#       - title: Contact
-#         url: '#'
-#         id: 'link-03'
-
-# english:
-#   links:
-#       - title: Link 1
-#         url: '#'
-#         id: 'link-01'
-#       - title: Link 2
-#         url: '#'
-#         id: 'link-02'
-#       - title: Link 3
-#         url: '#'
-#         id: 'link-03'
