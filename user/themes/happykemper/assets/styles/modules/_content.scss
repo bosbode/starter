@@ -15,9 +15,9 @@
 	@include breakpoint(desktop) {
 		min-height: 100vh;
 		
-		@media (max-height: 1079px) { 
-			height: 100%;
-			width: 100%; 
+		@media (max-height: 1079px) {
+			padding: 8.33% 8.33%;
+			height: 100%; 
 		}
 	}
 

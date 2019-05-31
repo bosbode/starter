@@ -16,8 +16,17 @@
 		z-index: 2;
 
 		@include breakpoint(tabletPortrait) {
-			width: 65px;
+			width: 60px;
 			border-radius: 15px;
+		}
+
+		@include breakpoint(desktop) {
+			width: 70px;
+			border-radius: 20px;
+		}
+
+		@include breakpoint(desktopWide) {
+			width: 65px;
 		}
 	
 		&:hover {
