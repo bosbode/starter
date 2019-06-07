@@ -8,4 +8,4 @@ fullHeight: true
 
 # WELKOM
 
-Dit is het digitale landschap van Happy Kemper. In dit landschap zitten de waarden verwerkt die ik het meest belangrijk vind. Mijn grote drijfveer is ontdekken en op een speelse manier creëren. Altijd op zoek naar een balans van elementen, structuur en een efficiënte manier van werken. Het liefst doe ik dit samen, ga je mee op ontdekkingstocht?
+Dit is het digitale landschap van Happy Kemper. In dit landschap zitten de waarden verwerkt die ik het meest belangrijk vind. Mijn grote drijfveer is ontdekken en op een speelse manier creëren. Altijd op zoek naar een balans tussen elementen, structuur en een efficiënte manier van werken. Het liefst doe ik dit samen, ga je mee op ontdekkingstocht?
